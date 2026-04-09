@@ -8,7 +8,7 @@ era_label: "۲۰۲۰–اکنون"
 category: military
 category_label: "نظامی"
 featured: true
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Qasem_Soleimani_2019.jpg/320px-Qasem_Soleimani_2019.jpg"
+image: "/assets/images/events/soleimani.jpg"
 description: "ترور سردار قاسم سلیمانی توسط پهپاد آمریکایی در فرودگاه بغداد — خطرناک‌ترین تصعید مستقیم بین ایران و آمریکا."
 sources:
   - title: "Soleimani Killing: Trump Administration's Legal Justification"

@@ -8,7 +8,7 @@ era_label: "۱۹۸۰–۱۹۹۰"
 category: intel
 category_label: "ایران‌کنترا"
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Iran_Contra_Affair.jpg/400px-Iran_Contra_Affair.jpg"
+image: "/assets/images/events/iran-contra.jpg"
 description: "دولت ریگان مخفیانه به ایران سلاح فروخت و پول را به شورشیان نیکاراگوئه رساند."
 sources:
   - title: "Iran-Contra Affair — National Security Archive"

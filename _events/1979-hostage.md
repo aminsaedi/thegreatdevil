@@ -8,7 +8,7 @@ era_label: "۱۹۷۰–۱۹۸۰"
 category: diplo
 category_label: "دیپلماسی"
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Hostage_Crisis_-_American_hostages%2C_November_1979.jpg/400px-Hostage_Crisis_-_American_hostages%2C_November_1979.jpg"
+image: "/assets/images/events/hostage-crisis.jpg"
 description: "پذیرش شاه معزول در آمریکا منجر به ۴۴۴ روز گروگان‌گیری دیپلمات‌های آمریکایی در تهران شد."
 sources:
   - title: "The Iranian Hostage Crisis — Office of the Historian"

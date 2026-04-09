@@ -8,7 +8,7 @@ era_label: "۱۹۸۰–۱۹۹۰"
 category: military
 category_label: "نظامی"
 featured: true
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Rumsfeld_and_Saddam_Hussein.jpg/400px-Rumsfeld_and_Saddam_Hussein.jpg"
+image: "/assets/images/events/rumsfeld-saddam.jpg"
 description: "آمریکا صدام حسین را در جنگ با ایران حمایت کرد — حتی پس از استفاده از سلاح‌های شیمیایی علیه غیرنظامیان."
 sources:
   - title: "Rumsfeld-Saddam Handshake — Declassified State Dept. Cables"

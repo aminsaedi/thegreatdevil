@@ -8,7 +8,7 @@ era_label: "۱۹۰۰–۱۹۴۰"
 category: diplo
 category_label: "دیپلماسی"
 featured: true
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Morgan_Shuster.jpg/320px-Morgan_Shuster.jpg"
+image: "/assets/images/events/shuster.jpg"
 description: "اخراج مشاور مالی آمریکایی مجلس ایران تحت فشار روسیه و بریتانیا — با بی‌تفاوتی واشنگتن."
 sources:
   - title: "The Strangling of Persia"

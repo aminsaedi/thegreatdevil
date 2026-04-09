@@ -8,7 +8,7 @@ era_label: "۲۰۲۰–اکنون"
 category: military
 category_label: "نظامی"
 featured: true
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/B-2_Spirit_bombing.jpg/400px-B-2_Spirit_bombing.jpg"
+image: "/assets/images/events/b2-bombing.jpg"
 description: "برای نخستین بار، نیروهای آمریکایی مستقیماً به خاک ایران حمله کردند و تأسیسات هسته‌ای را بمباران کردند."
 sources:
   - title: "Pentagon Statement on Iran Strike"

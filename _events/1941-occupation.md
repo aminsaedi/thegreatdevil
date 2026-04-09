@@ -8,7 +8,7 @@ era_label: "۱۹۰۰–۱۹۴۰"
 category: military
 category_label: "نظامی"
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Map_of_Allied_occupation_of_Iran_%281941-1946%29.jpg/400px-Map_of_Allied_occupation_of_Iran_%281941-1946%29.jpg"
+image: "/assets/images/events/allied-occupation.png"
 description: "نیروهای آمریکا، بریتانیا و شوروی در جنگ جهانی دوم ایران را اشغال کردند و رضاشاه را از قدرت برانداختند."
 sources:
   - title: "Iran in World War II — Foreign Relations of the United States"

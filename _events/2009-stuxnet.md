@@ -8,7 +8,7 @@ era_label: "۲۰۰۰–۲۰۱۰"
 category: cyber
 category_label: "سایبری"
 featured: true
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Natanz_nuclear_enrichment_plant_site_in_Iran.jpg/400px-Natanz_nuclear_enrichment_plant_site_in_Iran.jpg"
+image: "/assets/images/events/natanz.jpg"
 description: "استاکس‌نت — اولین سلاح سایبری تاریخ — توسط آمریکا و اسرائیل علیه تأسیسات هسته‌ای ایران به‌کار رفت."
 sources:
   - title: "Confirmed: US and Israel Created Stuxnet, Lost Control of It"

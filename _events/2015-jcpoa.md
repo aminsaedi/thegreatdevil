@@ -8,7 +8,7 @@ era_label: "۲۰۱۰–۲۰۲۰"
 category: diplo
 category_label: "دیپلماسی"
 featured: true
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/John_Kerry_and_Mohammad_Javad_Zarif_-_2015_%28cropped%29.jpg/400px-John_Kerry_and_Mohammad_Javad_Zarif_-_2015_%28cropped%29.jpg"
+image: "/assets/images/events/kerry-zarif.jpg"
 description: "برجام — نادرترین دستاورد دیپلماتیک در روابط آمریکا–ایران — که سه سال بعد نابود شد."
 sources:
   - title: "Joint Comprehensive Plan of Action (JCPOA) — Full Text"
