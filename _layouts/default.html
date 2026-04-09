@@ -70,7 +70,7 @@
     <span class="era-nav-toggle-label">دوره‌ها</span>
   </button>
   <div class="era-nav-links" id="era-nav-links" role="menu">
-    {% assign eras = site.events | map: "era_id" | uniq %}
+    {% assign eras = site.events | map: "era_id" | uniq | sort %}
     {% for era_id in eras %}
       {% assign era_event = site.events | where: "era_id", era_id | first %}
       <a href="#{{ era_id }}" role="menuitem">{{ era_event.era_label }}</a>

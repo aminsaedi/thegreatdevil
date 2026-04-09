@@ -63,7 +63,7 @@ layout: default
 </div>
 
 <main>
-{% assign eras = site.events | group_by: "era_id" %}
+{% assign eras = site.events | sort: "era_id" | group_by: "era_id" %}
 {% for era_group in eras %}
   {% assign first_event = era_group.items | first %}
   <div class="era-section" id="{{ era_group.name }}" data-era="{{ era_group.name }}">
