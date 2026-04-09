@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<main>
+{% assign eras = site.events | group_by: "era_id" %}
+{% for era_group in eras %}
+  {% assign first_event = era_group.items | first %}
+  <div class="era-section" id="{{ era_group.name }}">
+    <h2 class="era-title">
+      {{ first_event.era_title }}
+      <span class="era-range">{{ first_event.era_range }}</span>
+    </h2>
+    <div class="grid-wrapper">
+      {% for event in era_group.items %}
+      <article{% if event.featured %} class="featured"{% endif %}>
+        <span class="year-badge">{{ event.year }}</span>
+        <span class="category cat-{{ event.category }}">{{ event.category_label }}</span>
+        <h3>{{ event.title }}</h3>
+        <p>{{ event.content | strip_html | truncatewords: 60 }}</p>
+        {% if event.image %}
+        <img src="{{ event.image }}" alt="{{ event.title }}" loading="lazy">
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+{% endfor %}
+</main>

@@ -1,0 +1,21 @@
+title: "دخالت‌های آمریکا در امور داخلی ایران"
+description: "از ۱۹۰۰ تا امروز — بیش از ۵۰ رویداد مستند"
+baseurl: "/iran-us-history"
+url: "https://aminsaedi.github.io"
+lang: fa
+direction: rtl
+
+collections:
+  events:
+    output: false
+    sort_by: year
+
+defaults:
+  - scope:
+      path: ""
+      type: events
+    values:
+      layout: null
+
+plugins:
+  - jekyll-feed
