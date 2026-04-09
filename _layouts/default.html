@@ -62,13 +62,43 @@
   <p>{{ site.description_fa }}</p>
 </header>
 
-<nav class="era-nav">
-  {% assign eras = site.events | map: "era_id" | uniq %}
-  {% for era_id in eras %}
-    {% assign era_event = site.events | where: "era_id", era_id | first %}
-    <a href="#{{ era_id }}">{{ era_event.era_label }}</a>
-  {% endfor %}
+<nav class="era-nav" id="era-nav">
+  <button class="era-nav-toggle" id="era-nav-toggle" aria-label="نمایش منوی دوره‌ها" aria-expanded="false" aria-controls="era-nav-links">
+    <span class="era-nav-hamburger" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </span>
+    <span class="era-nav-toggle-label">دوره‌ها</span>
+  </button>
+  <div class="era-nav-links" id="era-nav-links" role="menu">
+    {% assign eras = site.events | map: "era_id" | uniq %}
+    {% for era_id in eras %}
+      {% assign era_event = site.events | where: "era_id", era_id | first %}
+      <a href="#{{ era_id }}" role="menuitem">{{ era_event.era_label }}</a>
+    {% endfor %}
+  </div>
 </nav>
+
+<script>
+(function() {
+  var toggle = document.getElementById('era-nav-toggle');
+  var links  = document.getElementById('era-nav-links');
+  if (!toggle || !links) return;
+
+  toggle.addEventListener('click', function() {
+    var expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    links.classList.toggle('open', !expanded);
+  });
+
+  /* Close menu when a nav link is clicked on mobile */
+  links.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      toggle.setAttribute('aria-expanded', 'false');
+      links.classList.remove('open');
+    });
+  });
+})();
+</script>
 
 {{ content }}
 

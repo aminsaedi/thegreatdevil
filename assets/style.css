@@ -1546,3 +1546,137 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
     padding: 0.4rem 0.8rem;
   }
 }
+
+/* ── Hamburger era nav (TGD-019) ─────────────────────────── */
+
+/* Desktop: toggle hidden, links always visible */
+.era-nav-toggle {
+  display: none;
+}
+
+.era-nav-links {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ── Hamburger button styles ── */
+.era-nav-hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 18px;
+  flex-shrink: 0;
+}
+
+.era-nav-hamburger span {
+  display: block;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.era-nav-toggle[aria-expanded="true"] .era-nav-hamburger span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.era-nav-toggle[aria-expanded="true"] .era-nav-hamburger span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.era-nav-toggle[aria-expanded="true"] .era-nav-hamburger span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.era-nav-toggle-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #a0a0c0;
+}
+
+/* ── Mobile: show hamburger, collapse links ── */
+@media (max-width: 599px) {
+  .era-nav {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    gap: 0;
+  }
+
+  .era-nav-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.6rem 1rem;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #a0a0c0;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .era-nav-toggle:hover,
+  .era-nav-toggle:focus-visible {
+    background: #1a2a4a;
+    color: #fff;
+    outline: none;
+  }
+
+  .era-nav-toggle[aria-expanded="true"] {
+    color: #e94560;
+    background: rgba(233, 69, 96, 0.08);
+  }
+
+  .era-nav-toggle[aria-expanded="true"] .era-nav-toggle-label {
+    color: #e94560;
+  }
+
+  /* Links hidden by default on mobile */
+  .era-nav-links {
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.3rem;
+    padding: 0.6rem 0.75rem;
+    width: 100%;
+    background: rgba(10, 10, 20, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .era-nav-links.open {
+    display: flex;
+  }
+
+  .era-nav-links a {
+    font-size: 0.82rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  /* Reduce main padding on small screens */
+  main {
+    padding: 1.25rem 1rem;
+  }
+
+  .era-header {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+
+  /* Ensure filter bar is usable on mobile */
+  .filter-bar {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .filter-label {
+    min-width: 4rem;
+  }
+
+  .search-wrapper {
+    max-width: 100%;
+  }
+}
+/* ─────────────────────────────────────────────────────────── */
