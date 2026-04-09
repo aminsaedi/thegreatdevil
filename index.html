@@ -15,11 +15,14 @@ layout: default
       <article{% if event.featured %} class="featured"{% endif %}>
         <span class="year-badge">{{ event.year }}</span>
         <span class="category cat-{{ event.category }}">{{ event.category_label }}</span>
-        <h3>{{ event.title }}</h3>
-        <p>{{ event.content | strip_html | truncatewords: 60 }}</p>
+        <h3><a href="{{ event.url | relative_url }}" class="event-link">{{ event.title }}</a></h3>
+        <p>{{ event.content | strip_html | truncatewords: 40 }}</p>
         {% if event.image %}
-        <img src="{{ event.image }}" alt="{{ event.title }}" loading="lazy">
+        <a href="{{ event.url | relative_url }}">
+          <img src="{{ event.image }}" alt="{{ event.title }}" loading="lazy">
+        </a>
         {% endif %}
+        <a href="{{ event.url | relative_url }}" class="read-more">بیشتر بخوانید ›</a>
       </article>
       {% endfor %}
     </div>

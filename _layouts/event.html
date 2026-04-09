@@ -1,0 +1,77 @@
+---
+layout: default
+---
+<main class="event-page">
+
+  <nav class="breadcrumb">
+    <a href="{{ '/' | relative_url }}">صفحه اصلی</a>
+    <span>›</span>
+    <span>{{ page.era_title }}</span>
+    <span>›</span>
+    <span>{{ page.year }}</span>
+  </nav>
+
+  <article class="event-detail">
+    <div class="event-meta">
+      <span class="year-badge large">{{ page.year }}</span>
+      <span class="category cat-{{ page.category }}">{{ page.category_label }}</span>
+    </div>
+
+    <h1 class="event-title">{{ page.title }}</h1>
+
+    {% if page.image %}
+    <figure class="event-image">
+      <img src="{{ page.image }}" alt="{{ page.title }}" loading="lazy">
+    </figure>
+    {% endif %}
+
+    <div class="event-body">
+      {{ content }}
+    </div>
+
+    <div class="event-era-info">
+      <h3>دوره تاریخی: {{ page.era_title }}</h3>
+      <p>{{ page.era_range }}</p>
+    </div>
+
+    <div class="share-section">
+      <h3>اشتراک‌گذاری</h3>
+      <div class="share-buttons">
+        <a href="https://t.me/share/url?url={{ site.url }}/events/{{ page.name }}/&text={{ page.title | url_encode }}" target="_blank" class="share-btn telegram">تلگرام</a>
+        <a href="https://twitter.com/intent/tweet?url={{ site.url }}/events/{{ page.name }}/&text={{ page.title | url_encode }}" target="_blank" class="share-btn twitter">توئیتر</a>
+        <a href="https://wa.me/?text={{ page.title | url_encode }}%20{{ site.url }}/events/{{ page.name }}/" target="_blank" class="share-btn whatsapp">واتساپ</a>
+      </div>
+    </div>
+
+    <div class="event-nav">
+      {% assign all_events = site.events | sort: "year" %}
+      {% assign current_index = nil %}
+      {% for e in all_events %}
+        {% if e.url == page.url %}
+          {% assign current_index = forloop.index0 %}
+        {% endif %}
+      {% endfor %}
+
+      {% if current_index and current_index > 0 %}
+        {% assign prev_index = current_index | minus: 1 %}
+        {% assign prev_event = all_events[prev_index] %}
+        <a href="{{ prev_event.url | relative_url }}" class="nav-btn prev">
+          <span class="nav-label">رویداد قبلی</span>
+          <span class="nav-title">{{ prev_event.title }}</span>
+        </a>
+      {% else %}
+        <span></span>
+      {% endif %}
+
+      {% assign next_index = current_index | plus: 1 %}
+      {% assign next_event = all_events[next_index] %}
+      {% if next_event %}
+        <a href="{{ next_event.url | relative_url }}" class="nav-btn next">
+          <span class="nav-label">رویداد بعدی</span>
+          <span class="nav-title">{{ next_event.title }}</span>
+        </a>
+      {% endif %}
+    </div>
+  </article>
+
+</main>

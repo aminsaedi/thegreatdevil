@@ -14,15 +14,16 @@ keywords: "US Iran history, CIA Iran coup, US sanctions Iran, Mossadegh, Iran in
 
 collections:
   events:
-    output: false
+    output: true
     sort_by: year
+    permalink: /events/:name/
 
 defaults:
   - scope:
       path: ""
       type: events
     values:
-      layout: null
+      layout: event
 
 plugins:
   - jekyll-feed
