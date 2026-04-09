@@ -76,20 +76,37 @@ layout: default
       {% for event in era_group.items %}
       {% assign event_text = event.content | strip_html | truncatewords: 150 %}
       <article{% if event.featured %} class="featured"{% endif %} data-category="{{ event.category }}" data-era="{{ event.era_id }}" data-search="{{ event.title | append: ' ' | append: event.year | append: ' ' | append: event.category_label | append: ' ' | append: event.era_title | append: ' ' | append: event_text | xml_escape }}">
-        {% if event.image %}
-        <a href="{{ event.url | relative_url }}" aria-label="{{ event.title }}">
-          <img src="{{ event.image }}" alt="{{ event.title }}" loading="lazy">
-        </a>
+        {% if event.featured %}
+          {% if event.image %}<div class="featured-banner-bg" style="background-image:url('{{ event.image }}')" aria-hidden="true"></div>{% endif %}
+          <div class="featured-overlay" aria-hidden="true"></div>
+          <div class="featured-content">
+            <div class="featured-eyebrow">رویداد برجسته</div>
+            <div class="card-meta">
+              <span class="year-badge">{{ event.year }}</span>
+              <span class="category cat-{{ event.category }}">{{ event.category_label }}</span>
+            </div>
+            <h3><a href="{{ event.url | relative_url }}" class="event-link">{{ event.title }}</a></h3>
+            <p>{{ event.description }}</p>
+            <div class="card-footer">
+              <a href="{{ event.url | relative_url }}" class="read-more">بیشتر بخوانید ›</a>
+            </div>
+          </div>
+        {% else %}
+          {% if event.image %}
+          <a href="{{ event.url | relative_url }}" aria-label="{{ event.title }}">
+            <img src="{{ event.image }}" alt="{{ event.title }}" loading="lazy">
+          </a>
+          {% endif %}
+          <div class="card-meta">
+            <span class="year-badge">{{ event.year }}</span>
+            <span class="category cat-{{ event.category }}">{{ event.category_label }}</span>
+          </div>
+          <h3><a href="{{ event.url | relative_url }}" class="event-link">{{ event.title }}</a></h3>
+          <p>{{ event.content | strip_html | truncatewords: 60 }}</p>
+          <div class="card-footer">
+            <a href="{{ event.url | relative_url }}" class="read-more">بیشتر بخوانید ›</a>
+          </div>
         {% endif %}
-        <div class="card-meta">
-          <span class="year-badge">{{ event.year }}</span>
-          <span class="category cat-{{ event.category }}">{{ event.category_label }}</span>
-        </div>
-        <h3><a href="{{ event.url | relative_url }}" class="event-link">{{ event.title }}</a></h3>
-        <p>{{ event.content | strip_html | truncatewords: 60 }}</p>
-        <div class="card-footer">
-          <a href="{{ event.url | relative_url }}" class="read-more">بیشتر بخوانید ›</a>
-        </div>
       </article>
       {% endfor %}
     </div>
