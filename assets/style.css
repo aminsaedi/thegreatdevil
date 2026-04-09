@@ -1787,8 +1787,9 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
 }
 /* ─────────────────────────────────────────────────────────── */
 
-/* ── Scroll-triggered micro-animations ── */
-article,
+/* ── Scroll-triggered micro-animations (homepage cards only) ── */
+/* Scoped to .grid-wrapper so event detail pages are unaffected */
+.grid-wrapper article,
 .era-header {
   opacity: 0;
   transform: translateY(24px);
@@ -1796,20 +1797,26 @@ article,
   will-change: opacity, transform;
 }
 
-article.scroll-visible,
+.grid-wrapper article.scroll-visible,
 .era-header.scroll-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* Event detail article is always visible */
+article.event-detail {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* Stagger cards within a row by their sibling index */
-article:nth-child(2) { transition-delay: 0.08s; }
-article:nth-child(3) { transition-delay: 0.16s; }
-article:nth-child(4) { transition-delay: 0.24s; }
+.grid-wrapper article:nth-child(2) { transition-delay: 0.08s; }
+.grid-wrapper article:nth-child(3) { transition-delay: 0.16s; }
+.grid-wrapper article:nth-child(4) { transition-delay: 0.24s; }
 
 /* Respect user preference for reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  article,
+  .grid-wrapper article,
   .era-header {
     opacity: 1;
     transform: none;
