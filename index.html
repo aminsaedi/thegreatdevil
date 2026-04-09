@@ -243,6 +243,86 @@ layout: default
 <div class="tl-tooltip" id="tl-tooltip" role="tooltip"></div>
 
 <script>
+/* ── Era nav scrollspy (TGD-013) ── */
+(function() {
+  var navLinks = Array.from(document.querySelectorAll('.era-nav a[href^="#"]'));
+  if (!navLinks.length) return;
+
+  function setActive(eraId) {
+    navLinks.forEach(function(a) {
+      var href = a.getAttribute('href').slice(1);
+      if (href === eraId) {
+        a.classList.add('era-active');
+      } else {
+        a.classList.remove('era-active');
+      }
+    });
+  }
+
+  /* Use IntersectionObserver to detect which era section is in view */
+  var eraSections = Array.from(document.querySelectorAll('.era-section[id]'));
+  if (!eraSections.length) return;
+
+  /* Start with first visible era active */
+  setActive(eraSections[0].id);
+
+  var observer = new IntersectionObserver(function(entries) {
+    /* Find the topmost visible section */
+    var visible = eraSections.filter(function(s) { return s._isVisible; });
+    if (visible.length > 0) {
+      /* Activate the section closest to top of viewport */
+      var topmost = visible.reduce(function(best, s) {
+        var bt = s.getBoundingClientRect().top;
+        var bt2 = best.getBoundingClientRect().top;
+        return bt >= 0 && (bt < bt2 || bt2 < 0) ? s : best;
+      });
+      setActive(topmost.id);
+    }
+  }, {
+    rootMargin: '-10% 0px -60% 0px',
+    threshold: 0
+  });
+
+  eraSections.forEach(function(section) {
+    section._isVisible = false;
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        entry.target._isVisible = entry.isIntersecting;
+      });
+      /* Re-evaluate which nav item to activate */
+      var topmost = null;
+      eraSections.forEach(function(s) {
+        if (s._isVisible) {
+          if (!topmost) { topmost = s; return; }
+          var t = s.getBoundingClientRect().top;
+          var bt = topmost.getBoundingClientRect().top;
+          if (t >= 0 && (bt < 0 || t < bt)) topmost = s;
+        }
+      });
+      if (topmost) setActive(topmost.id);
+    }, {
+      rootMargin: '-10% 0px -50% 0px',
+      threshold: 0
+    });
+    io.observe(section);
+  });
+
+  /* Smooth scroll when clicking era nav links */
+  navLinks.forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var target = document.getElementById(this.getAttribute('href').slice(1));
+      if (!target) return;
+      e.preventDefault();
+      /* Account for sticky nav height */
+      var navH = document.querySelector('.era-nav').offsetHeight || 50;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - navH - 8;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+
+<script>
 /* ── Interactive decade timeline (TGD-009) ── */
 (function() {
   /* ── Layout constants ── */
