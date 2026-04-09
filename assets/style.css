@@ -327,7 +327,10 @@ header p { color: #a0a0c0; font-size: 0.9rem; }
 main { padding: 2rem; max-width: 1400px; margin: auto; }
 
 /* Era chapter opener (TGD-015) */
-.era-section { margin-bottom: 4rem; }
+.era-section {
+  margin-bottom: 4rem;
+  position: relative;
+}
 
 /* Era-specific accent colours */
 .era-section[data-era="era-1900"] { --era-accent: #4a90c4; }
@@ -410,20 +413,137 @@ main { padding: 2rem; max-width: 1400px; margin: auto; }
   letter-spacing: 0.06em;
 }
 
-.grid-wrapper { display: grid; gap: 1rem; }
-
-@media screen and (min-width: 600px) {
-  .grid-wrapper { grid-auto-flow: column; grid-template-columns: 1fr 2fr; }
+/* ── Vertical Timeline Layout ── */
+.timeline-wrapper {
+  position: relative;
+  padding-right: 60px; /* space for spine on the right (RTL) */
+  padding-left: 0;
 }
 
-@media screen and (min-width: 1025px) {
-  .grid-wrapper { grid-template-columns: 1fr 2fr 1fr 2fr; }
+/* Vertical spine line */
+.timeline-wrapper::before {
+  content: '';
+  position: absolute;
+  right: 24px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--era-accent, #2a3a5a) 0%, rgba(42, 58, 90, 0.3) 100%);
+  border-radius: 2px;
+}
+
+/* Timeline item wrapper */
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-right: 20px; /* gap between card and spine */
+}
+
+/* Timeline node (dot on the spine) */
+.timeline-node {
+  position: absolute;
+  right: -48px;
+  top: 1.5rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #2a3a5a;
+  border: 3px solid #1a1a2e;
+  z-index: 2;
+  box-shadow: 0 0 0 3px rgba(42, 58, 90, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.timeline-item:hover .timeline-node {
+  transform: scale(1.3);
+}
+
+/* Category-colored nodes */
+.cat-node-coup     { background: #ff6b8a; box-shadow: 0 0 0 3px rgba(255, 107, 138, 0.3); }
+.cat-node-sanction { background: #6bc5ff; box-shadow: 0 0 0 3px rgba(107, 197, 255, 0.3); }
+.cat-node-military { background: #ffaa6b; box-shadow: 0 0 0 3px rgba(255, 170, 107, 0.3); }
+.cat-node-cyber    { background: #6bffaa; box-shadow: 0 0 0 3px rgba(107, 255, 170, 0.3); }
+.cat-node-diplo    { background: #fff06b; box-shadow: 0 0 0 3px rgba(255, 240, 107, 0.3); }
+.cat-node-intel    { background: #d06bff; box-shadow: 0 0 0 3px rgba(208, 107, 255, 0.3); }
+
+/* Connector line from node to card */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  right: -28px;
+  top: 2rem;
+  width: 28px;
+  height: 2px;
+  background: rgba(42, 58, 90, 0.5);
+}
+
+/* Timeline date label beside the spine */
+.timeline-date {
+  position: absolute;
+  right: -120px;
+  top: 1.1rem;
+  width: 55px;
+  text-align: center;
+  font-size: 0.68rem;
+  color: #7070a0;
+  font-weight: 600;
+  white-space: nowrap;
+  display: none; /* shown on wider screens */
+}
+
+@media screen and (min-width: 900px) {
+  .timeline-wrapper {
+    padding-right: 140px;
+  }
+
+  .timeline-wrapper::before {
+    right: 64px;
+  }
+
+  .timeline-node {
+    right: -88px;
+  }
+
+  .timeline-item::before {
+    right: -68px;
+    width: 68px;
+  }
+
+  .timeline-date {
+    display: block;
+    right: -140px;
+    width: 65px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .timeline-wrapper {
+    padding-right: 40px;
+  }
+
+  .timeline-wrapper::before {
+    right: 14px;
+  }
+
+  .timeline-node {
+    right: -32px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .timeline-item::before {
+    right: -18px;
+    width: 18px;
+  }
+
+  .timeline-item {
+    padding-right: 12px;
+    margin-bottom: 1.25rem;
+  }
 }
 
 /* Featured events — dramatic full-width banner (TGD-021) */
 article.featured {
-  grid-column: 1 / -1;
-  grid-row: auto;
   min-height: 420px;
   position: relative;
   overflow: hidden;
@@ -1788,19 +1908,19 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
 /* ─────────────────────────────────────────────────────────── */
 
 /* ── Scroll-triggered micro-animations (homepage cards only) ── */
-/* Scoped to .grid-wrapper so event detail pages are unaffected */
-.grid-wrapper article,
+/* Scoped to .timeline-wrapper so event detail pages are unaffected */
+.timeline-wrapper .timeline-item,
 .era-header {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateX(30px);
   transition: opacity 0.55s ease, transform 0.55s ease;
   will-change: opacity, transform;
 }
 
-.grid-wrapper article.scroll-visible,
+.timeline-wrapper .timeline-item.scroll-visible,
 .era-header.scroll-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 /* Event detail article is always visible */
@@ -1809,14 +1929,14 @@ article.event-detail {
   transform: none !important;
 }
 
-/* Stagger cards within a row by their sibling index */
-.grid-wrapper article:nth-child(2) { transition-delay: 0.08s; }
-.grid-wrapper article:nth-child(3) { transition-delay: 0.16s; }
-.grid-wrapper article:nth-child(4) { transition-delay: 0.24s; }
+/* Stagger items along the timeline */
+.timeline-wrapper .timeline-item:nth-child(2) { transition-delay: 0.06s; }
+.timeline-wrapper .timeline-item:nth-child(3) { transition-delay: 0.12s; }
+.timeline-wrapper .timeline-item:nth-child(4) { transition-delay: 0.18s; }
 
 /* Respect user preference for reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .grid-wrapper article,
+  .timeline-wrapper .timeline-item,
   .era-header {
     opacity: 1;
     transform: none;
