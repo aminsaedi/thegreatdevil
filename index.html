@@ -72,43 +72,47 @@ layout: default
       <h2 class="era-title">{{ first_event.era_title }}</h2>
       <div class="era-range-tag">{{ first_event.era_range }}</div>
     </div>
-    <div class="grid-wrapper">
+    <div class="timeline-wrapper">
       {% assign sorted_era_events = era_group.items | sort: "name" %}
       {% for event in sorted_era_events %}
       {% assign event_text = event.content | strip_html | truncatewords: 150 %}
-      <article{% if event.featured %} class="featured"{% endif %} data-category="{{ event.category }}" data-era="{{ event.era_id }}" data-search="{{ event.title | append: ' ' | append: event.year | append: ' ' | append: event.category_label | append: ' ' | append: event.era_title | append: ' ' | append: event_text | xml_escape }}">
-        {% if event.featured %}
-          {% if event.image %}<div class="featured-banner-bg" style="background-image:url('{{ event.image }}')" aria-hidden="true"></div>{% endif %}
-          <div class="featured-overlay" aria-hidden="true"></div>
-          <div class="featured-content">
-            <div class="featured-eyebrow">رویداد برجسته</div>
+      <div class="timeline-item" data-category="{{ event.category }}" data-era="{{ event.era_id }}" data-search="{{ event.title | append: ' ' | append: event.year | append: ' ' | append: event.category_label | append: ' ' | append: event.era_title | append: ' ' | append: event_text | xml_escape }}">
+        <div class="timeline-node cat-node-{{ event.category }}" aria-hidden="true"></div>
+        <div class="timeline-date">{{ event.year }}</div>
+        <article{% if event.featured %} class="featured"{% endif %}>
+          {% if event.featured %}
+            {% if event.image %}<div class="featured-banner-bg" style="background-image:url('{{ event.image }}')" aria-hidden="true"></div>{% endif %}
+            <div class="featured-overlay" aria-hidden="true"></div>
+            <div class="featured-content">
+              <div class="featured-eyebrow">رویداد برجسته</div>
+              <div class="card-meta">
+                <span class="year-badge">{{ event.year }}</span>
+                <span class="category cat-{{ event.category }}">{{ event.category_label }}</span>
+              </div>
+              <h3><a href="{{ event.url | relative_url }}" class="event-link">{{ event.title }}</a></h3>
+              <p>{{ event.description }}</p>
+              <div class="card-footer">
+                <a href="{{ event.url | relative_url }}" class="read-more">بیشتر بخوانید ›</a>
+              </div>
+            </div>
+          {% else %}
+            {% if event.image %}
+            <a href="{{ event.url | relative_url }}" aria-label="{{ event.title }}">
+              <img src="{{ event.image }}" alt="{{ event.title }}" loading="lazy">
+            </a>
+            {% endif %}
             <div class="card-meta">
               <span class="year-badge">{{ event.year }}</span>
               <span class="category cat-{{ event.category }}">{{ event.category_label }}</span>
             </div>
             <h3><a href="{{ event.url | relative_url }}" class="event-link">{{ event.title }}</a></h3>
-            <p>{{ event.description }}</p>
+            <p>{{ event.content | strip_html | truncatewords: 60 }}</p>
             <div class="card-footer">
               <a href="{{ event.url | relative_url }}" class="read-more">بیشتر بخوانید ›</a>
             </div>
-          </div>
-        {% else %}
-          {% if event.image %}
-          <a href="{{ event.url | relative_url }}" aria-label="{{ event.title }}">
-            <img src="{{ event.image }}" alt="{{ event.title }}" loading="lazy">
-          </a>
           {% endif %}
-          <div class="card-meta">
-            <span class="year-badge">{{ event.year }}</span>
-            <span class="category cat-{{ event.category }}">{{ event.category_label }}</span>
-          </div>
-          <h3><a href="{{ event.url | relative_url }}" class="event-link">{{ event.title }}</a></h3>
-          <p>{{ event.content | strip_html | truncatewords: 60 }}</p>
-          <div class="card-footer">
-            <a href="{{ event.url | relative_url }}" class="read-more">بیشتر بخوانید ›</a>
-          </div>
-        {% endif %}
-      </article>
+        </article>
+      </div>
       {% endfor %}
     </div>
   </div>
@@ -147,13 +151,13 @@ layout: default
   }
 
   function applyFilters() {
-    var articles = document.querySelectorAll('article[data-category]');
+    var items = document.querySelectorAll('.timeline-item[data-category]');
     var visible = 0;
     var searchTerms = normalizeText(activeSearch)
       .split(' ')
       .filter(function(t) { return t.length > 0; });
 
-    articles.forEach(function(a) {
+    items.forEach(function(a) {
       var catMatch = activeCat === 'all' || a.dataset.category === activeCat;
       var eraMatch = activeEra === 'all' || a.dataset.era === activeEra;
       var searchMatch = true;
@@ -173,9 +177,9 @@ layout: default
 
     // Hide era sections with no visible events
     document.querySelectorAll('.era-section').forEach(function(section) {
-      var sectionArticles = section.querySelectorAll('article[data-category]');
+      var sectionItems = section.querySelectorAll('.timeline-item[data-category]');
       var sectionVisible = 0;
-      sectionArticles.forEach(function(a) { if (a.style.display !== 'none') sectionVisible++; });
+      sectionItems.forEach(function(a) { if (a.style.display !== 'none') sectionVisible++; });
       section.style.display = sectionVisible > 0 ? '' : 'none';
     });
 
@@ -692,7 +696,7 @@ layout: default
 (function() {
   if (!('IntersectionObserver' in window)) {
     /* Fallback: show everything immediately */
-    document.querySelectorAll('article, .era-header').forEach(function(el) {
+    document.querySelectorAll('.timeline-item, .era-header').forEach(function(el) {
       el.classList.add('scroll-visible');
     });
     return;
@@ -707,7 +711,7 @@ layout: default
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('article, .era-header').forEach(function(el) {
+  document.querySelectorAll('.timeline-item, .era-header').forEach(function(el) {
     io.observe(el);
   });
 })();
