@@ -67,10 +67,11 @@ layout: default
 {% for era_group in eras %}
   {% assign first_event = era_group.items | first %}
   <div class="era-section" id="{{ era_group.name }}" data-era="{{ era_group.name }}">
-    <h2 class="era-title">
-      {{ first_event.era_title }}
-      <span class="era-range">{{ first_event.era_range }}</span>
-    </h2>
+    <div class="era-header" data-year="{{ era_group.name | replace: 'era-', '' }}">
+      <div class="era-chapter-label">فصل</div>
+      <h2 class="era-title">{{ first_event.era_title }}</h2>
+      <div class="era-range-tag">{{ first_event.era_range }}</div>
+    </div>
     <div class="grid-wrapper">
       {% for event in era_group.items %}
       {% assign event_text = event.content | strip_html | truncatewords: 150 %}
@@ -607,7 +608,7 @@ layout: default
   var sections = [];
   document.querySelectorAll('.era-section[data-era]').forEach(function(sec) {
     var eraId = sec.getAttribute('data-era');
-    var rangeEl = sec.querySelector('.era-range');
+    var rangeEl = sec.querySelector('.era-range-tag');
     sections.push({
       el: sec,
       era: eraId,
