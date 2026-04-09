@@ -1,77 +1,144 @@
 ---
 layout: default
 ---
-<main class="event-page">
+<div class="event-page-wrapper{% if page.sources %} has-sources{% endif %}">
 
-  <nav class="breadcrumb">
-    <a href="{{ '/' | relative_url }}">صفحه اصلی</a>
-    <span aria-hidden="true">‹</span>
-    <span>{{ page.era_title }}</span>
-    <span aria-hidden="true">‹</span>
-    <span>{{ page.year }}</span>
-  </nav>
+  <main class="event-page">
 
-  <article class="event-detail">
-    <div class="event-meta">
-      <span class="year-badge large">{{ page.year }}</span>
-      <span class="category cat-{{ page.category }}">{{ page.category_label }}</span>
-    </div>
+    <nav class="breadcrumb">
+      <a href="{{ '/' | relative_url }}">صفحه اصلی</a>
+      <span aria-hidden="true">‹</span>
+      <span>{{ page.era_title }}</span>
+      <span aria-hidden="true">‹</span>
+      <span>{{ page.year }}</span>
+    </nav>
 
-    <h1 class="event-title">{{ page.title }}</h1>
+    <article class="event-detail">
+      <div class="event-meta">
+        <span class="year-badge large">{{ page.year }}</span>
+        <span class="category cat-{{ page.category }}">{{ page.category_label }}</span>
+      </div>
 
-    {% if page.image %}
-    <figure class="event-image">
-      <img src="{{ page.image }}" alt="{{ page.title }}" loading="lazy">
-    </figure>
-    {% endif %}
+      <h1 class="event-title">{{ page.title }}</h1>
 
-    <div class="event-body">
-      {{ content }}
-    </div>
+      {% if page.image %}
+      <figure class="event-image">
+        <img src="{{ page.image }}" alt="{{ page.title }}" loading="lazy">
+      </figure>
+      {% endif %}
 
-    <div class="event-era-info">
-      <h3>دوره تاریخی: {{ page.era_title }}</h3>
-      <p>{{ page.era_range }}</p>
-    </div>
+      <div class="event-body">
+        {{ content }}
+      </div>
 
-    <div class="share-section">
-      <h3>اشتراک‌گذاری</h3>
-      <div class="share-buttons">
-        <a href="https://t.me/share/url?url={{ site.url }}/events/{{ page.name }}/&text={{ page.title | url_encode }}" target="_blank" class="share-btn telegram">تلگرام</a>
-        <a href="https://twitter.com/intent/tweet?url={{ site.url }}/events/{{ page.name }}/&text={{ page.title | url_encode }}" target="_blank" class="share-btn twitter">توئیتر</a>
-        <a href="https://wa.me/?text={{ page.title | url_encode }}%20{{ site.url }}/events/{{ page.name }}/" target="_blank" class="share-btn whatsapp">واتساپ</a>
+      <div class="event-era-info">
+        <h3>دوره تاریخی: {{ page.era_title }}</h3>
+        <p>{{ page.era_range }}</p>
+      </div>
+
+      <div class="share-section">
+        <h3>اشتراک‌گذاری</h3>
+        <div class="share-buttons">
+          <a href="https://t.me/share/url?url={{ site.url }}/events/{{ page.name }}/&text={{ page.title | url_encode }}" target="_blank" class="share-btn telegram">تلگرام</a>
+          <a href="https://twitter.com/intent/tweet?url={{ site.url }}/events/{{ page.name }}/&text={{ page.title | url_encode }}" target="_blank" class="share-btn twitter">توئیتر</a>
+          <a href="https://wa.me/?text={{ page.title | url_encode }}%20{{ site.url }}/events/{{ page.name }}/" target="_blank" class="share-btn whatsapp">واتساپ</a>
+        </div>
+      </div>
+
+      <div class="event-nav">
+        {% assign all_events = site.events | sort: "year" %}
+        {% assign current_index = nil %}
+        {% for e in all_events %}
+          {% if e.url == page.url %}
+            {% assign current_index = forloop.index0 %}
+          {% endif %}
+        {% endfor %}
+
+        {% if current_index and current_index > 0 %}
+          {% assign prev_index = current_index | minus: 1 %}
+          {% assign prev_event = all_events[prev_index] %}
+          <a href="{{ prev_event.url | relative_url }}" class="nav-btn prev">
+            <span class="nav-label">رویداد قبلی</span>
+            <span class="nav-title">{{ prev_event.title }}</span>
+          </a>
+        {% else %}
+          <span></span>
+        {% endif %}
+
+        {% assign next_index = current_index | plus: 1 %}
+        {% assign next_event = all_events[next_index] %}
+        {% if next_event %}
+          <a href="{{ next_event.url | relative_url }}" class="nav-btn next">
+            <span class="nav-label">رویداد بعدی</span>
+            <span class="nav-title">{{ next_event.title }}</span>
+          </a>
+        {% endif %}
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Source Attribution Sidebar -->
+  <aside class="sources-sidebar" id="sourcesSidebar" aria-label="منابع و استنادات">
+    <button class="sources-toggle" id="sourcesToggle" aria-expanded="true" aria-controls="sourcesSidebar">
+      <span class="sources-toggle-icon" aria-hidden="true">📚</span>
+      <span class="sources-toggle-label">منابع</span>
+      <span class="sources-toggle-arrow" aria-hidden="true">›</span>
+    </button>
+
+    <div class="sources-panel" id="sourcesPanel">
+      <div class="sources-header">
+        <h2 class="sources-title">زنجیره استناد</h2>
+        <p class="sources-subtitle">هر ادعا در این صفحه قابل ردیابی است</p>
+      </div>
+
+      <div class="sources-list">
+        {% if page.sources %}
+          {% for source in page.sources %}
+          <div class="source-item source-type-{{ source.type | default: 'secondary' }}">
+            <div class="source-type-badge">
+              {% if source.type == 'primary' %}سند اولیه
+              {% elsif source.type == 'book' %}کتاب
+              {% else %}منبع ثانویه{% endif %}
+            </div>
+            <a href="{{ source.url }}" target="_blank" rel="noopener noreferrer" class="source-link">
+              {{ source.title }}
+              <span class="source-ext-icon" aria-hidden="true">↗</span>
+            </a>
+          </div>
+          {% endfor %}
+        {% else %}
+          <div class="sources-empty">
+            <p>منابع این رویداد به زودی اضافه می‌شوند.</p>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="sources-footer">
+        <p>دقت اطلاعات — رسالت اصلی این سایت</p>
       </div>
     </div>
+  </aside>
 
-    <div class="event-nav">
-      {% assign all_events = site.events | sort: "year" %}
-      {% assign current_index = nil %}
-      {% for e in all_events %}
-        {% if e.url == page.url %}
-          {% assign current_index = forloop.index0 %}
-        {% endif %}
-      {% endfor %}
+</div>
 
-      {% if current_index and current_index > 0 %}
-        {% assign prev_index = current_index | minus: 1 %}
-        {% assign prev_event = all_events[prev_index] %}
-        <a href="{{ prev_event.url | relative_url }}" class="nav-btn prev">
-          <span class="nav-label">رویداد قبلی</span>
-          <span class="nav-title">{{ prev_event.title }}</span>
-        </a>
-      {% else %}
-        <span></span>
-      {% endif %}
+<script>
+(function() {
+  var toggle = document.getElementById('sourcesToggle');
+  var panel = document.getElementById('sourcesPanel');
+  var sidebar = document.getElementById('sourcesSidebar');
 
-      {% assign next_index = current_index | plus: 1 %}
-      {% assign next_event = all_events[next_index] %}
-      {% if next_event %}
-        <a href="{{ next_event.url | relative_url }}" class="nav-btn next">
-          <span class="nav-label">رویداد بعدی</span>
-          <span class="nav-title">{{ next_event.title }}</span>
-        </a>
-      {% endif %}
-    </div>
-  </article>
+  // Restore collapsed state from localStorage
+  var collapsed = localStorage.getItem('sourcesSidebarCollapsed') === 'true';
+  if (collapsed) {
+    sidebar.classList.add('collapsed');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
 
-</main>
+  toggle.addEventListener('click', function() {
+    var isCollapsed = sidebar.classList.toggle('collapsed');
+    toggle.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
+    localStorage.setItem('sourcesSidebarCollapsed', isCollapsed);
+  });
+})();
+</script>
