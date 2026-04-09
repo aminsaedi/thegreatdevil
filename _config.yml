@@ -1,9 +1,15 @@
-title: "دخالت‌های آمریکا در امور داخلی ایران"
-description: "از ۱۹۰۰ تا امروز — بیش از ۵۰ رویداد مستند"
+title: "The Great Devil — US Interventions in Iran"
+title_fa: "دخالت‌های آمریکا در امور داخلی ایران"
+description: "A documented timeline of over 50 US interventions in Iran's internal affairs, from 1900 to today — coups, sanctions, cyber attacks, assassinations, and military strikes."
+description_fa: "از ۱۹۰۰ تا امروز — بیش از ۵۰ رویداد مستند از دخالت‌های آمریکا در امور داخلی ایران"
 baseurl: ""
 url: "https://thegreatdevil.com"
 lang: fa
 direction: rtl
+author: "thegreatdevil.com"
+twitter_card: summary_large_image
+og_image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/MohammadMossadegh.jpg/800px-MohammadMossadegh.jpg"
+keywords: "US Iran history, CIA Iran coup, US sanctions Iran, Mossadegh, Iran interventions, US imperialism Iran, 1953 coup, Stuxnet, Soleimani"
 
 collections:
   events:
@@ -19,3 +25,4 @@ defaults:
 
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
