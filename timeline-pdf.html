@@ -1,0 +1,55 @@
+---
+layout: print
+title: خط زمانی دخالت‌های آمریکا در ایران
+permalink: /timeline-pdf/
+---
+<div class="doc">
+
+  <div class="doc-header">
+    <div class="logo">😈</div>
+    <h1>شیطان بزرگ — خط زمانی کامل</h1>
+    <div class="subtitle">The Great Devil — US Interventions in Iran</div>
+    <p class="description">
+      خط زمانی مستند دخالت‌های آمریکا در امور داخلی ایران از ۱۹۰۰ تا امروز —
+      کودتاها، تحریم‌ها، حملات سایبری، ترور و عملیات نظامی.
+    </p>
+    <p class="generated">منبع: thegreatdevil.com — برای ذخیره به PDF از دکمه «ذخیره / چاپ PDF» استفاده کنید</p>
+  </div>
+
+  {% assign eras = site.events | group_by: "era_id" %}
+  {% for era_group in eras %}
+    {% assign first = era_group.items | first %}
+    <div class="era-section">
+      <h2 class="era-heading">
+        {{ first.era_title }}
+        <span class="era-range">{{ first.era_range }}</span>
+      </h2>
+
+      {% assign sorted_events = era_group.items | sort: "year" %}
+      {% for event in sorted_events %}
+      <div class="event-entry">
+        <div class="event-side">
+          <span class="year-badge">{{ event.year }}</span>
+          <span class="category-tag cat-{{ event.category }}">{{ event.category_label }}</span>
+        </div>
+        <div class="event-body">
+          <h3>{{ event.title }}</h3>
+          <p>{{ event.content | strip_html | strip_newlines | strip }}</p>
+          <div class="event-url">{{ site.url }}{{ event.url }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+
+  <div class="citations">
+    <h2>منابع و ارجاعات</h2>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/CIA_activities_in_Iran">ویکی‌پدیا — فعالیت‌های CIA در ایران</a></li>
+      <li><a href="https://www.britannica.com/topic/US-Iran-Relations-A-Timeline">بریتانیکا — روابط ایران و آمریکا: خط زمانی</a></li>
+      <li><a href="https://iranprimer.usip.org/resource/timeline-us-sanctions">Iran Primer (USIP) — خط زمانی تحریم‌های آمریکا علیه ایران</a></li>
+      <li><a href="https://nsarchive2.gwu.edu/NSAEBB/NSAEBB435/">آرشیو امنیت ملی دانشگاه جورج واشنگتن — اسناد ایران</a></li>
+    </ul>
+  </div>
+
+</div>

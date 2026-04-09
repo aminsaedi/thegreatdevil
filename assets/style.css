@@ -322,3 +322,13 @@ footer {
 }
 
 footer a { color: #e94560; text-decoration: none; }
+
+/* PDF export link in nav */
+.era-nav .pdf-link {
+  margin-right: auto;
+  background: #e94560;
+  color: #fff !important;
+  border-color: #e94560 !important;
+  font-weight: 600;
+}
+.era-nav .pdf-link:hover { opacity: 0.85; background: #c73652; }

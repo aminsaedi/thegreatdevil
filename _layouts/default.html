@@ -68,6 +68,7 @@
     {% assign era_event = site.events | where: "era_id", era_id | first %}
     <a href="#{{ era_id }}">{{ era_event.era_label }}</a>
   {% endfor %}
+  <a href="{{ '/timeline-pdf/' | relative_url }}" class="pdf-link">&#x1F4C4; دانلود PDF</a>
 </nav>
 
 {{ content }}
