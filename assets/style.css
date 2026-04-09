@@ -775,6 +775,96 @@ article img {
   }
 }
 
+/* ── Interactive decade timeline (TGD-009) ── */
+
+.tl-filter-group {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.tl-outer {
+  width: 100%;
+}
+
+.tl-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.tl-all-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.tl-svg-host {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
+/* Tooltip */
+.tl-tooltip {
+  position: fixed;
+  z-index: 2000;
+  background: #0f3460;
+  border: 1px solid #2a3a5a;
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  pointer-events: none;
+  max-width: 300px;
+  min-width: 160px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.6);
+  direction: rtl;
+  display: none;
+}
+
+.tl-tip-year {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #e94560;
+  margin-bottom: 0.1rem;
+  font-family: 'Arial', sans-serif;
+  direction: ltr;
+  text-align: left;
+}
+
+.tl-tip-count {
+  font-size: 0.72rem;
+  color: #7070a0;
+  margin-bottom: 0.45rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #2a2a4a;
+}
+
+.tl-tip-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.tl-tip-item {
+  font-size: 0.78rem;
+  color: #c8c8d8;
+  line-height: 1.45;
+}
+
+.tl-tip-date {
+  color: #7070a0;
+  font-size: 0.72rem;
+}
+
+.tl-bar {
+  transition: opacity 0.18s;
+}
+
+/* ── end timeline ── */
+
 footer {
   text-align: center;
   padding: 2rem;
