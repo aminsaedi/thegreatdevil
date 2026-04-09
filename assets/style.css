@@ -1680,3 +1680,34 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
   }
 }
 /* ─────────────────────────────────────────────────────────── */
+
+/* ── Scroll-triggered micro-animations ── */
+article,
+.era-header {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  will-change: opacity, transform;
+}
+
+article.scroll-visible,
+.era-header.scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger cards within a row by their sibling index */
+article:nth-child(2) { transition-delay: 0.08s; }
+article:nth-child(3) { transition-delay: 0.16s; }
+article:nth-child(4) { transition-delay: 0.24s; }
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  article,
+  .era-header {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+/* ── end scroll-triggered micro-animations ── */

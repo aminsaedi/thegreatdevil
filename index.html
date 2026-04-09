@@ -668,3 +668,30 @@ layout: default
   setTimeout(function() { buildTicks(); onScroll(); }, 150);
 })();
 </script>
+
+<script>
+/* ── Scroll-triggered micro-animations (TGD-020) ── */
+(function() {
+  if (!('IntersectionObserver' in window)) {
+    /* Fallback: show everything immediately */
+    document.querySelectorAll('article, .era-header').forEach(function(el) {
+      el.classList.add('scroll-visible');
+    });
+    return;
+  }
+
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('scroll-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('article, .era-header').forEach(function(el) {
+    io.observe(el);
+  });
+})();
+/* ── end scroll-triggered micro-animations ── */
+</script>
