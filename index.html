@@ -1,18 +1,48 @@
 ---
 layout: default
 ---
+<div class="filter-bar">
+  <div class="filter-group">
+    <span class="filter-label">نوع رویداد:</span>
+    <div class="filter-buttons" id="cat-filters">
+      <button class="filter-btn active" data-filter="cat" data-value="all">همه</button>
+      <button class="filter-btn" data-filter="cat" data-value="military">نظامی</button>
+      <button class="filter-btn" data-filter="cat" data-value="sanction">تحریم</button>
+      <button class="filter-btn" data-filter="cat" data-value="intel">اطلاعاتی</button>
+      <button class="filter-btn" data-filter="cat" data-value="diplo">دیپلماسی</button>
+      <button class="filter-btn" data-filter="cat" data-value="coup">کودتا</button>
+      <button class="filter-btn" data-filter="cat" data-value="cyber">سایبری</button>
+    </div>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">دهه:</span>
+    <div class="filter-buttons" id="era-filters">
+      <button class="filter-btn active" data-filter="era" data-value="all">همه</button>
+      <button class="filter-btn" data-filter="era" data-value="era-1900">۱۹۰۰–۱۹۴۰</button>
+      <button class="filter-btn" data-filter="era" data-value="era-1950">۱۹۵۰–۱۹۶۰</button>
+      <button class="filter-btn" data-filter="era" data-value="era-1970">۱۹۷۰</button>
+      <button class="filter-btn" data-filter="era" data-value="era-1980">۱۹۸۰</button>
+      <button class="filter-btn" data-filter="era" data-value="era-1990">۱۹۹۰</button>
+      <button class="filter-btn" data-filter="era" data-value="era-2000">۲۰۰۰</button>
+      <button class="filter-btn" data-filter="era" data-value="era-2010">۲۰۱۰</button>
+      <button class="filter-btn" data-filter="era" data-value="era-2020">۲۰۲۰</button>
+    </div>
+  </div>
+  <div class="filter-count" id="filter-count"></div>
+</div>
+
 <main>
 {% assign eras = site.events | group_by: "era_id" %}
 {% for era_group in eras %}
   {% assign first_event = era_group.items | first %}
-  <div class="era-section" id="{{ era_group.name }}">
+  <div class="era-section" id="{{ era_group.name }}" data-era="{{ era_group.name }}">
     <h2 class="era-title">
       {{ first_event.era_title }}
       <span class="era-range">{{ first_event.era_range }}</span>
     </h2>
     <div class="grid-wrapper">
       {% for event in era_group.items %}
-      <article{% if event.featured %} class="featured"{% endif %}>
+      <article{% if event.featured %} class="featured"{% endif %} data-category="{{ event.category }}" data-era="{{ event.era_id }}">
         <span class="year-badge">{{ event.year }}</span>
         <span class="category cat-{{ event.category }}">{{ event.category_label }}</span>
         <h3><a href="{{ event.url | relative_url }}" class="event-link">{{ event.title }}</a></h3>
@@ -28,4 +58,69 @@ layout: default
     </div>
   </div>
 {% endfor %}
+<p class="no-results" id="no-results" style="display:none">هیچ رویدادی با این فیلترها یافت نشد.</p>
 </main>
+
+<script>
+(function() {
+  var activeCat = 'all';
+  var activeEra = 'all';
+
+  function applyFilters() {
+    var articles = document.querySelectorAll('article[data-category]');
+    var visible = 0;
+    articles.forEach(function(a) {
+      var catMatch = activeCat === 'all' || a.dataset.category === activeCat;
+      var eraMatch = activeEra === 'all' || a.dataset.era === activeEra;
+      if (catMatch && eraMatch) {
+        a.style.display = '';
+        visible++;
+      } else {
+        a.style.display = 'none';
+      }
+    });
+
+    // Hide era sections with no visible events
+    document.querySelectorAll('.era-section').forEach(function(section) {
+      var hasVisible = section.querySelectorAll('article[data-category]:not([style*="display: none"])').length > 0;
+      // Re-check more robustly
+      var sectionArticles = section.querySelectorAll('article[data-category]');
+      var sectionVisible = 0;
+      sectionArticles.forEach(function(a) { if (a.style.display !== 'none') sectionVisible++; });
+      section.style.display = sectionVisible > 0 ? '' : 'none';
+    });
+
+    var countEl = document.getElementById('no-results');
+    if (countEl) countEl.style.display = visible === 0 ? '' : 'none';
+
+    var filterCount = document.getElementById('filter-count');
+    if (filterCount) {
+      if (activeCat !== 'all' || activeEra !== 'all') {
+        filterCount.textContent = visible + ' رویداد یافت شد';
+        filterCount.style.display = '';
+      } else {
+        filterCount.style.display = 'none';
+      }
+    }
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var filterType = this.dataset.filter;
+      var value = this.dataset.value;
+
+      // Update active state in this group
+      var groupId = filterType === 'cat' ? 'cat-filters' : 'era-filters';
+      document.querySelectorAll('#' + groupId + ' .filter-btn').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      this.classList.add('active');
+
+      if (filterType === 'cat') activeCat = value;
+      else activeEra = value;
+
+      applyFilters();
+    });
+  });
+})();
+</script>
