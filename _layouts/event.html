@@ -29,6 +29,31 @@ layout: default
       {{ content }}
     </div>
 
+    {% if page.sources %}
+    <section class="sources-section" aria-labelledby="sources-heading">
+      <h2 id="sources-heading" class="sources-title">منابع مورد استفاده</h2>
+      <p class="sources-intro">این رویداد بر اساس اسناد اولیه، آرشیوهای طبقه‌بندی‌زدایی‌شده و پژوهش‌های دانشگاهی تدوین شده است.</p>
+      <ul class="sources-list">
+        {% for source in page.sources %}
+        <li class="source-item">
+          <span class="source-type source-type-{{ source.type | default: 'general' }}">{{ source.type_label | default: 'منبع' }}</span>
+          <div class="source-content">
+            {% if source.url %}
+            <a href="{{ source.url }}" target="_blank" rel="noopener noreferrer" class="source-link">{{ source.title }}</a>
+            {% else %}
+            <span class="source-title">{{ source.title }}</span>
+            {% endif %}
+            <span class="source-meta">
+              {% if source.publisher %}{{ source.publisher }}{% endif %}
+              {% if source.year %} — {{ source.year }}{% endif %}
+            </span>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
     <div class="event-era-info">
       <h3>دوره تاریخی: {{ page.era_title }}</h3>
       <p>{{ page.era_range }}</p>

@@ -306,6 +306,85 @@ article img {
   overflow-wrap: break-word;
 }
 
+/* Sources section */
+.sources-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #0a1628;
+  border-radius: 10px;
+  border-right: 3px solid #e94560;
+}
+
+.sources-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e94560;
+  margin-bottom: 0.5rem;
+}
+
+.sources-intro {
+  font-size: 0.85rem;
+  color: #7070a0;
+  margin-bottom: 1.25rem;
+}
+
+.sources-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.source-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.source-type {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 0.15rem;
+}
+
+.source-type-declassified { background: #7c3aed; color: #fff; }
+.source-type-academic     { background: #0f3460; color: #a0c0ff; }
+.source-type-archive      { background: #1a4a2a; color: #6edb8a; }
+.source-type-official     { background: #4a2a00; color: #ffb347; }
+.source-type-journalism   { background: #3a1a2a; color: #ff8ab0; }
+.source-type-general      { background: #2a2a4a; color: #a0a0c0; }
+
+.source-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.source-link {
+  color: #c8c8ff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.source-link:hover { color: #e94560; text-decoration: underline; }
+
+.source-title {
+  color: #c8c8d8;
+  font-size: 0.9rem;
+}
+
+.source-meta {
+  font-size: 0.78rem;
+  color: #7070a0;
+}
+
 .event-era-info {
   background: #0f3460;
   border-radius: 8px;
