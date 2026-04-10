@@ -51,14 +51,20 @@
   }
   </script>
   {% if page.collection == "events" %}
+  {% assign event_year = page.name | slice: 0, 4 %}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ site.url }}{{ page.url }}"
+    },
     "headline": "{{ page.title | escape }}",
-    "description": "{{ page.content | strip_html | truncatewords: 40 | escape }}",
+    "name": "{{ page.title | escape }}",
+    "description": "{{ page.description | default: page.content | strip_html | truncatewords: 40 | escape }}",
     "image": "{{ page.image | default: site.og_image }}",
-    "datePublished": "{{ page.year }}",
+    "datePublished": "{{ event_year }}",
     "url": "{{ site.url }}{{ page.url }}",
     "inLanguage": "fa",
     "publisher": {
