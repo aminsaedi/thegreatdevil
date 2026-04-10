@@ -2219,3 +2219,51 @@ article.event-detail {
   }
 }
 /* ── end print styles ── */
+
+/* ── Back-to-top button ── */
+#back-to-top {
+  display: none;              /* hidden by default to avoid layout shift */
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;                 /* bottom-left: RTL-aware mirror of typical LTR bottom-right */
+  right: auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #e94560;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+}
+
+#back-to-top.shown {
+  display: flex;              /* make it part of layout once triggered */
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  background-color: #c73652;
+}
+
+#back-to-top:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+@media print {
+  #back-to-top { display: none !important; }
+}
+/* ── end back-to-top button ── */
