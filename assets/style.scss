@@ -802,6 +802,25 @@ article:hover img {
 .cat-diplo    { background: rgba(42,42,16,0.9);  color: #fff380; }
 .cat-intel    { background: rgba(42,26,58,0.9);  color: #dc80ff; }
 
+.reading-time-badge {
+  display: inline-block;
+  background: rgba(102, 120, 160, 0.12);
+  color: #6678a0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  border-radius: 12px;
+  letter-spacing: 0.02em;
+}
+
+.event-hero-content .reading-time-badge {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  background-color: rgba(10, 10, 30, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.85);
+}
+
 /* Index card links */
 .event-link {
   color: inherit;

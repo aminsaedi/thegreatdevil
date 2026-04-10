@@ -86,9 +86,11 @@ layout: default
             <div class="featured-overlay" aria-hidden="true"></div>
             <div class="featured-content">
               <div class="featured-eyebrow">رویداد برجسته</div>
-              <div class="card-meta">
+              {% assign feat_reading_min = event.content | strip_html | number_of_words | plus: 199 | divided_by: 200 %}{% if feat_reading_min < 1 %}{% assign feat_reading_min = 1 %}{% endif %}{% assign feat_rm_str = feat_reading_min | append: "" | replace: '0', '۰' | replace: '1', '۱' | replace: '2', '۲' | replace: '3', '۳' | replace: '4', '۴' | replace: '5', '۵' | replace: '6', '۶' | replace: '7', '۷' | replace: '8', '۸' | replace: '9', '۹' %}
+            <div class="card-meta">
                 <span class="year-badge">{{ event.year }}</span>
                 <span class="category cat-{{ event.category }}">{{ event.category_label }}</span>
+                <span class="reading-time-badge">{{ feat_rm_str }} دقیقه مطالعه</span>
               </div>
               <h3><a href="{{ event.url | relative_url }}" class="event-link">{{ event.title }}</a></h3>
               <p>{{ event.description }}</p>
@@ -105,9 +107,11 @@ layout: default
               </picture>
             </a>
             {% endif %}
+            {% assign reading_min = event.content | strip_html | number_of_words | plus: 199 | divided_by: 200 %}{% if reading_min < 1 %}{% assign reading_min = 1 %}{% endif %}{% assign rm_str = reading_min | append: "" | replace: '0', '۰' | replace: '1', '۱' | replace: '2', '۲' | replace: '3', '۳' | replace: '4', '۴' | replace: '5', '۵' | replace: '6', '۶' | replace: '7', '۷' | replace: '8', '۸' | replace: '9', '۹' %}
             <div class="card-meta">
               <span class="year-badge">{{ event.year }}</span>
               <span class="category cat-{{ event.category }}">{{ event.category_label }}</span>
+              <span class="reading-time-badge">{{ rm_str }} دقیقه مطالعه</span>
             </div>
             <h3><a href="{{ event.url | relative_url }}" class="event-link">{{ event.title }}</a></h3>
             <p>{{ event.content | strip_html | truncatewords: 60 }}</p>

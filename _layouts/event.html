@@ -241,6 +241,7 @@ layout: default
 
     <article class="event-detail">
 
+      {% assign detail_reading_min = content | strip_html | number_of_words | plus: 199 | divided_by: 200 %}{% if detail_reading_min < 1 %}{% assign detail_reading_min = 1 %}{% endif %}{% assign detail_rm_str = detail_reading_min | append: "" | replace: '0', '۰' | replace: '1', '۱' | replace: '2', '۲' | replace: '3', '۳' | replace: '4', '۴' | replace: '5', '۵' | replace: '6', '۶' | replace: '7', '۷' | replace: '8', '۸' | replace: '9', '۹' %}
       {% if page.image %}{% assign hero_img_webp = page.image | replace: '.jpg', '.webp' | replace: '.png', '.webp' %}
       <!-- Full-bleed hero — LCP image in DOM for immediate preload-scanner discovery -->
       <div class="event-hero">
@@ -257,6 +258,7 @@ layout: default
           <div class="event-meta">
             <span class="year-badge large">{{ page.year }}</span>
             <span class="category cat-{{ page.category }}">{{ page.category_label }}</span>
+            <span class="reading-time-badge">{{ detail_rm_str }} دقیقه مطالعه</span>
           </div>
           <h1 class="event-title">{{ page.title }}</h1>
           {% if page.description %}
@@ -270,6 +272,7 @@ layout: default
         <div class="event-meta">
           <span class="year-badge large">{{ page.year }}</span>
           <span class="category cat-{{ page.category }}">{{ page.category_label }}</span>
+          <span class="reading-time-badge">{{ detail_rm_str }} دقیقه مطالعه</span>
         </div>
         <h1 class="event-title">{{ page.title }}</h1>
         {% if page.description %}
