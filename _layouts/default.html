@@ -241,8 +241,8 @@
 
 
 <script>
-/* Register service worker for efficient asset caching */
-if ('serviceWorker' in navigator) {
+/* Register service worker for efficient asset caching — skip on localhost */
+if ('serviceWorker' in navigator && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
   window.addEventListener('load', function () {
     navigator.serviceWorker.register('/sw.js');
   });

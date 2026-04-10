@@ -3,7 +3,7 @@ layout: null
 ---
 /* Service Worker — efficient cache lifetimes for static assets */
 
-var CACHE_VERSION = 'tgd-v1';
+var CACHE_VERSION = 'tgd-v2';
 var STATIC_CACHE  = CACHE_VERSION + '-static';
 var IMAGE_CACHE   = CACHE_VERSION + '-images';
 
@@ -81,7 +81,9 @@ self.addEventListener('fetch', function (event) {
   if (req.mode === 'navigate') {
     event.respondWith(
       fetch(req).catch(function () {
-        return caches.match(req);
+        return caches.match(req).then(function (cached) {
+          return cached || fetch(req);
+        });
       })
     );
   }
