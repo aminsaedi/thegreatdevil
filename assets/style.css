@@ -1118,6 +1118,64 @@ article:hover img {
   color: #a0a0c0;
 }
 
+/* Related Events */
+.related-events {
+  margin: 1.5rem 0;
+}
+
+.related-events-title {
+  font-size: 0.95rem;
+  color: #9c9cc0;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.related-events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.related-event-card {
+  display: block;
+  background: #0f3460;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  border-inline-start: 3px solid #1a4a80;
+}
+
+.related-event-card:hover {
+  background: #1a4a80;
+}
+
+.related-event-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.related-event-meta .year-badge {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+}
+
+.related-event-meta .category {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+}
+
+.related-event-title {
+  font-size: 0.9rem;
+  color: #e0e0f0;
+  margin: 0;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
 /* Share buttons */
 .share-section {
   margin: 1.5rem 0;

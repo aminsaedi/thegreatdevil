@@ -83,6 +83,32 @@ layout: default
         <p>{{ page.era_range }}</p>
       </div>
 
+      {% assign related_events = "" | split: "" %}
+      {% for e in site.events %}
+        {% if e.url != page.url %}
+          {% if e.era_id == page.era_id or e.category == page.category %}
+            {% assign related_events = related_events | push: e %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {% if related_events.size > 0 %}
+      <section class="related-events" aria-labelledby="related-events-heading">
+        <h3 id="related-events-heading" class="related-events-title">رویدادهای مرتبط</h3>
+        <div class="related-events-grid">
+          {% for rel in related_events limit:3 %}
+          <a href="{{ rel.url | relative_url }}" class="related-event-card">
+            <div class="related-event-meta">
+              <span class="year-badge">{{ rel.year }}</span>
+              <span class="category cat-{{ rel.category }}">{{ rel.category_label }}</span>
+            </div>
+            <h4 class="related-event-title">{{ rel.title }}</h4>
+          </a>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
       <div class="share-section">
         <h3>اشتراک‌گذاری</h3>
         <div class="share-buttons">
