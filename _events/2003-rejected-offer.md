@@ -8,6 +8,7 @@ era_label: "۲۰۰۰–۲۰۱۰"
 category: diplo
 category_label: "دیپلماسی"
 featured: true
+image: "/assets/images/events/bush-2003.jpg"
 description: "ایران پیشنهاد مذاکره جامع داد — آمریکا بدون پاسخ آن را رد کرد. تحلیلگران این را بزرگ‌ترین فرصت از‌دست‌رفته می‌دانند."
 sources:
   - title: "The Iran Proposal of 2003 — Flynt Leverett Analysis"

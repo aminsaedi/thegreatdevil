@@ -8,6 +8,7 @@ era_label: "۱۹۹۰–۲۰۰۰"
 category: sanction
 category_label: "تحریم"
 featured: true
+image: "/assets/images/events/damato.jpg"
 description: "آمریکا شرکت‌های خارجی سرمایه‌گذار در ایران را هم تحریم کرد — یک‌جانبه‌گرایی تجاری بی‌سابقه."
 sources:
   - title: "Iran and Libya Sanctions Act of 1996 (ILSA)"
