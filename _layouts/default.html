@@ -239,5 +239,14 @@
 })();
 </script>
 
+
+<script>
+/* Register service worker for efficient asset caching */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+</script>
 </body>
 </html>
