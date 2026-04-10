@@ -85,6 +85,11 @@
 
   <!-- Fonts (self-hosted via assets/fonts/) -->
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+
+  {% if page.collection == "events" and page.image %}
+  {% assign hero_img_webp_preload = page.image | replace: '.jpg', '.webp' | replace: '.png', '.webp' %}
+  <link rel="preload" as="image" href="{{ page.image }}" fetchpriority="high">
+  {% endif %}
 </head>
 <body>
 

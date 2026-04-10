@@ -188,6 +188,17 @@ layout: default
   }
   .toc-mobile-nav { display: flex; flex-direction: column; gap: 0.1rem; }
 }
+
+/* LCP hero image — positioned to fill the hero div, discovered by preload scanner */
+.event-hero picture { display: contents; }
+.event-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 </style>
 
 <div class="event-page-wrapper{% if page.sources %} has-sources{% endif %}">
@@ -231,8 +242,16 @@ layout: default
     <article class="event-detail">
 
       {% if page.image %}{% assign hero_img_webp = page.image | replace: '.jpg', '.webp' | replace: '.png', '.webp' %}
-      <!-- Full-bleed hero with image background -->
-      <div class="event-hero" style="background-image: url('{{ page.image }}');background-image:image-set(url('{{ hero_img_webp }}') 1x,url('{{ page.image }}') 1x)">
+      <!-- Full-bleed hero — LCP image in DOM for immediate preload-scanner discovery -->
+      <div class="event-hero">
+        <picture>
+          <source srcset="{{ hero_img_webp }}" type="image/webp">
+          <img src="{{ page.image }}" alt="{{ page.title }}"
+               loading="eager"
+               fetchpriority="high"
+               decoding="async"
+               class="event-hero-img">
+        </picture>
         <div class="event-hero-overlay"></div>
         <div class="event-hero-content">
           <div class="event-meta">
@@ -243,11 +262,6 @@ layout: default
           {% if page.description %}
           <p class="event-hero-desc">{{ page.description }}</p>
           {% endif %}
-        </div>
-        <div class="event-hero-image-credit" aria-hidden="true">
-          <figure class="event-image-hidden">
-            <img src="{{ hero_img_webp }}" alt="{{ page.title }}" loading="eager" style="display:none" onerror="this.closest('.event-hero').style.backgroundImage='none'">
-          </figure>
         </div>
       </div>
       {% else %}
