@@ -30,6 +30,9 @@ feed:
     events:
       path: "/feed.xml"
 
+sass:
+  style: compressed
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
