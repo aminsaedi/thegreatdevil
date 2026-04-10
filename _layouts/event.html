@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="event-page-wrapper{% if page.sources %} has-sources{% endif %}">
 
-  <main class="event-page">
+  <main class="event-page" data-url="{{ site.url }}{{ page.url }}">
 
     <nav class="breadcrumb">
       <a href="{{ '/' | relative_url }}">صفحه اصلی</a>

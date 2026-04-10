@@ -2002,3 +2002,194 @@ article.event-detail {
   }
 }
 /* ── end scroll-triggered micro-animations ── */
+
+/* ─────────────────────────────────────────────────────────── */
+/* ── Print styles for event detail pages ── */
+@media print {
+  /* Reset colors to black on white */
+  *, *::before, *::after {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Hide interactive / navigation elements */
+  header,
+  .era-nav,
+  .breadcrumb,
+  .sources-sidebar,
+  .share-section,
+  .event-nav,
+  .related-events,
+  .event-hero-image-credit,
+  footer {
+    display: none !important;
+  }
+
+  /* Remove layout constraints for print */
+  body {
+    font-size: 12pt;
+    line-height: 1.6;
+    font-family: serif;
+  }
+
+  .event-page-wrapper,
+  .event-page-wrapper.has-sources {
+    display: block !important;
+    grid-template-columns: none !important;
+  }
+
+  .event-page {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hero section: flatten to simple header */
+  .event-hero {
+    background-image: none !important;
+    background-color: #fff !important;
+    min-height: auto !important;
+    padding: 0 !important;
+  }
+
+  .event-hero-overlay {
+    display: none !important;
+  }
+
+  .event-hero-content {
+    position: static !important;
+    padding: 0 0 1rem !important;
+    color: #000 !important;
+  }
+
+  .event-header-plain {
+    padding: 0 0 1rem !important;
+    border: none !important;
+  }
+
+  /* Typography */
+  h1, h2, h3 {
+    page-break-after: avoid;
+    orphans: 3;
+    widows: 3;
+  }
+
+  .event-title {
+    font-size: 22pt;
+    margin: 0.5rem 0;
+    color: #000 !important;
+    text-shadow: none !important;
+  }
+
+  .event-hero-desc {
+    font-size: 12pt;
+    color: #333 !important;
+  }
+
+  .year-badge {
+    background: #eee !important;
+    color: #000 !important;
+    border: 1px solid #ccc;
+    font-size: 11pt;
+  }
+
+  .category {
+    background: #eee !important;
+    color: #000 !important;
+    border: 1px solid #ccc;
+    font-size: 10pt;
+  }
+
+  /* Body content */
+  .event-body {
+    font-size: 11pt;
+    padding: 0 !important;
+  }
+
+  .event-body blockquote {
+    border-right: 3px solid #999;
+    border-left: none;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    color: #333 !important;
+    background: #f9f9f9 !important;
+  }
+
+  /* Sources section — keep and show full URLs */
+  .sources-section {
+    display: block !important;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ccc;
+    page-break-before: auto;
+  }
+
+  .sources-title {
+    font-size: 14pt;
+    margin-bottom: 0.5rem;
+  }
+
+  .footnote-list {
+    list-style: decimal;
+    padding-right: 1.5rem;
+  }
+
+  .footnote-item {
+    margin-bottom: 0.5rem;
+    font-size: 10pt;
+  }
+
+  /* Show full URL after links */
+  .source-link::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555 !important;
+    word-break: break-all;
+  }
+
+  /* Era info */
+  .event-era-info {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #ddd;
+    font-size: 10pt;
+    color: #444 !important;
+  }
+
+  /* Page URL as print footer */
+  .event-page::after {
+    content: "منبع: " attr(data-url);
+    display: block;
+    margin-top: 2rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #ccc;
+    font-size: 9pt;
+    color: #555 !important;
+    direction: ltr;
+    text-align: left;
+  }
+
+  /* Avoid breaking article across pages */
+  article.event-detail {
+    page-break-inside: avoid;
+  }
+
+  /* Links: show URL in print */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555 !important;
+    word-break: break-all;
+  }
+
+  /* But not for nav/button-style links */
+  .nav-btn::after,
+  .share-btn::after,
+  .related-event-card::after,
+  .breadcrumb a::after {
+    content: none !important;
+  }
+}
+/* ── end print styles ── */
