@@ -43,6 +43,7 @@ layout: default
         <button class="filter-btn" data-filter="era" data-value="era-2000">۲۰۰۰</button>
         <button class="filter-btn" data-filter="era" data-value="era-2010">۲۰۱۰</button>
         <button class="filter-btn" data-filter="era" data-value="era-2020">۲۰۲۰</button>
+        <button class="filter-btn" data-filter="era" data-value="era-2025">۲۰۲۵–اکنون</button>
       </div>
       <!-- Visual controls row -->
       <div class="tl-controls">
@@ -359,8 +360,8 @@ layout: default
   var PAD = { t: 6, b: 26, l: 4, r: 4 };
   var CW = SVG_W - PAD.l - PAD.r; /* chart width  */
   var CH = SVG_H - PAD.t - PAD.b; /* bar area height ≈ 48 */
-  var MIN_Y = 1900, MAX_Y = 2026;
-  var SPAN = MAX_Y - MIN_Y; /* 126 */
+  var MIN_Y = 1900, MAX_Y = 2028;
+  var SPAN = MAX_Y - MIN_Y; /* 128 */
   var YW = CW / SPAN; /* pixels per year */
 
   /* ── Era colour palette ── */
@@ -372,7 +373,8 @@ layout: default
     'era-1990': '#38b87a',
     'era-2000': '#a06be0',
     'era-2010': '#38b0d8',
-    'era-2020': '#e0b030'
+    'era-2020': '#e0b030',
+    'era-2025': '#e05858'
   };
 
   /* ── Era year ranges (for background bands) ── */
@@ -384,7 +386,8 @@ layout: default
     'era-1990': [1990, 2000],
     'era-2000': [2000, 2010],
     'era-2010': [2010, 2020],
-    'era-2020': [2020, 2027]
+    'era-2020': [2020, 2025],
+    'era-2025': [2025, 2028]
   };
 
   /* ── Event data (Liquid-generated) ── */
@@ -618,7 +621,8 @@ layout: default
     'era-1990': '#38b87a',
     'era-2000': '#a06be0',
     'era-2010': '#38b0d8',
-    'era-2020': '#e0b030'
+    'era-2020': '#e0b030',
+    'era-2025': '#e05858'
   };
 
   var fill = document.getElementById('vtl-fill');
