@@ -335,6 +335,9 @@ header p { color: #556080; font-size: 0.9rem; }
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.2s;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .filter-btn:hover {
@@ -927,7 +930,7 @@ article:hover img {
 .reading-time-badge {
   display: inline-block;
   background: rgba(102, 120, 160, 0.12);
-  color: #6678a0;
+  color: #445566;
   font-size: 0.72rem;
   font-weight: 600;
   padding: 0.15rem 0.55rem;
@@ -967,6 +970,7 @@ article:hover img {
   font-weight: 600;
   transition: color 0.2s, gap 0.2s;
   letter-spacing: 0.01em;
+  min-height: 44px;
 }
 .read-more:hover {
   color: #ff7090;
@@ -1214,7 +1218,7 @@ article:hover img {
 
 .sources-intro {
   font-size: 0.85rem;
-  color: #6678a0;
+  color: #445566;
   margin-bottom: 1.25rem;
 }
 
@@ -1285,13 +1289,13 @@ article:hover img {
   gap: 0.2rem;
 }
 
-.source-link {
+.sources-section .source-link {
   color: #1a3a8a;
-  text-decoration: none;
-  font-size: 0.9rem;
+  text-decoration: underline;
+  font-size: 0.95rem;
   transition: color 0.2s;
 }
-.source-link:hover { color: #e94560; text-decoration: underline; }
+.sources-section .source-link:hover { color: #e94560; }
 
 .source-title {
   color: #1a1a2e;
@@ -1439,7 +1443,7 @@ article:hover img {
 
 .nav-label {
   font-size: 0.75rem;
-  color: #6678a0;
+  color: #445566;
 }
 .nav-title {
   font-size: 0.9rem;
@@ -1545,7 +1549,7 @@ article:hover img {
 
 .sources-subtitle {
   font-size: 0.75rem;
-  color: #6678a0;
+  color: #445566;
   line-height: 1.5;
 }
 
@@ -1579,7 +1583,7 @@ article:hover img {
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #6678a0;
+  color: #445566;
   margin-bottom: 0.3rem;
 }
 
@@ -1588,25 +1592,26 @@ article:hover img {
 
 .source-link {
   color: #1a4a80;
-  text-decoration: none;
-  font-size: 0.82rem;
+  text-decoration: underline;
+  font-size: 0.9rem;
   line-height: 1.5;
   display: flex;
   align-items: flex-start;
   gap: 0.3rem;
   word-break: break-word;
+  min-height: 44px;
+  padding: 0.25rem 0;
 }
 
 .source-link:hover {
   color: #e94560;
-  text-decoration: underline;
 }
 
 .source-ext-icon {
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   flex-shrink: 0;
-  margin-top: 0.2rem;
-  opacity: 0.6;
+  margin-top: 0.15rem;
+  opacity: 0.8;
 }
 
 .sources-empty {
@@ -2043,6 +2048,9 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
   .era-nav a {
     font-size: 0.9rem;
     padding: 0.4rem 0.8rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
 }
 
@@ -2133,7 +2141,7 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
     display: inline-flex;
     align-items: center;
     flex-shrink: 0;
-    min-height: 36px;
+    min-height: 44px;
     font-size: 0.78rem;
     padding: 0.3rem 0.65rem;
     white-space: nowrap;
@@ -2434,6 +2442,26 @@ article.event-detail {
   outline: 3px solid #fff;
   outline-offset: 3px;
 }
+
+/* ── Global focus-visible styles for keyboard/screen reader navigation ── */
+/* Provide visible focus rings for all interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[role="button"]:focus-visible {
+  outline: 3px solid #e94560;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Override for dark backgrounds */
+.hero a:focus-visible,
+.hero button:focus-visible,
+.event-hero a:focus-visible,
+.event-hero button:focus-visible {
+  outline-color: #fff;
+}
+/* ── end focus-visible styles ── */
 
 @media print {
   #back-to-top { display: none !important; }
