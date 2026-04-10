@@ -866,7 +866,14 @@ article:hover img {
   flex-wrap: wrap;
 }
 
-.breadcrumb a { color: #e94560; text-decoration: none; }
+.breadcrumb a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.15rem;
+  color: #e94560;
+  text-decoration: none;
+}
 .breadcrumb a:hover { text-decoration: underline; }
 
 .event-detail {
@@ -1249,6 +1256,10 @@ article:hover img {
 }
 
 .share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   text-decoration: none;
@@ -1947,6 +1958,7 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
     align-items: center;
     gap: 0.6rem;
     width: 100%;
+    min-height: 44px;
     padding: 0.6rem 1rem;
     background: none;
     border: none;
@@ -1991,6 +2003,9 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
   }
 
   .era-nav-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     font-size: 0.82rem;
     padding: 0.35rem 0.7rem;
   }
