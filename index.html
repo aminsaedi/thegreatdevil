@@ -935,4 +935,19 @@ layout: default
   });
 })();
 /* ── end Hero Category Timeline ── */
+
+/* ── Hero Viewport Fill ── */
+(function () {
+  function fitHeroToViewport() {
+    var hero = document.querySelector('section.hero');
+    if (!hero) return;
+    var header = document.querySelector('header');
+    var nav    = document.querySelector('nav.era-nav');
+    var overhead = (header ? header.offsetHeight : 0) + (nav ? nav.offsetHeight : 0);
+    hero.style.minHeight = Math.max(560, window.innerHeight - overhead) + 'px';
+  }
+  fitHeroToViewport();
+  window.addEventListener('resize', fitHeroToViewport, { passive: true });
+})();
+/* ── end Hero Viewport Fill ── */
 </script>
