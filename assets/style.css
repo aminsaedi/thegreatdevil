@@ -651,6 +651,32 @@ article.featured .read-more {
   article.featured h3 { font-size: 1.45rem; }
 }
 
+/* Featured timeline items — grid row-span: 2
+   Standard card row height is ~260 px; featured items span 2 rows (≥ 520 px).
+   Scoped to .timeline-item.featured-item to avoid affecting event detail pages. */
+:root {
+  --card-row-height: 260px;
+}
+
+.timeline-item.featured-item {
+  min-height: calc(2 * var(--card-row-height));
+}
+
+.timeline-item.featured-item article.featured {
+  min-height: calc(2 * var(--card-row-height));
+}
+
+.timeline-item.featured-item article.featured .featured-content {
+  min-height: calc(2 * var(--card-row-height));
+}
+
+@media screen and (max-width: 600px) {
+  :root { --card-row-height: 200px; }
+  .timeline-item.featured-item { min-height: calc(2 * var(--card-row-height)); }
+  .timeline-item.featured-item article.featured { min-height: calc(2 * var(--card-row-height)); }
+  .timeline-item.featured-item article.featured .featured-content { min-height: calc(2 * var(--card-row-height)); }
+}
+
 article {
   padding: 1.25rem;
   border: 1px solid #d0daed;

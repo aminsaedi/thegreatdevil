@@ -76,7 +76,7 @@ layout: default
       {% assign sorted_era_events = era_group.items | sort: "name" %}
       {% for event in sorted_era_events %}
       {% assign event_text = event.content | strip_html | truncatewords: 150 %}
-      <div class="timeline-item" data-category="{{ event.category }}" data-era="{{ event.era_id }}" data-search="{{ event.title | append: ' ' | append: event.year | append: ' ' | append: event.category_label | append: ' ' | append: event.era_title | append: ' ' | append: event_text | xml_escape }}">
+      <div class="timeline-item{% if event.featured %} featured-item{% endif %}" data-category="{{ event.category }}" data-era="{{ event.era_id }}" data-search="{{ event.title | append: ' ' | append: event.year | append: ' ' | append: event.category_label | append: ' ' | append: event.era_title | append: ' ' | append: event_text | xml_escape }}">
         <div class="timeline-node cat-node-{{ event.category }}" aria-hidden="true"></div>
         <div class="timeline-date">{{ event.year }}</div>
         <article{% if event.featured %} class="featured"{% endif %}>
