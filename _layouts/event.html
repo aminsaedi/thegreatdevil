@@ -1,6 +1,22 @@
 ---
 layout: default
 ---
+<div id="reading-progress-bar" aria-hidden="true"></div>
+
+<style>
+#reading-progress-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 3px;
+  width: 0;
+  background-color: #e94560;
+  transition: width 0.1s linear;
+  z-index: 9999;
+  pointer-events: none;
+}
+</style>
+
 <div class="event-page-wrapper{% if page.sources %} has-sources{% endif %}">
 
   <main class="event-page" data-url="{{ site.url }}{{ page.url }}">
@@ -213,5 +229,23 @@ layout: default
     toggle.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
     localStorage.setItem('sourcesSidebarCollapsed', isCollapsed);
   });
+})();
+</script>
+
+<script>
+(function() {
+  var bar = document.getElementById('reading-progress-bar');
+  var body = document.querySelector('.event-body');
+  if (!bar || !body) return;
+
+  function updateProgress() {
+    var articleTop = body.getBoundingClientRect().top + window.scrollY;
+    var articleHeight = body.offsetHeight;
+    var progress = (window.scrollY - articleTop) / articleHeight * 100;
+    bar.style.width = Math.max(0, Math.min(100, progress)) + '%';
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
 })();
 </script>
