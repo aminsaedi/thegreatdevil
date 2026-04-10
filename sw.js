@@ -21,7 +21,9 @@ self.addEventListener('install', function (event) {
   self.skipWaiting();
   event.waitUntil(
     caches.open(STATIC_CACHE).then(function (cache) {
-      return cache.addAll(PRECACHE_ASSETS);
+      return cache.addAll(PRECACHE_ASSETS).catch(function () {
+        /* Pre-cache may fail in restricted environments; SW still installs */
+      });
     })
   );
 });
@@ -66,6 +68,9 @@ self.addEventListener('fetch', function (event) {
             });
           }
           return response;
+        }).catch(function () {
+          /* Network unavailable — resource will be missing this load */
+          return new Response('', { status: 503, statusText: 'Service Unavailable' });
         });
       })
     );
