@@ -86,9 +86,9 @@ layout: default
       <div class="share-section">
         <h3>اشتراک‌گذاری</h3>
         <div class="share-buttons">
-          <a href="https://t.me/share/url?url={{ site.url }}/events/{{ page.name }}/&text={{ page.title | url_encode }}" target="_blank" class="share-btn telegram">تلگرام</a>
-          <a href="https://twitter.com/intent/tweet?url={{ site.url }}/events/{{ page.name }}/&text={{ page.title | url_encode }}" target="_blank" class="share-btn twitter">توئیتر</a>
-          <a href="https://wa.me/?text={{ page.title | url_encode }}%20{{ site.url }}/events/{{ page.name }}/" target="_blank" class="share-btn whatsapp">واتساپ</a>
+          <a href="https://t.me/share/url?url={{ site.url }}/events/{{ page.name }}/&text={{ page.title | url_encode }}%20({{ page.year | url_encode }})" target="_blank" rel="noopener noreferrer" class="share-btn telegram">تلگرام</a>
+          <a href="https://twitter.com/intent/tweet?url={{ site.url }}/events/{{ page.name }}/&text={{ page.title | url_encode }}%20({{ page.year | url_encode }})" target="_blank" rel="noopener noreferrer" class="share-btn twitter">توئیتر / X</a>
+          <a href="https://api.whatsapp.com/send?text={{ page.title | url_encode }}%20({{ page.year | url_encode }})%20{{ site.url }}/events/{{ page.name }}/" target="_blank" rel="noopener noreferrer" class="share-btn whatsapp">واتساپ</a>
         </div>
       </div>
 
