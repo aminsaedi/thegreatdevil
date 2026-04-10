@@ -244,13 +244,15 @@ header p { color: #556080; font-size: 0.9rem; }
 /* ────────────────────────────────────────────────────────── */
 
 .era-nav {
-  background: #edf2fb;
+  background: rgba(237, 242, 251, 0.88);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   padding: 0.6rem 2rem;
   display: flex;
   gap: 0.4rem;
   flex-wrap: wrap;
   justify-content: center;
-  border-bottom: 2px solid #c8d8ee;
+  border-bottom: 2px solid rgba(200, 216, 238, 0.7);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
@@ -2029,70 +2031,49 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
   color: #445566;
 }
 
-/* ── Mobile: show hamburger, collapse links ── */
+/* ── Mobile: horizontal scroll nav (no hamburger) ── */
 @media (max-width: 599px) {
   .era-nav {
-    flex-direction: column;
+    flex-direction: row;
     align-items: stretch;
     padding: 0;
     gap: 0;
+    overflow: hidden;
   }
 
+  /* Hide hamburger toggle on mobile — horizontal scroll replaces it */
   .era-nav-toggle {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    width: 100%;
-    min-height: 44px;
-    padding: 0.6rem 1rem;
-    background: none;
-    border: none;
-    border-bottom: 1px solid rgba(176, 210, 240, 0.3);
-    color: #445566;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-  }
-
-  .era-nav-toggle:hover,
-  .era-nav-toggle:focus-visible {
-    background: #d0e4f8;
-    color: #0d1b35;
-    outline: none;
-  }
-
-  .era-nav-toggle[aria-expanded="true"] {
-    color: #e94560;
-    background: rgba(233, 69, 96, 0.08);
-  }
-
-  .era-nav-toggle[aria-expanded="true"] .era-nav-toggle-label {
-    color: #e94560;
-  }
-
-  /* Links hidden by default on mobile */
-  .era-nav-links {
     display: none;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 0.3rem;
-    padding: 0.6rem 0.75rem;
-    width: 100%;
-    background: rgba(224, 236, 250, 0.6);
-    border-bottom: 1px solid rgba(180, 210, 240, 0.4);
   }
 
-  .era-nav-links.open {
+  /* Always-visible horizontal scroll strip */
+  .era-nav-links {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.3rem;
+    padding: 0.45rem 0.75rem;
+    width: 100%;
+    background: transparent;
+    border-bottom: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .era-nav-links::-webkit-scrollbar {
+    display: none;
   }
 
   .era-nav-links a {
     display: inline-flex;
     align-items: center;
-    min-height: 44px;
-    font-size: 0.82rem;
-    padding: 0.35rem 0.7rem;
+    flex-shrink: 0;
+    min-height: 36px;
+    font-size: 0.78rem;
+    padding: 0.3rem 0.65rem;
+    white-space: nowrap;
   }
 
   /* Reduce main padding on small screens */
