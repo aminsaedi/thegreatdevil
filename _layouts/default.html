@@ -198,5 +198,44 @@
   </div>
 </footer>
 
+<!-- Back-to-top button -->
+<button id="back-to-top" aria-label="بازگشت به بالا">&#8593;</button>
+
+<script>
+(function () {
+  var btn = document.getElementById('back-to-top');
+  if (!btn) return;
+
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 400) {
+      if (!btn.classList.contains('shown')) {
+        btn.classList.add('shown');
+        /* trigger transition in the next paint */
+        requestAnimationFrame(function () {
+          btn.classList.add('visible');
+        });
+      }
+    } else {
+      btn.classList.remove('visible');
+      /* hide after transition ends */
+      btn.addEventListener('transitionend', function hide() {
+        btn.classList.remove('shown');
+        btn.removeEventListener('transitionend', hide);
+      });
+    }
+  }, { passive: true });
+
+  btn.addEventListener('click', function () {
+    if (prefersReduced) {
+      window.scrollTo(0, 0);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
