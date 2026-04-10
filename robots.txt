@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /feed.xml
 
 Sitemap: https://thegreatdevil.com/sitemap.xml
