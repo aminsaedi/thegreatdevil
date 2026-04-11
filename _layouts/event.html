@@ -1,6 +1,10 @@
 ---
 layout: default
 ---
+{% assign _greg_year = page.path | split: "/" | last | split: "-" | first | plus: 0 %}
+{% assign _shamsi_year = _greg_year | minus: 621 %}
+{% capture _shamsi_str %}{{ _shamsi_year }}{% endcapture %}
+{% assign _shamsi_fa = _shamsi_str | replace: '0', '۰' | replace: '1', '۱' | replace: '2', '۲' | replace: '3', '۳' | replace: '4', '۴' | replace: '5', '۵' | replace: '6', '۶' | replace: '7', '۷' | replace: '8', '۸' | replace: '9', '۹' %}
 <div id="reading-progress-bar" aria-hidden="true"></div>
 
 <style>
@@ -327,7 +331,7 @@ layout: default
         <div class="event-hero-overlay"></div>
         <div class="event-hero-content">
           <div class="event-meta">
-            <span class="year-badge large">{{ page.year }}</span>
+            <span class="year-badge large">{{ page.year }}<span class="shamsi-year"> / {{ _shamsi_fa }} ش</span></span>
             <span class="category cat-{{ page.category }}">{{ page.category_label }}</span>
             <span class="reading-time-badge">{{ detail_rm_str }} دقیقه مطالعه</span>
           </div>
@@ -341,7 +345,7 @@ layout: default
       <!-- No image: text-only header -->
       <div class="event-header-plain event-header-cat-{{ page.category }}">
         <div class="event-meta">
-          <span class="year-badge large">{{ page.year }}</span>
+          <span class="year-badge large">{{ page.year }}<span class="shamsi-year"> / {{ _shamsi_fa }} ش</span></span>
           <span class="category cat-{{ page.category }}">{{ page.category_label }}</span>
           <span class="reading-time-badge">{{ detail_rm_str }} دقیقه مطالعه</span>
         </div>
@@ -396,9 +400,10 @@ layout: default
         <h3 id="related-events-heading" class="related-events-title">رویدادهای مرتبط</h3>
         <div class="related-events-grid">
           {% for rel in related_events limit:3 %}
+          {% assign _rel_gy = rel.path | split: "/" | last | split: "-" | first | plus: 0 %}{% assign _rel_sy = _rel_gy | minus: 621 %}{% capture _rel_sy_str %}{{ _rel_sy }}{% endcapture %}{% assign _rel_sy_fa = _rel_sy_str | replace: '0', '۰' | replace: '1', '۱' | replace: '2', '۲' | replace: '3', '۳' | replace: '4', '۴' | replace: '5', '۵' | replace: '6', '۶' | replace: '7', '۷' | replace: '8', '۸' | replace: '9', '۹' %}
           <a href="{{ rel.url | relative_url }}" class="related-event-card">
             <div class="related-event-meta">
-              <span class="year-badge">{{ rel.year }}</span>
+              <span class="year-badge">{{ rel.year }}<span class="shamsi-year"> / {{ _rel_sy_fa }} ش</span></span>
               <span class="category cat-{{ rel.category }}">{{ rel.category_label }}</span>
             </div>
             <h4 class="related-event-title">{{ rel.title }}</h4>

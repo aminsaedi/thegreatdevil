@@ -126,6 +126,7 @@ layout: default
       {% assign sorted_era_events = era_group.items | sort: "name" %}
       {% for event in sorted_era_events %}
       {% assign event_text = event.content | strip_html | truncatewords: 150 %}
+      {% assign _ev_gy = event.path | split: "/" | last | split: "-" | first | plus: 0 %}{% assign _ev_sy = _ev_gy | minus: 621 %}{% capture _ev_sy_str %}{{ _ev_sy }}{% endcapture %}{% assign _ev_sy_fa = _ev_sy_str | replace: '0', '۰' | replace: '1', '۱' | replace: '2', '۲' | replace: '3', '۳' | replace: '4', '۴' | replace: '5', '۵' | replace: '6', '۶' | replace: '7', '۷' | replace: '8', '۸' | replace: '9', '۹' %}
       <div class="timeline-item{% if event.featured %} featured-item{% endif %}" data-category="{{ event.category }}" data-era="{{ event.era_id }}" data-search="{{ event.title | append: ' ' | append: event.year | append: ' ' | append: event.category_label | append: ' ' | append: event.era_title | append: ' ' | append: event_text | xml_escape }}">
         <div class="timeline-node cat-node-{{ event.category }}" aria-hidden="true"></div>
         <div class="timeline-date">{{ event.year }}</div>
@@ -137,7 +138,7 @@ layout: default
               <div class="featured-eyebrow">رویداد برجسته</div>
               {% assign feat_reading_min = event.content | strip_html | number_of_words | plus: 199 | divided_by: 200 %}{% if feat_reading_min < 1 %}{% assign feat_reading_min = 1 %}{% endif %}{% assign feat_rm_str = feat_reading_min | append: "" | replace: '0', '۰' | replace: '1', '۱' | replace: '2', '۲' | replace: '3', '۳' | replace: '4', '۴' | replace: '5', '۵' | replace: '6', '۶' | replace: '7', '۷' | replace: '8', '۸' | replace: '9', '۹' %}
             <div class="card-meta">
-                <span class="year-badge">{{ event.year }}</span>
+                <span class="year-badge">{{ event.year }}<span class="shamsi-year"> / {{ _ev_sy_fa }} ش</span></span>
                 <span class="category cat-{{ event.category }}">{{ event.category_label }}</span>
                 <span class="reading-time-badge">{{ feat_rm_str }} دقیقه مطالعه</span>
               </div>
@@ -157,14 +158,14 @@ layout: default
                 </picture>
               </a>
               <div class="card-img-overlay">
-                <span class="year-badge">{{ event.year }}</span>
+                <span class="year-badge">{{ event.year }}<span class="shamsi-year"> / {{ _ev_sy_fa }} ش</span></span>
                 <span class="category cat-{{ event.category }}">{{ event.category_label }}</span>
               </div>
             </div>
             {% endif %}
             {% assign reading_min = event.content | strip_html | number_of_words | plus: 199 | divided_by: 200 %}{% if reading_min < 1 %}{% assign reading_min = 1 %}{% endif %}{% assign rm_str = reading_min | append: "" | replace: '0', '۰' | replace: '1', '۱' | replace: '2', '۲' | replace: '3', '۳' | replace: '4', '۴' | replace: '5', '۵' | replace: '6', '۶' | replace: '7', '۷' | replace: '8', '۸' | replace: '9', '۹' %}
             <div class="card-meta">
-              {% unless event.image %}<span class="year-badge">{{ event.year }}</span>
+              {% unless event.image %}<span class="year-badge">{{ event.year }}<span class="shamsi-year"> / {{ _ev_sy_fa }} ش</span></span>
               <span class="category cat-{{ event.category }}">{{ event.category_label }}</span>{% endunless %}
               <span class="reading-time-badge">{{ rm_str }} دقیقه مطالعه</span>
             </div>
