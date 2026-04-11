@@ -239,13 +239,40 @@ layout: default
 
   <main class="event-page" data-url="{{ site.url }}{{ page.url }}">
 
-    <nav class="breadcrumb">
+    <nav class="breadcrumb" aria-label="مسیر ناوبری">
       <a href="{{ '/' | relative_url }}">صفحه اصلی</a>
       <span aria-hidden="true">‹</span>
-      <span>{{ page.era_title }}</span>
+      <a href="{{ '/' | relative_url }}#{{ page.era_id }}">{{ page.era_title }}</a>
       <span aria-hidden="true">‹</span>
-      <span>{{ page.year }}</span>
+      <span aria-current="page">{{ page.title }}</span>
     </nav>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "صفحه اصلی",
+          "item": "{{ site.url }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ page.era_title }}",
+          "item": "{{ site.url }}/#{{ page.era_id }}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{ page.title }}",
+          "item": "{{ site.url }}{{ page.url }}"
+        }
+      ]
+    }
+    </script>
 
     <article class="event-detail">
 
