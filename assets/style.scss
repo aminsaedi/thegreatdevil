@@ -511,7 +511,7 @@ main { padding: 2rem; max-width: 1400px; margin: auto; }
 
 /* Era chapter opener (TGD-015) */
 .era-section {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   position: relative;
 }
 
@@ -527,8 +527,8 @@ main { padding: 2rem; max-width: 1400px; margin: auto; }
 
 .era-header {
   position: relative;
-  padding: 2rem 2.5rem 1.75rem;
-  margin-bottom: 2rem;
+  padding: 1.25rem 2rem 1rem;
+  margin-bottom: 1rem;
   overflow: hidden;
   background: linear-gradient(135deg, #d8e8f8 0%, #e4f0fc 100%);
   border-right: 4px solid var(--era-accent, #e94560);
@@ -618,7 +618,7 @@ main { padding: 2rem; max-width: 1400px; margin: auto; }
 /* Timeline item wrapper */
 .timeline-item {
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   padding-right: 20px; /* gap between card and spine */
 }
 
@@ -721,7 +721,7 @@ main { padding: 2rem; max-width: 1400px; margin: auto; }
 
   .timeline-item {
     padding-right: 12px;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.875rem;
   }
 }
 
@@ -836,10 +836,10 @@ article.featured .read-more {
 }
 
 /* Featured timeline items — grid row-span: 2
-   Standard card row height is ~260 px; featured items span 2 rows (≥ 520 px).
+   Standard card row height is ~210 px; featured items span 2 rows (≥ 420 px).
    Scoped to .timeline-item.featured-item to avoid affecting event detail pages. */
 :root {
-  --card-row-height: 260px;
+  --card-row-height: 210px;
 }
 
 .timeline-item.featured-item {
@@ -855,7 +855,7 @@ article.featured .read-more {
 }
 
 @media screen and (max-width: 600px) {
-  :root { --card-row-height: 200px; }
+  :root { --card-row-height: 160px; }
   .timeline-item.featured-item { min-height: calc(2 * var(--card-row-height)); }
   .timeline-item.featured-item article.featured { min-height: calc(2 * var(--card-row-height)); }
   .timeline-item.featured-item article.featured .featured-content { min-height: calc(2 * var(--card-row-height)); }
