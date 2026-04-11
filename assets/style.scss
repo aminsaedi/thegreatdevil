@@ -295,6 +295,34 @@ header p { color: #556080; font-size: 0.9rem; }
   border-radius: 1px;
 }
 
+.era-nav-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(69, 90, 120, 0.13);
+  color: #667788;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 1.5em;
+  height: 1.5em;
+  border-radius: 8px;
+  padding: 0 0.3em;
+  margin-inline-start: 0.3rem;
+  vertical-align: middle;
+  line-height: 1;
+  transition: background 0.2s, color 0.2s;
+}
+
+.era-nav a:hover .era-nav-count {
+  background: rgba(13, 27, 53, 0.15);
+  color: #0d1b35;
+}
+
+.era-nav a.era-active .era-nav-count {
+  background: rgba(233, 69, 96, 0.18);
+  color: #e94560;
+}
+
 /* Filter bar */
 .filter-bar {
   background: #dce8f8;

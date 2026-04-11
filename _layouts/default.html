@@ -111,7 +111,9 @@
     {% assign eras = site.events | map: "era_id" | uniq | sort | reverse %}
     {% for era_id in eras %}
       {% assign era_event = site.events | where: "era_id", era_id | first %}
-      <a href="#{{ era_id }}" role="menuitem">{{ era_event.era_label }}</a>
+      {% assign era_count = site.events | where: "era_id", era_id | size %}
+      {% assign era_count_fa = era_count | append: "" | replace: '0', '۰' | replace: '1', '۱' | replace: '2', '۲' | replace: '3', '۳' | replace: '4', '۴' | replace: '5', '۵' | replace: '6', '۶' | replace: '7', '۷' | replace: '8', '۸' | replace: '9', '۹' %}
+      <a href="#{{ era_id }}" role="menuitem">{{ era_event.era_label }}<span class="era-nav-count" aria-label="{{ era_count }} رویداد">{{ era_count_fa }}</span></a>
     {% endfor %}
   </div>
 </nav>
