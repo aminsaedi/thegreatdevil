@@ -19,6 +19,10 @@ layout: default
 /* ── Table of Contents Sidebar ── */
 .toc-sidebar { display: none; }
 
+/* Mobile-only TOC elements: hidden by default so they don't leak into desktop grid layout */
+.toc-float-btn,
+.toc-mobile-panel { display: none; }
+
 /* Desktop: sticky sidebar via CSS grid */
 @media screen and (min-width: 1100px) {
   .event-page-wrapper.has-toc {
@@ -37,8 +41,8 @@ layout: default
     grid-column: 1;
     grid-row: 1;
     position: sticky;
-    top: 0;
-    height: 100vh;
+    top: var(--era-nav-h, 0px);
+    height: calc(100vh - var(--era-nav-h, 0px));
     width: 220px;
     min-width: 220px;
     background: #f5f8fd;
@@ -155,6 +159,7 @@ layout: default
   .toc-float-btn.toc-ready { display: flex; }
   .toc-float-icon { font-size: 1rem; }
   .toc-mobile-panel {
+    display: block;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -474,6 +479,19 @@ layout: default
 /* Auto-generated Table of Contents */
 (function() {
   'use strict';
+
+  // Offset TOC sidebar below the sticky era-nav so it doesn't slide under it
+  (function() {
+    var eraNav = document.getElementById('era-nav');
+    if (eraNav) {
+      var h = eraNav.offsetHeight;
+      document.documentElement.style.setProperty('--era-nav-h', h + 'px');
+      // Update on resize in case nav wraps to multiple lines
+      window.addEventListener('resize', function() {
+        document.documentElement.style.setProperty('--era-nav-h', eraNav.offsetHeight + 'px');
+      }, { passive: true });
+    }
+  })();
 
   var eventBody = document.querySelector('.event-body');
   if (!eventBody) return;
