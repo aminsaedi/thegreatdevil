@@ -3123,3 +3123,217 @@ input:focus-visible,
   #back-to-top { display: none !important; }
 }
 /* ── end back-to-top button ── */
+
+/* ── Theme Toggle Button ── */
+header {
+  position: relative; /* anchor the toggle button */
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(13, 27, 53, 0.08);
+  border: 1px solid rgba(13, 27, 53, 0.18);
+  color: #0d1b35;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  z-index: 10;
+}
+
+.theme-toggle:hover {
+  background: rgba(13, 27, 53, 0.15);
+  transform: scale(1.08);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid #e94560;
+  outline-offset: 3px;
+}
+
+.theme-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+@media print {
+  .theme-toggle { display: none !important; }
+}
+/* ── end theme toggle button ── */
+
+/* ══════════════════════════════════════════════
+   Dark Theme Overrides
+   Applied via [data-theme="dark"] on <html>
+   ══════════════════════════════════════════════ */
+
+/* Base */
+[data-theme="dark"] body {
+  background: #0f1219;
+  color: #c8d8f0;
+}
+
+/* Header */
+[data-theme="dark"] header {
+  background: linear-gradient(135deg, #0d1b35 0%, #1a2a4a 100%);
+  border-bottom-color: rgba(233, 69, 96, 0.6);
+}
+[data-theme="dark"] header h1 { color: #e8f2ff; }
+[data-theme="dark"] header p  { color: #7888a8; }
+[data-theme="dark"] .title-en { color: #e94560; }
+
+[data-theme="dark"] .theme-toggle {
+  background: rgba(200, 216, 255, 0.08);
+  border-color: rgba(200, 216, 255, 0.18);
+  color: #c8d8f0;
+}
+[data-theme="dark"] .theme-toggle:hover {
+  background: rgba(200, 216, 255, 0.15);
+}
+
+/* Sticky nav */
+[data-theme="dark"] .era-nav {
+  background: rgba(13, 20, 36, 0.92);
+  border-bottom-color: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+[data-theme="dark"] .era-nav a           { color: #8898b8; }
+[data-theme="dark"] .era-nav a:hover     { background: rgba(255,255,255,0.07); color: #e8f2ff; border-color: rgba(255,255,255,0.12); }
+[data-theme="dark"] .era-nav a.era-active {
+  background: rgba(233, 69, 96, 0.18);
+  color: #e94560;
+  border-color: rgba(233, 69, 96, 0.45);
+}
+[data-theme="dark"] .era-nav-count { background: rgba(255,255,255,0.08); color: #6878a8; }
+[data-theme="dark"] .era-nav a:hover .era-nav-count     { background: rgba(255,255,255,0.12); color: #c8d8f0; }
+[data-theme="dark"] .era-nav a.era-active .era-nav-count { background: rgba(233,69,96,0.2); color: #e94560; }
+[data-theme="dark"] .era-nav-toggle-label { color: #8898b8; }
+
+/* Search */
+[data-theme="dark"] .search-input {
+  background: #141c2e;
+  color: #c8d8f0;
+  border-color: #253050;
+}
+[data-theme="dark"] .search-input::placeholder { color: #4a5878; }
+[data-theme="dark"] .search-input:focus       { border-color: #e94560; box-shadow: 0 0 0 2px rgba(233,69,96,0.2); }
+[data-theme="dark"] .search-clear             { color: #4a5878; }
+[data-theme="dark"] .no-results               { color: #4a5878; }
+
+/* Era sections */
+[data-theme="dark"] .era-header {
+  border-top-color: rgba(233,69,96,0.4);
+}
+[data-theme="dark"] .era-title  { color: #e8f2ff; }
+[data-theme="dark"] .era-range-tag { color: #8898b8; }
+[data-theme="dark"] .era-connector { background: rgba(60,80,130,0.35); }
+[data-theme="dark"] .era-node   { background: rgba(40,60,110,0.5); }
+
+/* Cards */
+[data-theme="dark"] article {
+  background: #141c2e;
+  border-color: #1e2d4a;
+  color: #b8cce8;
+}
+[data-theme="dark"] .timeline-wrapper article {
+  background: #141c2e;
+  border-color: #1e2d4a;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.3), 0 1px 5px rgba(0,0,0,0.2);
+}
+[data-theme="dark"] article:hover {
+  background: #1a2840;
+  border-color: #2e4060;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35), 0 4px 12px rgba(233,69,96,0.1);
+}
+[data-theme="dark"] .timeline-wrapper article:hover {
+  background: #1a2840;
+  box-shadow: 0 14px 42px rgba(0,0,0,0.4), 0 6px 20px rgba(0,0,0,0.3);
+}
+[data-theme="dark"] article h3,
+[data-theme="dark"] article h2 { color: #e0eeff; }
+[data-theme="dark"] article p  { color: #a8bcdc; }
+
+/* Category tinted card borders in dark mode */
+[data-theme="dark"] .timeline-wrapper .timeline-item[data-category="coup"] article:not(.featured)     { border-color: rgba(232,48,79,0.3);  box-shadow: 0 3px 14px rgba(0,0,0,0.3), 0 6px 24px rgba(232,48,79,0.18); }
+[data-theme="dark"] .timeline-wrapper .timeline-item[data-category="sanction"] article:not(.featured) { border-color: rgba(58,172,245,0.3); box-shadow: 0 3px 14px rgba(0,0,0,0.3), 0 6px 24px rgba(58,172,245,0.18); }
+[data-theme="dark"] .timeline-wrapper .timeline-item[data-category="military"] article:not(.featured) { border-color: rgba(245,144,58,0.3); box-shadow: 0 3px 14px rgba(0,0,0,0.3), 0 6px 24px rgba(245,144,58,0.18); }
+[data-theme="dark"] .timeline-wrapper .timeline-item[data-category="cyber"] article:not(.featured)    { border-color: rgba(58,245,160,0.3); box-shadow: 0 3px 14px rgba(0,0,0,0.3), 0 6px 24px rgba(58,245,160,0.18); }
+[data-theme="dark"] .timeline-wrapper .timeline-item[data-category="diplo"] article:not(.featured)    { border-color: rgba(245,224,58,0.3); box-shadow: 0 3px 14px rgba(0,0,0,0.3), 0 6px 24px rgba(245,224,58,0.18); }
+[data-theme="dark"] .timeline-wrapper .timeline-item[data-category="intel"] article:not(.featured)    { border-color: rgba(185,58,245,0.3); box-shadow: 0 3px 14px rgba(0,0,0,0.3), 0 6px 24px rgba(185,58,245,0.18); }
+
+/* Card meta */
+[data-theme="dark"] .card-footer      { border-top-color: rgba(255,255,255,0.07); }
+[data-theme="dark"] .reading-time-badge {
+  background: rgba(255,255,255,0.07);
+  color: #7888a8;
+}
+[data-theme="dark"] .event-link:hover { color: #e94560; }
+
+/* Footer */
+[data-theme="dark"] footer {
+  background: linear-gradient(180deg, #0d1420 0%, #080f18 100%);
+  color: #6878a8;
+  border-top-color: #1a2540;
+}
+[data-theme="dark"] .footer-site-title       { color: #e0eeff; }
+[data-theme="dark"] .footer-description-fa   { color: #a8bcdc; }
+[data-theme="dark"] .footer-description-en   { color: #8898b8; }
+[data-theme="dark"] .footer-sources-title    { color: #c8d8f0; }
+[data-theme="dark"] .footer-source-type      { background: rgba(255,255,255,0.07); color: #7888a8; border-color: rgba(255,255,255,0.1); }
+[data-theme="dark"] .footer-independence,
+[data-theme="dark"] .footer-copyright        { color: #4a5878; }
+[data-theme="dark"] .footer-url              { color: #4a5878; }
+[data-theme="dark"] .footer-divider          { background: #1a2540; }
+[data-theme="dark"] .footer-github-link      { color: #7888a8; border-color: rgba(255,255,255,0.12); }
+[data-theme="dark"] .footer-github-link:hover { color: #c8d8f0; background: rgba(255,255,255,0.07); }
+
+/* Event detail page */
+[data-theme="dark"] .event-body       { color: #b8cce8; }
+[data-theme="dark"] .event-body h2,
+[data-theme="dark"] .event-body h3,
+[data-theme="dark"] .event-body h4    { color: #e0eeff; }
+[data-theme="dark"] .event-body blockquote {
+  background: rgba(255,255,255,0.04);
+  border-right-color: rgba(233,69,96,0.5);
+  color: #a8bcdc;
+}
+[data-theme="dark"] .event-body a     { color: #7eb8e8; }
+[data-theme="dark"] .event-body a:hover { color: #a8d0ff; }
+
+[data-theme="dark"] .event-header-plain {
+  background: linear-gradient(135deg, #0d1b35, #1a2a4a);
+  border-bottom-color: rgba(233,69,96,0.4);
+}
+[data-theme="dark"] .event-title      { color: #e8f2ff; }
+[data-theme="dark"] .event-hero-desc  { color: #a8bcdc; }
+
+[data-theme="dark"] .sources-section  { background: #141c2e; border-color: #1e2d4a; }
+[data-theme="dark"] .sources-title    { color: #c8d8f0; }
+[data-theme="dark"] .source-link      { color: #7eb8e8; }
+[data-theme="dark"] .source-link:hover { color: #a8d0ff; }
+[data-theme="dark"] .footnote-item    { color: #8898b8; }
+
+[data-theme="dark"] .related-events-section { background: #0d1219; }
+[data-theme="dark"] .related-events-section h2 { color: #c8d8f0; }
+[data-theme="dark"] .related-event-card { background: #141c2e; border-color: #1e2d4a; color: #b8cce8; }
+[data-theme="dark"] .related-event-card:hover { background: #1a2840; }
+[data-theme="dark"] .related-event-title { color: #e0eeff; }
+
+/* Back-to-top in dark mode */
+[data-theme="dark"] #back-to-top {
+  background-color: #e94560;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+}
+
+/* 404 page */
+[data-theme="dark"] .error-page { background: #0f1219; color: #c8d8f0; }
+[data-theme="dark"] .error-code { color: #e94560; }
+
+/* ── end dark theme ── */
