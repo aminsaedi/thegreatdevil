@@ -578,8 +578,9 @@ main { padding: 2rem; max-width: 1400px; margin: auto; }
 }
 
 @media screen and (min-width: 900px) {
-  .era-timeline-rail::before { right: 64px; }
-  .era-era-node { right: 55px; }
+  /* (TGD-102) Center spine */
+  .era-timeline-rail::before { right: auto; left: 50%; transform: translateX(-50%); }
+  .era-era-node { right: auto; left: calc(50% - 10px); }
 }
 
 @media screen and (max-width: 599px) {
@@ -737,27 +738,109 @@ main { padding: 2rem; max-width: 1400px; margin: auto; }
 }
 
 @media screen and (min-width: 900px) {
+  /* (TGD-102) Center-spine alternating layout */
+
   .timeline-wrapper {
-    padding-right: 140px;
+    display: grid;
+    grid-template-columns: 1fr 4.5rem 1fr;
+    align-items: start;
+    row-gap: 1.75rem;
+    padding-right: 0;
+    padding-left: 0;
   }
 
+  /* era-timeline-rail handles the continuous spine; hide per-wrapper duplicate */
   .timeline-wrapper::before {
-    right: 64px;
+    display: none;
   }
 
-  .timeline-node {
-    right: -88px;
+  /* All items: reset inherited single-column offsets */
+  .timeline-item {
+    margin-bottom: 0;
+    padding-right: 0;
   }
 
-  .timeline-item::before {
-    right: -68px;
-    width: 68px;
+  /* Odd items → right column (RTL reading order: right = first) */
+  .timeline-item:nth-child(odd) {
+    grid-column: 3;
+    padding-right: 0.25rem;
+    padding-left: 0;
   }
 
+  /* Even items → left column */
+  .timeline-item:nth-child(even) {
+    grid-column: 1;
+    padding-left: 0.25rem;
+    padding-right: 0;
+  }
+
+  /* Node centered on spine — odd (right col): spine is to the left at -2.25rem */
+  .timeline-item:nth-child(odd) .timeline-node {
+    right: auto;
+    left: calc(-2.25rem - 7px);
+  }
+
+  /* Node — even (left col): spine is to the right at -2.25rem */
+  .timeline-item:nth-child(even) .timeline-node {
+    right: calc(-2.25rem - 7px);
+    left: auto;
+  }
+
+  /* Connector: from card edge to node right/left edge */
+  .timeline-item:nth-child(odd)::before {
+    right: auto;
+    left: calc(-2.25rem + 7px);
+    width: calc(2.25rem - 7px);
+  }
+
+  .timeline-item:nth-child(even)::before {
+    right: calc(-2.25rem + 7px);
+    left: auto;
+    width: calc(2.25rem - 7px);
+  }
+
+  /* Year badge centered on spine */
   .timeline-date {
     display: block;
-    right: -140px;
-    width: 65px;
+    width: 4rem;
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--era-accent, #9ab8d8);
+    background: rgba(10, 18, 35, 0.92);
+    border: 1px solid rgba(154,184,216,0.35);
+    border-radius: 4px;
+    padding: 0.15em 0.35em;
+    top: 1.15rem;
+    z-index: 4;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-date {
+    right: auto;
+    left: -4.25rem; /* spine-center = left: -2.25rem; badge-half = -2rem → total: -4.25rem */
+    width: 4rem;
+  }
+
+  .timeline-item:nth-child(even) .timeline-date {
+    right: -4.25rem;
+    left: auto;
+    width: 4rem;
+  }
+
+  /* Featured items span all columns for full-width drama */
+  .timeline-item.featured-item {
+    grid-column: 1 / -1;
+    padding: 0;
+  }
+
+  /* Featured items: hide the node/connector since they span the full width */
+  .timeline-item.featured-item .timeline-node { display: none; }
+  .timeline-item.featured-item::before { display: none; }
+  .timeline-item.featured-item .timeline-date {
+    left: auto;
+    right: auto;
+    position: static;
+    display: none; /* year badge inside featured card already shows */
   }
 }
 
@@ -2584,6 +2667,16 @@ article.event-detail {
 .timeline-wrapper .timeline-item:nth-child(2) { transition-delay: 0.06s; }
 .timeline-wrapper .timeline-item:nth-child(3) { transition-delay: 0.12s; }
 .timeline-wrapper .timeline-item:nth-child(4) { transition-delay: 0.18s; }
+
+/* (TGD-102) Alternating slide-in directions: even items (left col) slide from the left */
+@media screen and (min-width: 900px) {
+  .timeline-wrapper .timeline-item:nth-child(even) {
+    transform: translateX(-30px);
+  }
+  .timeline-wrapper .timeline-item:nth-child(even).scroll-visible {
+    transform: translateX(0);
+  }
+}
 
 /* Respect user preference for reduced motion */
 @media (prefers-reduced-motion: reduce) {
