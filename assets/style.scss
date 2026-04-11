@@ -2488,49 +2488,73 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
   color: #445566;
 }
 
-/* ── Mobile: horizontal scroll nav (no hamburger) ── */
+/* ── Mobile: hamburger dropdown nav ── */
 @media (max-width: 599px) {
   .era-nav {
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
     padding: 0;
     gap: 0;
+    overflow: visible;
+    position: relative;
+  }
+
+  /* Show hamburger toggle on mobile */
+  .era-nav-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0 1rem;
+    width: 100%;
+    min-height: 48px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #445566;
+    font-family: inherit;
+    text-align: start;
+  }
+
+  /* Dropdown: hidden by default */
+  .era-nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 200;
+    background: rgba(237, 242, 251, 0.97);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(200, 216, 238, 0.7);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 0.4rem 0;
     overflow: hidden;
   }
 
-  /* Hide hamburger toggle on mobile — horizontal scroll replaces it */
-  .era-nav-toggle {
-    display: none;
-  }
-
-  /* Always-visible horizontal scroll strip */
-  .era-nav-links {
+  /* Show dropdown when open */
+  .era-nav-links.open {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    gap: 0.3rem;
-    padding: 0.45rem 0.75rem;
-    width: 100%;
-    background: transparent;
-    border-bottom: none;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .era-nav-links::-webkit-scrollbar {
-    display: none;
   }
 
   .era-nav-links a {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    flex-shrink: 0;
-    min-height: 44px;
-    font-size: 0.78rem;
-    padding: 0.3rem 0.65rem;
-    white-space: nowrap;
+    width: 100%;
+    min-height: 48px;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: 0;
+    white-space: normal;
+    border-bottom: 1px solid rgba(200, 216, 238, 0.4);
+  }
+
+  .era-nav-links a:last-child {
+    border-bottom: none;
   }
 
   /* Reduce main padding on small screens */
