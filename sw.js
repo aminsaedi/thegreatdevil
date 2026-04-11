@@ -3,7 +3,7 @@ layout: null
 ---
 /* Service Worker — efficient cache lifetimes for static assets */
 
-var CACHE_VERSION = 'tgd-v2';
+var CACHE_VERSION = 'tgd-v3';
 var STATIC_CACHE  = CACHE_VERSION + '-static';
 var IMAGE_CACHE   = CACHE_VERSION + '-images';
 
@@ -82,7 +82,11 @@ self.addEventListener('fetch', function (event) {
     event.respondWith(
       fetch(req).catch(function () {
         return caches.match(req).then(function (cached) {
-          return cached || fetch(req);
+          /* Return cached page if available; otherwise a generic offline response */
+          return cached || new Response(
+            '<!doctype html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"><title>آفلاین</title></head><body><p>اتصال به اینترنت وجود ندارد.</p></body></html>',
+            { status: 503, headers: { 'Content-Type': 'text/html; charset=utf-8' } }
+          );
         });
       })
     );
