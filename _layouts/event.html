@@ -427,8 +427,8 @@ layout: default
         <div id="copyToast" class="copy-toast" role="status" aria-live="polite">کپی شد!</div>
       </div>
 
-      <div class="event-nav">
-        {% assign all_events = site.events | sort: "year" %}
+      <nav class="event-nav" aria-label="ناوبری رویدادها">
+        {% assign all_events = site.events | sort: "name" %}
         {% assign current_index = nil %}
         {% for e in all_events %}
           {% if e.url == page.url %}
@@ -439,9 +439,13 @@ layout: default
         {% if current_index and current_index > 0 %}
           {% assign prev_index = current_index | minus: 1 %}
           {% assign prev_event = all_events[prev_index] %}
-          <a href="{{ prev_event.url | relative_url }}" class="nav-btn prev">
-            <span class="nav-label">رویداد قبلی</span>
-            <span class="nav-title">{{ prev_event.title }}</span>
+          <a href="{{ prev_event.url | relative_url }}" class="nav-btn prev" aria-label="رویداد قبلی: {{ prev_event.title }}">
+            <span class="nav-arrow" aria-hidden="true">›</span>
+            <span class="nav-content">
+              <span class="nav-label">رویداد قبلی</span>
+              <span class="nav-year">{{ prev_event.year }}</span>
+              <span class="nav-title">{{ prev_event.title }}</span>
+            </span>
           </a>
         {% else %}
           <span></span>
@@ -450,12 +454,16 @@ layout: default
         {% assign next_index = current_index | plus: 1 %}
         {% assign next_event = all_events[next_index] %}
         {% if next_event %}
-          <a href="{{ next_event.url | relative_url }}" class="nav-btn next">
-            <span class="nav-label">رویداد بعدی</span>
-            <span class="nav-title">{{ next_event.title }}</span>
+          <a href="{{ next_event.url | relative_url }}" class="nav-btn next" aria-label="رویداد بعدی: {{ next_event.title }}">
+            <span class="nav-content">
+              <span class="nav-label">رویداد بعدی</span>
+              <span class="nav-year">{{ next_event.year }}</span>
+              <span class="nav-title">{{ next_event.title }}</span>
+            </span>
+            <span class="nav-arrow" aria-hidden="true">‹</span>
           </a>
         {% endif %}
-      </div>
+      </nav>
     </article>
 
   </main>
