@@ -337,7 +337,7 @@ header p { color: #556080; font-size: 0.9rem; }
   padding: 0.3rem 0.75rem;
   border-radius: 20px;
   border: 1px solid transparent;
-  transition: color 0.2s, background 0.2s, border-color 0.2s, transform 0.15s;
+  transition: color 0.2s, background 0.2s, border-color 0.2s, transform 0.15s, box-shadow 0.2s;
   position: relative;
   white-space: nowrap;
 }
@@ -353,6 +353,7 @@ header p { color: #556080; font-size: 0.9rem; }
   color: #e94560;
   border-color: rgba(233, 69, 96, 0.5);
   font-weight: 600;
+  box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.12);
 }
 
 .era-nav a.era-active::after {
