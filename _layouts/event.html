@@ -141,7 +141,7 @@ layout: default
   .toc-float-btn {
     display: none;
     position: fixed;
-    bottom: 4.5rem;
+    bottom: 4rem;
     left: 1rem;
     z-index: 250;
     background: #1a2a4a;
@@ -510,9 +510,13 @@ layout: default
   var sidebar = document.getElementById('sourcesSidebar');
   if (!toggle || !sidebar) return;
 
-  // Restore collapsed state from localStorage
-  var collapsed = false;
-  try { collapsed = localStorage.getItem('sourcesSidebarCollapsed') === 'true'; } catch (e) {}
+  // Default collapsed on mobile; restore user preference from localStorage if set
+  var isMobile = window.innerWidth < 1100;
+  var collapsed = isMobile;
+  try {
+    var stored = localStorage.getItem('sourcesSidebarCollapsed');
+    if (stored !== null) collapsed = stored === 'true';
+  } catch (e) {}
   if (collapsed) {
     sidebar.classList.add('collapsed');
     toggle.setAttribute('aria-expanded', 'false');

@@ -1672,6 +1672,7 @@ article:hover img {
   .sources-sidebar {
     position: fixed;
     bottom: 0;
+    top: auto;
     left: 0;
     right: 0;
     width: 100% !important;
@@ -2499,6 +2500,15 @@ input:focus-visible,
   outline-color: #fff;
 }
 /* ── end focus-visible styles ── */
+
+/* On mobile with sources-sidebar fixed at bottom (48px), move back-to-top above it */
+@media screen and (max-width: 1099px) {
+  #back-to-top {
+    bottom: 4rem;
+    left: auto;
+    right: 1rem;
+  }
+}
 
 @media print {
   #back-to-top { display: none !important; }
