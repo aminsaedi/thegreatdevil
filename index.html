@@ -28,6 +28,41 @@ layout: default
   </div>
 </section>
 
+<!-- Statistics Overview Bar (TGD-079) -->
+{% assign total_events = site.events | size %}
+{% assign total_events_fa = total_events | append: "" | replace: '0', '۰' | replace: '1', '۱' | replace: '2', '۲' | replace: '3', '۳' | replace: '4', '۴' | replace: '5', '۵' | replace: '6', '۶' | replace: '7', '۷' | replace: '8', '۸' | replace: '9', '۹' %}
+{% assign categories_count = site.events | map: "category" | uniq | size %}
+{% assign categories_count_fa = categories_count | append: "" | replace: '0', '۰' | replace: '1', '۱' | replace: '2', '۲' | replace: '3', '۳' | replace: '4', '۴' | replace: '5', '۵' | replace: '6', '۶' | replace: '7', '۷' | replace: '8', '۸' | replace: '9', '۹' %}
+{% assign source_count = 0 %}
+{% for event in site.events %}
+  {% assign n = event.sources | size %}
+  {% assign source_count = source_count | plus: n %}
+{% endfor %}
+{% assign source_count_fa = source_count | append: "" | replace: '0', '۰' | replace: '1', '۱' | replace: '2', '۲' | replace: '3', '۳' | replace: '4', '۴' | replace: '5', '۵' | replace: '6', '۶' | replace: '7', '۷' | replace: '8', '۸' | replace: '9', '۹' %}
+<section class="stats-bar" aria-label="آمار کلی آرشیو">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-number">{{ total_events_fa }}</div>
+      <div class="stat-label">رویداد مستند</div>
+    </div>
+    <div class="stat-divider" aria-hidden="true"></div>
+    <div class="stat-item">
+      <div class="stat-number">۱۹۰۱–۲۰۲۶</div>
+      <div class="stat-label">بازه زمانی</div>
+    </div>
+    <div class="stat-divider" aria-hidden="true"></div>
+    <div class="stat-item">
+      <div class="stat-number">{{ categories_count_fa }}</div>
+      <div class="stat-label">دسته‌بندی</div>
+    </div>
+    <div class="stat-divider" aria-hidden="true"></div>
+    <div class="stat-item">
+      <div class="stat-number">{{ source_count_fa }}+</div>
+      <div class="stat-label">منبع مستند</div>
+    </div>
+  </div>
+</section>
+
 <div class="filter-bar">
   <div class="filter-group">
     <span class="filter-label">نوع رویداد:</span>

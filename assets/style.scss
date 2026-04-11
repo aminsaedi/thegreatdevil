@@ -241,6 +241,62 @@ header p { color: #556080; font-size: 0.9rem; }
   .hero-sub { font-size: 1.05rem; }
   .hero-cta { height: 48px; font-size: 0.92rem; padding: 0 1.75rem; }
 }
+/* ── Statistics Overview Bar (TGD-079) ── */
+.stats-bar {
+  background: linear-gradient(180deg, #0d1327 0%, #111827 100%);
+  border-bottom: 1px solid rgba(233, 69, 96, 0.25);
+  padding: 1.75rem 2rem;
+}
+
+.stats-bar-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem 1rem;
+}
+
+.stat-number {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: #e94560;
+  line-height: 1.1;
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: rgba(190, 210, 245, 0.6);
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .stats-bar { padding: 1.25rem 1rem; }
+  .stats-bar-inner { gap: 0; }
+  .stat-item { padding: 0.35rem 0.5rem; }
+  .stat-number { font-size: clamp(1.4rem, 6vw, 1.75rem); }
+  .stat-label { font-size: 0.72rem; }
+  .stat-divider { height: 36px; }
+}
+/* ── end Statistics Overview Bar ── */
+
 /* ────────────────────────────────────────────────────────── */
 
 .era-nav {
