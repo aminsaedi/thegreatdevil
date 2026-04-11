@@ -534,6 +534,58 @@ main { padding: 2rem; max-width: 1400px; margin: auto; }
 .era-section[data-era="era-2000"] { --era-accent: #a06be0; }
 .era-section[data-era="era-2010"] { --era-accent: #38b0d8; }
 .era-section[data-era="era-2020"] { --era-accent: #e0b030; }
+.era-section[data-era="era-2025"] { --era-accent: #e05858; }
+
+/* ── Cross-era timeline connector rail (TGD-095) ── */
+
+/* Container that wraps all era sections */
+.era-timeline-rail {
+  position: relative;
+}
+
+/* Continuous vertical connector line running through all era sections */
+.era-timeline-rail::before {
+  content: '';
+  position: absolute;
+  right: 24px; /* aligns with .timeline-wrapper::before spine */
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg,
+    rgba(154,184,216,0.15) 0%,
+    rgba(154,184,216,0.45) 8%,
+    rgba(154,184,216,0.45) 92%,
+    rgba(154,184,216,0.10) 100%
+  );
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Era marker node — sits on the connector rail at each era-header level */
+.era-era-node {
+  position: absolute;
+  right: 15px; /* centers a 20px node on the 3px spine at right:24px */
+  top: 2rem;   /* positioned within the era-header area */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--era-accent, #9ab8d8);
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 3px var(--era-accent, #9ab8d8), 0 2px 8px rgba(0,0,0,0.18);
+  z-index: 3;
+  pointer-events: none;
+}
+
+@media screen and (min-width: 900px) {
+  .era-timeline-rail::before { right: 64px; }
+  .era-era-node { right: 55px; }
+}
+
+@media screen and (max-width: 599px) {
+  .era-timeline-rail::before { right: 14px; }
+  .era-era-node { right: 7px; width: 14px; height: 14px; }
+}
 
 .era-header {
   position: relative;
