@@ -523,18 +523,21 @@ main { padding: 2rem; max-width: 1400px; margin: auto; }
 .era-section {
   margin-bottom: 2rem;
   position: relative;
+  background-color: var(--era-bg, transparent);
+  border-radius: 10px;
+  padding: 0.25rem 0.75rem 1rem;
 }
 
-/* Era-specific accent colours */
-.era-section[data-era="era-1900"] { --era-accent: #4a90c4; }
-.era-section[data-era="era-1950"] { --era-accent: #e05060; }
-.era-section[data-era="era-1970"] { --era-accent: #e09030; }
-.era-section[data-era="era-1980"] { --era-accent: #d04060; }
-.era-section[data-era="era-1990"] { --era-accent: #38b87a; }
-.era-section[data-era="era-2000"] { --era-accent: #a06be0; }
-.era-section[data-era="era-2010"] { --era-accent: #38b0d8; }
-.era-section[data-era="era-2020"] { --era-accent: #e0b030; }
-.era-section[data-era="era-2025"] { --era-accent: #e05858; }
+/* Era-specific accent colours and background tints */
+.era-section[data-era="era-1900"] { --era-accent: #4a90c4; --era-bg: rgba(74,144,196,0.05); }
+.era-section[data-era="era-1950"] { --era-accent: #e05060; --era-bg: rgba(224,80,96,0.05); }
+.era-section[data-era="era-1970"] { --era-accent: #e09030; --era-bg: rgba(224,144,48,0.05); }
+.era-section[data-era="era-1980"] { --era-accent: #d04060; --era-bg: rgba(208,64,96,0.05); }
+.era-section[data-era="era-1990"] { --era-accent: #38b87a; --era-bg: rgba(56,184,122,0.05); }
+.era-section[data-era="era-2000"] { --era-accent: #a06be0; --era-bg: rgba(160,107,224,0.05); }
+.era-section[data-era="era-2010"] { --era-accent: #38b0d8; --era-bg: rgba(56,176,216,0.05); }
+.era-section[data-era="era-2020"] { --era-accent: #e0b030; --era-bg: rgba(224,176,48,0.05); }
+.era-section[data-era="era-2025"] { --era-accent: #e05858; --era-bg: rgba(224,88,88,0.05); }
 
 /* ── Cross-era timeline connector rail (TGD-095) ── */
 
@@ -3241,6 +3244,17 @@ header {
 [data-theme="dark"] .era-range-tag { color: #8898b8; }
 [data-theme="dark"] .era-connector { background: rgba(60,80,130,0.35); }
 [data-theme="dark"] .era-node   { background: rgba(40,60,110,0.5); }
+
+/* Era background tints — stronger opacity on dark backgrounds */
+[data-theme="dark"] .era-section[data-era="era-1900"] { --era-bg: rgba(74,144,196,0.08); }
+[data-theme="dark"] .era-section[data-era="era-1950"] { --era-bg: rgba(224,80,96,0.08); }
+[data-theme="dark"] .era-section[data-era="era-1970"] { --era-bg: rgba(224,144,48,0.08); }
+[data-theme="dark"] .era-section[data-era="era-1980"] { --era-bg: rgba(208,64,96,0.08); }
+[data-theme="dark"] .era-section[data-era="era-1990"] { --era-bg: rgba(56,184,122,0.08); }
+[data-theme="dark"] .era-section[data-era="era-2000"] { --era-bg: rgba(160,107,224,0.08); }
+[data-theme="dark"] .era-section[data-era="era-2010"] { --era-bg: rgba(56,176,216,0.08); }
+[data-theme="dark"] .era-section[data-era="era-2020"] { --era-bg: rgba(224,176,48,0.08); }
+[data-theme="dark"] .era-section[data-era="era-2025"] { --era-bg: rgba(224,88,88,0.08); }
 
 /* Cards */
 [data-theme="dark"] article {
