@@ -169,7 +169,7 @@ layout: default
               <span class="reading-time-badge">{{ rm_str }} دقیقه مطالعه</span>
             </div>
             <h3><a href="{{ event.url | relative_url }}" class="event-link">{{ event.title }}</a></h3>
-            {% if event.description %}<p>{{ event.description | truncate: 150 }}</p>{% else %}<p>{{ event.content | strip_html | truncatewords: 60 }}</p>{% endif %}
+            {% if event.description %}<p class="card-excerpt">{{ event.description | truncatewords: 25 }}</p>{% else %}<p class="card-excerpt">{{ event.content | strip_html | truncatewords: 25 }}</p>{% endif %}
             <div class="card-footer">
               <a href="{{ event.url | relative_url }}" class="read-more">بیشتر بخوانید ›</a>
             </div>

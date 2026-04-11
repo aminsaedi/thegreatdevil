@@ -1151,6 +1151,14 @@ article p {
   margin-bottom: 0.5rem;
 }
 
+/* TGD-082: 3-line preview excerpt with CSS line-clamp for event cards */
+.timeline-wrapper article .card-excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* Card image — 16:9 aspect ratio with gradient overlay */
 .card-img-wrap {
   position: relative;
