@@ -875,6 +875,14 @@ article {
   gap: 0;
 }
 
+/* Stronger card contrast for homepage event grid — scoped to timeline so event detail pages are unaffected */
+.timeline-wrapper article {
+  border: 2px solid #9db8d4;
+  border-right: 4px solid transparent;
+  background: #f7fafd;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.13), 0 1px 5px rgba(0, 0, 0, 0.08);
+}
+
 /* Category accent border — colored by event type */
 article[data-category="coup"]     { border-right-color: #ff6b8a; }
 article[data-category="sanction"] { border-right-color: #6bc5ff; }
