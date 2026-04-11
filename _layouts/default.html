@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
+<script>
+/* Apply saved theme before CSS loads to prevent flash */
+(function(){try{var t=localStorage.getItem('tgd-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -94,6 +98,9 @@
 <body>
 
 <header>
+  <button class="theme-toggle" id="theme-toggle" aria-label="تغییر پوسته روشن/تاریک" title="تغییر پوسته">
+    <span class="theme-toggle-icon" aria-hidden="true"></span>
+  </button>
   <div class="site-logo"></div>
   <h1>{{ site.title }}</h1>
   <p class="title-en">{{ site.title_en }}</p>
@@ -250,6 +257,50 @@
 })();
 </script>
 
+
+<script>
+/* Theme toggle */
+(function () {
+  var STORAGE_KEY = 'tgd-theme';
+  var html = document.documentElement;
+  var btn  = document.getElementById('theme-toggle');
+  if (!btn) return;
+
+  function isDark() {
+    return html.getAttribute('data-theme') === 'dark';
+  }
+
+  function setTheme(dark) {
+    if (dark) {
+      html.setAttribute('data-theme', 'dark');
+    } else {
+      html.removeAttribute('data-theme');
+    }
+    try { localStorage.setItem(STORAGE_KEY, dark ? 'dark' : 'light'); } catch(e) {}
+    updateIcon(dark);
+  }
+
+  function updateIcon(dark) {
+    var icon = btn.querySelector('.theme-toggle-icon');
+    if (!icon) return;
+    /* Sun = light mode, Moon = dark mode */
+    if (dark) {
+      /* Show sun (switch to light) */
+      icon.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+    } else {
+      /* Show moon (switch to dark) */
+      icon.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+  }
+
+  /* Initial icon */
+  updateIcon(isDark());
+
+  btn.addEventListener('click', function () {
+    setTheme(!isDark());
+  });
+})();
+</script>
 
 <script>
 /* Register service worker for efficient asset caching — skip on localhost */
