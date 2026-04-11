@@ -1243,7 +1243,7 @@ article:hover img {
 /* Pull quotes — key facts highlighted */
 .event-body blockquote {
   position: relative;
-  margin: 2rem 0;
+  margin: 2.25rem 0;
   padding: 1.5rem 1.75rem 1.5rem 1.25rem;
   background: linear-gradient(135deg, rgba(233, 69, 96, 0.07) 0%, rgba(215, 232, 250, 0.6) 100%);
   border-right: 4px solid #e94560;
@@ -1252,6 +1252,7 @@ article:hover img {
   font-style: italic;
   color: #1a1a2e;
   line-height: 1.9;
+  box-shadow: 2px 2px 10px rgba(233, 69, 96, 0.08);
 }
 
 .event-body blockquote::before {
@@ -1268,6 +1269,36 @@ article:hover img {
 
 .event-body blockquote p {
   margin: 0;
+}
+
+/* Key fact callout — highlighted statistical or notable facts */
+.event-body .key-fact {
+  position: relative;
+  margin: 2.25rem 0;
+  padding: 1.1rem 1.5rem 1.25rem;
+  background: #fff;
+  border: 1px solid rgba(233, 69, 96, 0.25);
+  border-top: 3px solid #e94560;
+  border-radius: 0 0 8px 8px;
+  color: #1a1a2e;
+  box-shadow: 0 2px 8px rgba(26, 26, 46, 0.06);
+}
+
+.event-body .key-fact::before {
+  content: '📌 واقعیت کلیدی';
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #e94560;
+  margin-bottom: 0.55rem;
+  font-style: normal;
+}
+
+.event-body .key-fact p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.85;
 }
 
 /* Body headings as section markers */
@@ -2135,6 +2166,10 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
   .event-body blockquote {
     font-size: 1.05rem;
     padding: 1.25rem 1.25rem 1.25rem 1rem;
+  }
+
+  .event-body .key-fact {
+    padding: 1rem 1.25rem 1.1rem;
   }
 
   article {
