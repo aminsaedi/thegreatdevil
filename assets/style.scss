@@ -2578,9 +2578,10 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
 /* ─────────────────────────────────────────────────────────── */
 
 /* ── Scroll-triggered micro-animations (homepage cards only) ── */
-/* Scoped to .timeline-wrapper so event detail pages are unaffected */
-.timeline-wrapper .timeline-item,
-.era-header {
+/* Progressive enhancement: opacity:0 only applies when JS adds .js-scroll-anim to body.
+   Without JS (or if it fails), cards are always visible at full opacity. */
+.js-scroll-anim .timeline-wrapper .timeline-item,
+.js-scroll-anim .era-header {
   opacity: 0;
   transform: translateX(30px);
   transition: opacity 0.55s ease, transform 0.55s ease;
@@ -2593,20 +2594,14 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
   transform: translateX(0);
 }
 
-/* Event detail article is always visible */
-article.event-detail {
-  opacity: 1 !important;
-  transform: none !important;
-}
-
 /* Stagger items along the timeline */
-.timeline-wrapper .timeline-item:nth-child(2) { transition-delay: 0.06s; }
-.timeline-wrapper .timeline-item:nth-child(3) { transition-delay: 0.12s; }
-.timeline-wrapper .timeline-item:nth-child(4) { transition-delay: 0.18s; }
+.js-scroll-anim .timeline-wrapper .timeline-item:nth-child(2) { transition-delay: 0.06s; }
+.js-scroll-anim .timeline-wrapper .timeline-item:nth-child(3) { transition-delay: 0.12s; }
+.js-scroll-anim .timeline-wrapper .timeline-item:nth-child(4) { transition-delay: 0.18s; }
 
 /* (TGD-102) Alternating slide-in directions: even items (left col) slide from the left */
 @media screen and (min-width: 900px) {
-  .timeline-wrapper .timeline-item:nth-child(even) {
+  .js-scroll-anim .timeline-wrapper .timeline-item:nth-child(even) {
     transform: translateX(-30px);
   }
   .timeline-wrapper .timeline-item:nth-child(even).scroll-visible {
@@ -2616,8 +2611,8 @@ article.event-detail {
 
 /* Respect user preference for reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .timeline-wrapper .timeline-item,
-  .era-header {
+  .js-scroll-anim .timeline-wrapper .timeline-item,
+  .js-scroll-anim .era-header {
     opacity: 1;
     transform: none;
     transition: none;
