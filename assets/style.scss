@@ -452,6 +452,25 @@ header p { color: #556080; font-size: 0.9rem; }
   padding-right: 0.5rem;
 }
 
+/* Category color chips — show a colored dot before each category filter button */
+#cat-filters .filter-btn[data-value]:not([data-value="all"]) {
+  gap: 0.35rem;
+}
+#cat-filters .filter-btn[data-value]:not([data-value="all"])::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+#cat-filters .filter-btn[data-value="coup"]::before     { background: #ff6b8a; }
+#cat-filters .filter-btn[data-value="military"]::before { background: #ffaa6b; }
+#cat-filters .filter-btn[data-value="sanction"]::before { background: #6bc5ff; }
+#cat-filters .filter-btn[data-value="intel"]::before    { background: #d06bff; }
+#cat-filters .filter-btn[data-value="diplo"]::before    { background: #fff06b; box-shadow: 0 0 0 1px rgba(0,0,0,0.12); }
+#cat-filters .filter-btn[data-value="cyber"]::before    { background: #6bffaa; }
+
 /* Search group */
 .search-group {
   align-items: center;
