@@ -334,6 +334,45 @@ layout: default
   object-fit: cover;
   object-position: center;
 }
+
+/* ── Dark theme overrides for TOC sidebar ── */
+[data-theme="dark"] .toc-sidebar {
+  background: #111927;
+  border-inline-end-color: #1e2d4a;
+}
+[data-theme="dark"] .toc-toggle {
+  background: #172035;
+  color: #c8d8f0;
+  border-bottom-color: #1e2d4a;
+}
+[data-theme="dark"] .toc-toggle:hover { background: #1e2d4a; }
+[data-theme="dark"] .toc-heading {
+  color: #5a6a8a;
+  border-bottom-color: #1e2d4a;
+}
+[data-theme="dark"] .toc-link { color: #8898b8; }
+[data-theme="dark"] .toc-link:hover { background: #1a2840; color: #c8d8f0; }
+[data-theme="dark"] .toc-link.active { background: rgba(233,69,96,0.1); }
+[data-theme="dark"] .toc-link.toc-h3 { color: #6878a0; }
+[data-theme="dark"] .toc-mobile-panel {
+  background: #111927;
+  border-top-color: #1e2d4a;
+}
+[data-theme="dark"] .toc-mobile-title { color: #c8d8f0; }
+[data-theme="dark"] .toc-mobile-close { color: #5a6a8a; }
+[data-theme="dark"] .toc-inline-accordion {
+  background: #111927;
+  border-color: #1e2d4a;
+}
+[data-theme="dark"] .toc-accordion-toggle {
+  background: #172035;
+  color: #c8d8f0;
+}
+[data-theme="dark"] .toc-accordion-toggle:hover { background: #1e2d4a; }
+[data-theme="dark"] .toc-accordion-arrow { color: #5a6a8a; }
+[data-theme="dark"] .toc-accordion-nav .toc-link { color: #8898b8; }
+[data-theme="dark"] .toc-accordion-nav .toc-link:hover { background: #1a2840; color: #c8d8f0; }
+[data-theme="dark"] .toc-accordion-nav .toc-link.active { background: rgba(233,69,96,0.1); }
 </style>
 
 <div class="event-page-wrapper{% if page.sources %} has-sources{% endif %}">
