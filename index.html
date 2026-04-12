@@ -894,7 +894,17 @@ layout: default
     var header = document.querySelector('header');
     var nav    = document.querySelector('nav.era-nav');
     var overhead = (header ? header.offsetHeight : 0) + (nav ? nav.offsetHeight : 0);
-    hero.style.minHeight = Math.max(560, window.innerHeight - overhead) + 'px';
+    var targetH = Math.max(560, window.innerHeight - overhead) + 'px';
+    if (window.innerWidth >= 601) {
+      /* Desktop: pin hero to exactly the remaining viewport so red border
+         lands at the very bottom of the screen without scrolling */
+      hero.style.height = targetH;
+      hero.style.minHeight = '0';
+    } else {
+      /* Mobile: allow hero to grow with content */
+      hero.style.height = '';
+      hero.style.minHeight = targetH;
+    }
   }
   fitHeroToViewport();
   window.addEventListener('resize', fitHeroToViewport, { passive: true });
