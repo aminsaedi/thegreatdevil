@@ -138,7 +138,7 @@ layout: default
               <div class="featured-eyebrow">رویداد برجسته</div>
               {% assign feat_reading_min = event.content | strip_html | number_of_words | plus: 199 | divided_by: 200 %}{% if feat_reading_min < 1 %}{% assign feat_reading_min = 1 %}{% endif %}{% assign feat_rm_str = feat_reading_min | append: "" | replace: '0', '۰' | replace: '1', '۱' | replace: '2', '۲' | replace: '3', '۳' | replace: '4', '۴' | replace: '5', '۵' | replace: '6', '۶' | replace: '7', '۷' | replace: '8', '۸' | replace: '9', '۹' %}
             <div class="card-meta">
-                <span class="year-badge">{{ event.year }}<span class="shamsi-year"> / {{ _ev_sy_fa }} ش</span></span>
+                <span class="year-badge">{{ event.year }}<span class="shamsi-year"> / {{ _ev_sy_fa }} شمسی</span></span>
                 <span class="category cat-{{ event.category }}">{{ event.category_label }}</span>
                 <span class="reading-time-badge">{{ feat_rm_str }} دقیقه مطالعه</span>
               </div>
@@ -158,14 +158,14 @@ layout: default
                 </picture>
               </a>
               <div class="card-img-overlay">
-                <span class="year-badge">{{ event.year }}<span class="shamsi-year"> / {{ _ev_sy_fa }} ش</span></span>
+                <span class="year-badge">{{ event.year }}<span class="shamsi-year"> / {{ _ev_sy_fa }} شمسی</span></span>
                 <span class="category cat-{{ event.category }}">{{ event.category_label }}</span>
               </div>
             </div>
             {% endif %}
             {% assign reading_min = event.content | strip_html | number_of_words | plus: 199 | divided_by: 200 %}{% if reading_min < 1 %}{% assign reading_min = 1 %}{% endif %}{% assign rm_str = reading_min | append: "" | replace: '0', '۰' | replace: '1', '۱' | replace: '2', '۲' | replace: '3', '۳' | replace: '4', '۴' | replace: '5', '۵' | replace: '6', '۶' | replace: '7', '۷' | replace: '8', '۸' | replace: '9', '۹' %}
             <div class="card-meta">
-              {% unless event.image %}<span class="year-badge">{{ event.year }}<span class="shamsi-year"> / {{ _ev_sy_fa }} ش</span></span>
+              {% unless event.image %}<span class="year-badge">{{ event.year }}<span class="shamsi-year"> / {{ _ev_sy_fa }} شمسی</span></span>
               <span class="category cat-{{ event.category }}">{{ event.category_label }}</span>{% endunless %}
               <span class="reading-time-badge">{{ rm_str }} دقیقه مطالعه</span>
             </div>
