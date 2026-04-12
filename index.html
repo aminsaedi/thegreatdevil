@@ -905,11 +905,12 @@ layout: default
       x: xOf(year), y: 0,
       width: Math.max(YW, 5), height: CH + 4,
       fill: 'transparent', cursor: 'pointer',
-      'aria-label': String(year)
+      role: 'button', tabindex: '0',
+      'aria-label': 'رویداد سال ' + String(year)
     });
 
     (function(yr, era, barEl, cat) {
-      hit.addEventListener('click', function() {
+      function activateHit() {
         /* Scroll to nearest era section */
         var target = document.getElementById(era);
         if (!target) {
@@ -926,6 +927,10 @@ layout: default
           var top = target.getBoundingClientRect().top + window.pageYOffset - navH - 16;
           window.scrollTo({ top: top, behavior: 'smooth' });
         }
+      }
+      hit.addEventListener('click', activateHit);
+      hit.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateHit(); }
       });
       hit.addEventListener('mouseenter', function() {
         barEl.setAttribute('opacity', '1');
