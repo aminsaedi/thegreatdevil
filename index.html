@@ -297,6 +297,10 @@ layout: default
 <script>
 /* ── Scroll-triggered micro-animations (TGD-020) ── */
 (function() {
+  /* Mark body so CSS hides cards until JS reveals them (progressive enhancement).
+     Without this class, cards are always visible — no JS = no blank boxes. */
+  document.body.classList.add('js-scroll-anim');
+
   if (!('IntersectionObserver' in window)) {
     /* Fallback: show everything immediately */
     document.querySelectorAll('.timeline-item, .era-header').forEach(function(el) {
@@ -312,7 +316,7 @@ layout: default
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0 });
 
   document.querySelectorAll('.timeline-item, .era-header').forEach(function(el) {
     io.observe(el);
