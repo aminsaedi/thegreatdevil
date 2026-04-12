@@ -1023,12 +1023,13 @@ article {
 }
 
 /* Stronger card contrast for homepage event grid — scoped to timeline so event detail pages are unaffected */
+/* TGD-112: Generous whitespace + wider category accent border */
 .timeline-wrapper article {
   border: 2px solid #9db8d4;
-  border-right: 5px solid transparent;
+  border-right: 7px solid transparent;
   background: #f7fafd;
   box-shadow: 0 3px 14px rgba(0, 0, 0, 0.13), 0 1px 5px rgba(0, 0, 0, 0.08);
-  padding: 1.75rem;
+  padding: 2rem;
 }
 
 /* Featured articles inside the timeline — override regular card styles so banner treatment is preserved */
@@ -1048,13 +1049,13 @@ article {
 .timeline-item[data-category="diplo"] article    { border-right-color: #f5e03a; }
 .timeline-item[data-category="intel"] article    { border-right-color: #b93af5; }
 
-/* TGD-084: Color-tinted card elevation — layered box-shadow with accent-derived rgba + tinted border */
-.timeline-wrapper .timeline-item[data-category="coup"] article:not(.featured)     { border-color: rgba(232,48,79,0.22);  border-right-color: #e8304f; box-shadow: 0 3px 14px rgba(0,0,0,0.13), 0 1px 5px rgba(0,0,0,0.08), 0 6px 24px rgba(232,48,79,0.14); }
-.timeline-wrapper .timeline-item[data-category="sanction"] article:not(.featured) { border-color: rgba(58,172,245,0.22); border-right-color: #3aacf5; box-shadow: 0 3px 14px rgba(0,0,0,0.13), 0 1px 5px rgba(0,0,0,0.08), 0 6px 24px rgba(58,172,245,0.14); }
-.timeline-wrapper .timeline-item[data-category="military"] article:not(.featured) { border-color: rgba(245,144,58,0.22); border-right-color: #f5903a; box-shadow: 0 3px 14px rgba(0,0,0,0.13), 0 1px 5px rgba(0,0,0,0.08), 0 6px 24px rgba(245,144,58,0.14); }
-.timeline-wrapper .timeline-item[data-category="cyber"] article:not(.featured)    { border-color: rgba(58,245,160,0.22); border-right-color: #3af5a0; box-shadow: 0 3px 14px rgba(0,0,0,0.13), 0 1px 5px rgba(0,0,0,0.08), 0 6px 24px rgba(58,245,160,0.14); }
-.timeline-wrapper .timeline-item[data-category="diplo"] article:not(.featured)    { border-color: rgba(245,224,58,0.22); border-right-color: #f5e03a; box-shadow: 0 3px 14px rgba(0,0,0,0.13), 0 1px 5px rgba(0,0,0,0.08), 0 6px 24px rgba(245,224,58,0.14); }
-.timeline-wrapper .timeline-item[data-category="intel"] article:not(.featured)    { border-color: rgba(185,58,245,0.22); border-right-color: #b93af5; box-shadow: 0 3px 14px rgba(0,0,0,0.13), 0 1px 5px rgba(0,0,0,0.08), 0 6px 24px rgba(185,58,245,0.14); }
+/* TGD-084 / TGD-112: Color-tinted card elevation — accent border, category-tinted header gradient, and inset glow */
+.timeline-wrapper .timeline-item[data-category="coup"] article:not(.featured)     { border-color: rgba(232,48,79,0.22);  border-right-color: #e8304f; background: linear-gradient(180deg, rgba(232,48,79,0.05) 0%, #f7fafd 56px, #f7fafd 100%); box-shadow: 0 3px 14px rgba(0,0,0,0.13), 0 1px 5px rgba(0,0,0,0.08), 0 6px 24px rgba(232,48,79,0.14), inset -4px 0 16px rgba(232,48,79,0.07); }
+.timeline-wrapper .timeline-item[data-category="sanction"] article:not(.featured) { border-color: rgba(58,172,245,0.22); border-right-color: #3aacf5; background: linear-gradient(180deg, rgba(58,172,245,0.05) 0%, #f7fafd 56px, #f7fafd 100%); box-shadow: 0 3px 14px rgba(0,0,0,0.13), 0 1px 5px rgba(0,0,0,0.08), 0 6px 24px rgba(58,172,245,0.14), inset -4px 0 16px rgba(58,172,245,0.07); }
+.timeline-wrapper .timeline-item[data-category="military"] article:not(.featured) { border-color: rgba(245,144,58,0.22); border-right-color: #f5903a; background: linear-gradient(180deg, rgba(245,144,58,0.05) 0%, #f7fafd 56px, #f7fafd 100%); box-shadow: 0 3px 14px rgba(0,0,0,0.13), 0 1px 5px rgba(0,0,0,0.08), 0 6px 24px rgba(245,144,58,0.14), inset -4px 0 16px rgba(245,144,58,0.07); }
+.timeline-wrapper .timeline-item[data-category="cyber"] article:not(.featured)    { border-color: rgba(58,245,160,0.22); border-right-color: #3af5a0; background: linear-gradient(180deg, rgba(58,245,160,0.05) 0%, #f7fafd 56px, #f7fafd 100%); box-shadow: 0 3px 14px rgba(0,0,0,0.13), 0 1px 5px rgba(0,0,0,0.08), 0 6px 24px rgba(58,245,160,0.14), inset -4px 0 16px rgba(58,245,160,0.07); }
+.timeline-wrapper .timeline-item[data-category="diplo"] article:not(.featured)    { border-color: rgba(245,224,58,0.22); border-right-color: #f5e03a; background: linear-gradient(180deg, rgba(245,224,58,0.05) 0%, #f7fafd 56px, #f7fafd 100%); box-shadow: 0 3px 14px rgba(0,0,0,0.13), 0 1px 5px rgba(0,0,0,0.08), 0 6px 24px rgba(245,224,58,0.14), inset -4px 0 16px rgba(245,224,58,0.07); }
+.timeline-wrapper .timeline-item[data-category="intel"] article:not(.featured)    { border-color: rgba(185,58,245,0.22); border-right-color: #b93af5; background: linear-gradient(180deg, rgba(185,58,245,0.05) 0%, #f7fafd 56px, #f7fafd 100%); box-shadow: 0 3px 14px rgba(0,0,0,0.13), 0 1px 5px rgba(0,0,0,0.08), 0 6px 24px rgba(185,58,245,0.14), inset -4px 0 16px rgba(185,58,245,0.07); }
 
 article:hover {
   transform: translateY(-4px);
@@ -1063,10 +1064,10 @@ article:hover {
   border-color: #b0c4de;
 }
 
-/* Premium hover for homepage event cards */
+/* Premium hover for homepage event cards (TGD-112: deeper lift + stronger shadow) */
 .timeline-wrapper article:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 42px rgba(0, 0, 0, 0.16), 0 6px 20px rgba(0, 0, 0, 0.10);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.18), 0 8px 28px rgba(0, 0, 0, 0.12);
   background: #eef4fc;
   border-color: #a8c0d8;
 }
@@ -1079,12 +1080,13 @@ article:hover {
   box-shadow: 0 12px 50px rgba(0,0,0,0.45);
 }
 
-.timeline-item[data-category="coup"] article:hover     { box-shadow: 0 14px 42px rgba(0,0,0,0.16), 0 6px 22px rgba(232,48,79,0.30);  border-right-color: #c01a38; background: rgba(253, 238, 241, 0.97); }
-.timeline-item[data-category="sanction"] article:hover { box-shadow: 0 14px 42px rgba(0,0,0,0.16), 0 6px 22px rgba(58,172,245,0.30); border-right-color: #1a8fd1; background: rgba(237, 247, 255, 0.97); }
-.timeline-item[data-category="military"] article:hover { box-shadow: 0 14px 42px rgba(0,0,0,0.16), 0 6px 22px rgba(245,144,58,0.30); border-right-color: #d1701a; background: rgba(255, 246, 237, 0.97); }
-.timeline-item[data-category="cyber"] article:hover    { box-shadow: 0 14px 42px rgba(0,0,0,0.16), 0 6px 22px rgba(58,245,160,0.30); border-right-color: #1ad177; background: rgba(237, 255, 248, 0.97); }
-.timeline-item[data-category="diplo"] article:hover    { box-shadow: 0 14px 42px rgba(0,0,0,0.16), 0 6px 22px rgba(245,224,58,0.30); border-right-color: #c4b010; background: rgba(255, 254, 237, 0.97); }
-.timeline-item[data-category="intel"] article:hover    { box-shadow: 0 14px 42px rgba(0,0,0,0.16), 0 6px 22px rgba(185,58,245,0.30); border-right-color: #951ad1; background: rgba(250, 237, 255, 0.97); }
+/* TGD-112: Premium category hover — deeper lift + border glow via inset shadow */
+.timeline-item[data-category="coup"] article:hover     { box-shadow: 0 20px 55px rgba(0,0,0,0.18), 0 8px 30px rgba(232,48,79,0.42), inset -4px 0 20px rgba(232,48,79,0.12);  border-right-color: #c01a38; background: rgba(253, 238, 241, 0.97); }
+.timeline-item[data-category="sanction"] article:hover { box-shadow: 0 20px 55px rgba(0,0,0,0.18), 0 8px 30px rgba(58,172,245,0.42), inset -4px 0 20px rgba(58,172,245,0.12); border-right-color: #1a8fd1; background: rgba(237, 247, 255, 0.97); }
+.timeline-item[data-category="military"] article:hover { box-shadow: 0 20px 55px rgba(0,0,0,0.18), 0 8px 30px rgba(245,144,58,0.42), inset -4px 0 20px rgba(245,144,58,0.12); border-right-color: #d1701a; background: rgba(255, 246, 237, 0.97); }
+.timeline-item[data-category="cyber"] article:hover    { box-shadow: 0 20px 55px rgba(0,0,0,0.18), 0 8px 30px rgba(58,245,160,0.42), inset -4px 0 20px rgba(58,245,160,0.12); border-right-color: #1ad177; background: rgba(237, 255, 248, 0.97); }
+.timeline-item[data-category="diplo"] article:hover    { box-shadow: 0 20px 55px rgba(0,0,0,0.18), 0 8px 30px rgba(245,224,58,0.42), inset -4px 0 20px rgba(245,224,58,0.12); border-right-color: #c4b010; background: rgba(255, 254, 237, 0.97); }
+.timeline-item[data-category="intel"] article:hover    { box-shadow: 0 20px 55px rgba(0,0,0,0.18), 0 8px 30px rgba(185,58,245,0.42), inset -4px 0 20px rgba(185,58,245,0.12); border-right-color: #951ad1; background: rgba(250, 237, 255, 0.97); }
 
 /* Featured article category hover — keep dark backgrounds, not light card hover colours */
 .timeline-item[data-category="coup"]     article.featured:hover { background: linear-gradient(135deg, #1a060d, #2a0c1a); border-color: transparent; box-shadow: 0 12px 50px rgba(232,48,79,0.35); }
@@ -1095,6 +1097,14 @@ article:hover {
 .timeline-item[data-category="cyber"]    article.featured:hover { background: linear-gradient(135deg, #061a10, #0a2016); border-color: transparent; box-shadow: 0 12px 50px rgba(58,245,160,0.35); }
 
 article h3 { font-size: 1.55rem; font-weight: 700; color: #0d1b35; margin-bottom: 0.5rem; line-height: 1.4; }
+
+/* TGD-112: Bolder headline treatment for archive card titles */
+.timeline-wrapper article:not(.featured) h3 {
+  font-size: 1.62rem;
+  letter-spacing: -0.015em;
+  line-height: 1.32;
+  margin-bottom: 0.6rem;
+}
 
 .year-badge {
   display: inline-block;
@@ -1121,12 +1131,15 @@ article p {
   margin-bottom: 0.5rem;
 }
 
-/* TGD-082: 3-line preview excerpt with CSS line-clamp for event cards */
+/* TGD-082 / TGD-112: Description preview excerpt — 4-line clamp with improved readability */
 .timeline-wrapper article .card-excerpt {
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  color: #2a3350;
+  font-size: 0.95rem;
+  line-height: 1.85;
 }
 
 /* Card image — 16:9 aspect ratio with gradient overlay */
@@ -1139,10 +1152,10 @@ article p {
   aspect-ratio: 16 / 9;
 }
 
-/* Adjust card image bleed to match increased timeline card padding (1.75rem) */
+/* Adjust card image bleed to match increased timeline card padding (2rem) — TGD-112 */
 .timeline-wrapper .card-img-wrap {
-  width: calc(100% + 3.5rem);
-  margin: -1.75rem -1.75rem 1rem -1.75rem;
+  width: calc(100% + 4rem);
+  margin: -2rem -2rem 1.25rem -2rem;
 }
 
 .card-img-wrap a {
@@ -1265,8 +1278,8 @@ article:hover img {
 
 .card-footer {
   margin-top: auto;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(176, 196, 222, 0.8);
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(176, 196, 222, 0.6);
 }
 
 .read-more {
@@ -1284,6 +1297,20 @@ article:hover img {
   color: #ff7090;
   gap: 0.5rem;
 }
+
+/* TGD-112: Category-matched read-more accent colors */
+.timeline-item[data-category="coup"]     .read-more { color: #e8304f; }
+.timeline-item[data-category="coup"]     .read-more:hover { color: #c01a38; }
+.timeline-item[data-category="sanction"] .read-more { color: #1a8fd1; }
+.timeline-item[data-category="sanction"] .read-more:hover { color: #0c6ea8; }
+.timeline-item[data-category="military"] .read-more { color: #d1701a; }
+.timeline-item[data-category="military"] .read-more:hover { color: #a85410; }
+.timeline-item[data-category="cyber"]    .read-more { color: #1ad177; }
+.timeline-item[data-category="cyber"]    .read-more:hover { color: #10a85a; }
+.timeline-item[data-category="diplo"]    .read-more { color: #a09010; }
+.timeline-item[data-category="diplo"]    .read-more:hover { color: #806e08; }
+.timeline-item[data-category="intel"]    .read-more { color: #951ad1; }
+.timeline-item[data-category="intel"]    .read-more:hover { color: #7310a8; }
 
 /* Event detail page with sidebar layout */
 .event-page-wrapper {
