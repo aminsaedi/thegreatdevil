@@ -197,6 +197,93 @@ layout: default
   .toc-mobile-nav { display: flex; flex-direction: column; gap: 0.1rem; }
 }
 
+/* ── Inline TOC accordion (mobile only, appears before article body) ── */
+.toc-inline-accordion { display: none; }
+
+@media screen and (max-width: 1099px) {
+  .toc-inline-accordion {
+    display: none; /* shown by JS only when ≥3 headings exist */
+    margin: 1rem 0 1.25rem;
+    border: 1px solid #c8d4e8;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f5f8fd;
+  }
+  .toc-inline-accordion.toc-accordion-ready {
+    display: block;
+  }
+  .toc-accordion-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #dce8f8;
+    border: none;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1a2a4a;
+    cursor: pointer;
+    text-align: right;
+    justify-content: space-between;
+  }
+  .toc-accordion-toggle:hover { background: #c4d8f0; }
+  .toc-accordion-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #e94560;
+  }
+  .toc-accordion-icon { font-size: 1rem; }
+  .toc-accordion-arrow {
+    font-size: 1.1rem;
+    color: #6678a0;
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+  }
+  .toc-inline-accordion.open .toc-accordion-arrow { transform: rotate(90deg); }
+  .toc-accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .toc-inline-accordion.open .toc-accordion-body {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  .toc-accordion-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding: 0.5rem 0.75rem 0.75rem;
+  }
+  .toc-accordion-nav .toc-link {
+    display: block;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #3a4a6a;
+    text-decoration: none;
+    padding: 0.35rem 0.6rem;
+    border-radius: 4px;
+    border-inline-start: 2px solid transparent;
+    transition: background 0.15s, color 0.15s;
+  }
+  .toc-accordion-nav .toc-link:hover { background: #e8f0f8; color: #1a2a4a; }
+  .toc-accordion-nav .toc-link.active {
+    background: #e8f0f8;
+    color: #e94560;
+    border-inline-start-color: #e94560;
+    font-weight: 600;
+  }
+  .toc-accordion-nav .toc-link.toc-h3 {
+    padding-inline-start: 1.4rem;
+    font-size: 0.83rem;
+    color: #5a6a8a;
+  }
+  .toc-accordion-nav .toc-link.toc-h3.active { color: #e94560; }
+}
+
 /* ── Copy-link button & toast ── */
 .share-btn.copy-link {
   display: inline-flex;
@@ -355,6 +442,20 @@ layout: default
         {% endif %}
       </div>
       {% endif %}
+
+      <!-- Inline collapsible TOC accordion — mobile only, populated & shown by JS -->
+      <div class="toc-inline-accordion" id="tocInlineAccordion" aria-label="فهرست مطالب">
+        <button class="toc-accordion-toggle" id="tocAccordionToggle" aria-expanded="false" aria-controls="tocAccordionBody">
+          <span class="toc-accordion-label">
+            <span class="toc-accordion-icon" aria-hidden="true">☰</span>
+            فهرست مطالب
+          </span>
+          <span class="toc-accordion-arrow" aria-hidden="true">›</span>
+        </button>
+        <div class="toc-accordion-body" id="tocAccordionBody">
+          <nav class="toc-accordion-nav" id="tocAccordionNav" aria-label="بخش‌های این صفحه"></nav>
+        </div>
+      </div>
 
       <div class="event-body">
         {{ content }}
@@ -632,6 +733,48 @@ layout: default
     });
   }
 
+  // Populate inline accordion TOC nav (mobile only)
+  var accordionNav = document.getElementById('tocAccordionNav');
+  var accordionLinks = [];
+  var accordionEl = document.getElementById('tocInlineAccordion');
+  var accordionToggle = document.getElementById('tocAccordionToggle');
+  if (accordionNav && accordionEl) {
+    headings.forEach(function(h, i) {
+      var a = makeLink(h, i);
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.pushState(null, '', '#' + h.id);
+        // Collapse accordion after navigation
+        if (accordionEl.classList.contains('open')) {
+          accordionEl.classList.remove('open');
+          if (accordionToggle) accordionToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+      accordionNav.appendChild(a);
+      accordionLinks.push(a);
+    });
+    // Show accordion only on mobile viewports
+    if (window.innerWidth < 1100) {
+      accordionEl.classList.add('toc-accordion-ready');
+    }
+    window.addEventListener('resize', function() {
+      if (window.innerWidth < 1100) {
+        accordionEl.classList.add('toc-accordion-ready');
+      } else {
+        accordionEl.classList.remove('toc-accordion-ready');
+      }
+    }, { passive: true });
+  }
+
+  // Wire accordion toggle button
+  if (accordionToggle && accordionEl) {
+    accordionToggle.addEventListener('click', function() {
+      var isOpen = accordionEl.classList.toggle('open');
+      accordionToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+
   // Activate layout
   wrapper.classList.add('has-toc');
 
@@ -686,6 +829,7 @@ layout: default
   function updateActiveLinks(idx) {
     desktopLinks.forEach(function(a, i) { a.classList.toggle('active', i === idx); });
     mobileLinks.forEach(function(a, i) { a.classList.toggle('active', i === idx); });
+    accordionLinks.forEach(function(a, i) { a.classList.toggle('active', i === idx); });
   }
 
   if ('IntersectionObserver' in window) {
