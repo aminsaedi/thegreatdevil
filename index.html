@@ -534,10 +534,10 @@ layout: default
     var overhead = (header ? header.offsetHeight : 0) + (nav ? nav.offsetHeight : 0);
     var targetH = Math.max(560, window.innerHeight - overhead) + 'px';
     if (window.innerWidth >= 601) {
-      /* Desktop: pin hero to exactly the remaining viewport so red border
-         lands at the very bottom of the screen without scrolling */
-      hero.style.height = targetH;
-      hero.style.minHeight = '0';
+      /* Desktop: ensure hero fills viewport but allow content to grow if taller,
+         so category badges and timeline legend are never clipped by overflow:hidden */
+      hero.style.minHeight = targetH;
+      hero.style.height = '';
     } else {
       /* Mobile: allow hero to grow with content */
       hero.style.height = '';
