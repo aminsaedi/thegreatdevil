@@ -1356,6 +1356,13 @@ article:hover img {
 .timeline-item[data-category="intel"]    .read-more { color: #951ad1; }
 .timeline-item[data-category="intel"]    .read-more:hover { color: #7310a8; }
 
+/* TGD-122: White text on red-background read-more buttons (featured events).
+   The TGD-112 category overrides share the same specificity as article.featured .read-more
+   and appear later in the file, so they override the white color. This rule uses a higher
+   specificity selector to ensure the red CTA button always shows white text. */
+.timeline-item[data-category] article.featured .read-more,
+.timeline-item[data-category] article.featured .read-more:hover { color: #fff; }
+
 /* Event detail page with sidebar layout */
 .event-page-wrapper {
   display: block;
