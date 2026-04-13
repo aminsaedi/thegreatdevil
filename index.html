@@ -163,14 +163,11 @@ layout: default
         a.classList.remove('era-active');
       }
     });
-    /* Scroll the nav bar so the active link stays visible */
-    if (activeLink) {
-      activeLink.scrollIntoView({
-        behavior: prefersReduced ? 'auto' : 'smooth',
-        block: 'nearest',
-        inline: 'nearest'
-      });
-    }
+    /* Note: scrollIntoView is intentionally omitted here.
+       The .era-nav uses flex-wrap on desktop (all links always visible)
+       and a dropdown on mobile. Calling scrollIntoView on a sticky element
+       causes the page to scroll back to the element's layout position in
+       the document flow, which is what caused the scroll-jumps-up bug. */
   }
 
   /* Use IntersectionObserver to detect which era section is in view */
