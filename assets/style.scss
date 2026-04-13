@@ -1031,8 +1031,13 @@ article.featured .read-more:hover {
 }
 
 @media screen and (min-width: 1200px) {
+  /* At >=900px the timeline-wrapper switches to a 3-column grid with no padding,
+     so grid-column:1/-1 already spans full width. Counter only the .era-section
+     side padding (0.75rem) to let the banner reach the section edges without
+     overflowing the viewport and clipping content in RTL. */
   .timeline-item.featured-item {
-    margin-right: calc(-140px - 2rem); /* wider wrapper padding on large screens */
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
   }
 }
 
