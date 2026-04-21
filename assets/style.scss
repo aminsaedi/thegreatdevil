@@ -3194,7 +3194,7 @@ header {
 [data-theme="dark"] article h3,
 [data-theme="dark"] article h2 { color: #e0eeff; }
 [data-theme="dark"] article p  { color: #a8bcdc; }
-[data-theme="dark"] .timeline-wrapper article .card-excerpt { color: #a8bcdc; }
+[data-theme="dark"] .timeline-wrapper article .card-excerpt { color: #a8bcdc !important; }
 
 /* Category tinted card borders and backgrounds in dark mode */
 [data-theme="dark"] .timeline-wrapper .timeline-item[data-category="coup"] article:not(.featured)     { border-color: rgba(232,48,79,0.3);  background: linear-gradient(180deg, rgba(232,48,79,0.12) 0%, #141c2e 56px, #141c2e 100%); box-shadow: 0 3px 14px rgba(0,0,0,0.3), 0 6px 24px rgba(232,48,79,0.18); }
