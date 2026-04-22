@@ -461,9 +461,9 @@ layout: default
             <span class="category cat-{{ page.category }}">{{ page.category_label }}</span>
             <span class="reading-time-badge">{{ detail_rm_str }} دقیقه مطالعه</span>
           </div>
-          <h1 class="event-title">{{ page.title }}</h1>
+          <h1 class="event-title" lang="fa">{{ page.title }}</h1>
           {% if page.description %}
-          <p class="event-hero-desc">{{ page.description }}</p>
+          <p class="event-hero-desc" lang="fa">{{ page.description }}</p>
           {% endif %}
         </div>
       </div>
@@ -475,9 +475,9 @@ layout: default
           <span class="category cat-{{ page.category }}">{{ page.category_label }}</span>
           <span class="reading-time-badge">{{ detail_rm_str }} دقیقه مطالعه</span>
         </div>
-        <h1 class="event-title">{{ page.title }}</h1>
+        <h1 class="event-title" lang="fa">{{ page.title }}</h1>
         {% if page.description %}
-        <p class="event-hero-desc">{{ page.description }}</p>
+        <p class="event-hero-desc" lang="fa">{{ page.description }}</p>
         {% endif %}
       </div>
       {% endif %}
@@ -496,7 +496,7 @@ layout: default
         </div>
       </div>
 
-      <div class="event-body">
+      <div class="event-body" lang="fa">
         {{ content }}
       </div>
 
@@ -509,11 +509,11 @@ layout: default
           <span class="footnote-num" aria-hidden="true">[{{ forloop.index }}]</span>
           <div class="source-content">
             {% if source.url %}
-            <a href="{{ source.url }}" target="_blank" rel="noopener noreferrer" class="source-link">{{ source.title }}</a>
+            <a href="{{ source.url }}" target="_blank" rel="noopener noreferrer" class="source-link" lang="en">{{ source.title }}</a>
             {% else %}
-            <span class="source-title">{{ source.title }}</span>
+            <span class="source-title" lang="en">{{ source.title }}</span>
             {% endif %}
-            <span class="source-meta">{% if source.publisher %}{{ source.publisher }}{% endif %}{% if source.year %} — {{ source.year }}{% endif %}{% if source.type_label %} · <span class="source-type-text">{{ source.type_label }}</span>{% endif %}</span>
+            <span class="source-meta" lang="en">{% if source.publisher %}{{ source.publisher }}{% endif %}{% if source.year %} — {{ source.year }}{% endif %}{% if source.type_label %} · <span class="source-type-text" lang="fa">{{ source.type_label }}</span>{% endif %}</span>
           </div>
         </li>
         {% endfor %}
@@ -521,7 +521,7 @@ layout: default
     </section>
     {% endif %}
 
-      <div class="event-era-info">
+      <div class="event-era-info" lang="fa">
         <h3>دوره تاریخی: {{ page.era_title }}</h3>
         <p>{{ page.era_range }}</p>
       </div>
@@ -631,7 +631,7 @@ layout: default
               {% elsif source.type == 'book' %}کتاب
               {% else %}منبع ثانویه{% endif %}
             </div>
-            <a href="{{ source.url }}" target="_blank" rel="noopener noreferrer" class="source-link">
+            <a href="{{ source.url }}" target="_blank" rel="noopener noreferrer" class="source-link" lang="en">
               {{ source.title }}
               <span class="source-ext-icon" aria-hidden="true">↗</span>
             </a>
