@@ -1843,22 +1843,31 @@ article:hover img {
   text-decoration-color: rgba(233, 69, 96, 0.45);
 }
 
+.source-title-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35em;
+}
+
 .sources-section .source-archived-link {
-  display: inline-block;
-  margin-inline-start: 0.5em;
-  font-size: 0.78rem;
-  color: #6678a0;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  color: #fff;
+  background: #5a7ab0;
   text-decoration: none;
-  border: 1px solid #c8d4e8;
+  border: none;
   border-radius: 3px;
-  padding: 0 0.3em;
-  vertical-align: middle;
+  padding: 0.1em 0.45em;
   white-space: nowrap;
-  transition: color 0.2s, border-color 0.2s;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background 0.2s;
+  flex-shrink: 0;
 }
 .sources-section .source-archived-link:hover {
-  color: #1a3a8a;
-  border-color: #1a3a8a;
+  background: #3a5a90;
 }
 
 .source-title {
@@ -2226,20 +2235,22 @@ article:hover img {
 }
 
 .source-archived-link {
-  display: inline-block;
-  margin-top: 0.25rem;
-  font-size: 0.75rem;
-  color: #6678a0;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.3rem;
+  font-size: 0.72rem;
+  color: #fff;
+  background: #5a7ab0;
   text-decoration: none;
-  border: 1px solid #c8d4e8;
+  border: none;
   border-radius: 3px;
-  padding: 0 0.3em;
+  padding: 0.1em 0.45em;
   white-space: nowrap;
-  transition: color 0.2s, border-color 0.2s;
+  font-weight: 600;
+  transition: background 0.2s;
 }
 .source-archived-link:hover {
-  color: #1a4a80;
-  border-color: #1a4a80;
+  background: #3a5a90;
 }
 
 .source-ext-icon {
@@ -3313,8 +3324,8 @@ header {
 [data-theme="dark"] .footnote-item    { color: #8898b8; border-bottom-color: rgba(60,80,130,0.3); }
 [data-theme="dark"] .source-title     { color: #c8d8f0; }
 [data-theme="dark"] .source-meta      { color: #5a6a8a; }
-[data-theme="dark"] .source-archived-link { color: #4a6a9a; border-color: #2a3a5a; }
-[data-theme="dark"] .source-archived-link:hover { color: #7eb8e8; border-color: #7eb8e8; }
+[data-theme="dark"] .source-archived-link { background: #2a4a70; color: #c8d8f0; }
+[data-theme="dark"] .source-archived-link:hover { background: #3a6090; }
 [data-theme="dark"] .source-type-text { color: #5a6a8a; }
 [data-theme="dark"] .sources-section > .sources-title { border-bottom-color: #1e2d4a; }
 

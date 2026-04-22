@@ -509,8 +509,10 @@ layout: default
           <span class="footnote-num" aria-hidden="true">[{{ forloop.index }}]</span>
           <div class="source-content">
             {% if source.url %}
-            <a href="{{ source.url }}" target="_blank" rel="noopener noreferrer" class="source-link" lang="en">{{ source.title }}</a>
-            <a href="https://web.archive.org/web/{{ source.url }}" target="_blank" rel="noopener noreferrer" class="source-archived-link" lang="en" title="Archived version on Wayback Machine">(archived)</a>
+            <div class="source-title-row">
+              <a href="{{ source.url }}" target="_blank" rel="noopener noreferrer" class="source-link" lang="en">{{ source.title }}</a>
+              <a href="https://web.archive.org/web/{{ source.url }}" target="_blank" rel="noopener noreferrer" class="source-archived-link" lang="en" title="Archived version on Wayback Machine">⏎ archived</a>
+            </div>
             {% else %}
             <span class="source-title" lang="en">{{ source.title }}</span>
             {% endif %}
@@ -632,11 +634,15 @@ layout: default
               {% elsif source.type == 'book' %}کتاب
               {% else %}منبع ثانویه{% endif %}
             </div>
+            {% if source.url %}
             <a href="{{ source.url }}" target="_blank" rel="noopener noreferrer" class="source-link" lang="en">
               {{ source.title }}
               <span class="source-ext-icon" aria-hidden="true">↗</span>
             </a>
-            <a href="https://web.archive.org/web/{{ source.url }}" target="_blank" rel="noopener noreferrer" class="source-archived-link" lang="en" title="Archived version on Wayback Machine">(archived)</a>
+            <a href="https://web.archive.org/web/{{ source.url }}" target="_blank" rel="noopener noreferrer" class="source-archived-link" lang="en" title="Archived version on Wayback Machine">⏎ archived</a>
+            {% else %}
+            <span class="source-title" lang="en">{{ source.title }}</span>
+            {% endif %}
           </div>
           {% endfor %}
         {% else %}
