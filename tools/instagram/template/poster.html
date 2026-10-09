@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="poster.css">
+</head>
+<body>
+<article class="poster" id="poster">
+  <div class="grain" aria-hidden="true"></div>
+  <header class="masthead">
+    <div class="brand-block">
+      <div class="brand" data-text data-min="26"><span class="brand-mark"></span>شیطان بزرگ</div>
+      <div class="tagline" data-text data-min="22">دخالت‌های آمریکا در ایران</div>
+    </div>
+  </header>
+
+  <figure class="photo" id="photo">
+    <img id="photo-img" alt="">
+  </figure>
+
+  <main class="content">
+    <div class="year-row" id="year-row">
+      <div class="year" data-text data-fit data-lines="1" data-max="260" data-min="120" id="year"></div>
+      <div class="stamp" data-text data-min="22" id="stamp"></div>
+    </div>
+    <div class="date-detail" data-text data-min="30" id="date-detail"></div>
+    <h1 class="title" data-text data-fit data-lines="3" data-max="112" data-min="64" id="title"></h1>
+    <div class="rule"></div>
+    <p class="summary" data-text data-fit data-lines="4" data-max="40" data-min="32" id="summary"></p>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="credit" data-text data-fit data-lines="1" data-max="22" data-min="20" id="credit"></div>
+    <div class="source" data-text data-fit data-lines="1" data-max="26" data-min="22" id="source"></div>
+    <div class="cta-row">
+      <div class="cta" data-text data-min="26">روایت کامل و همهٔ منابع در سایت</div>
+      <div class="site" data-text data-min="26" dir="ltr">thegreatdevil.com</div>
+    </div>
+  </footer>
+</article>
+
+<script>
+const $ = (id) => document.getElementById(id);
+
+// Shrinks a data-fit element until it holds within data-lines lines and its
+// box, stopping at data-min. Whatever is left over is the gate's to catch.
+function fit(el) {
+  const max = +el.dataset.max, min = +el.dataset.min, lines = +el.dataset.lines;
+  const fits = () => {
+    const lh = parseFloat(getComputedStyle(el).lineHeight);
+    return Math.round(el.scrollHeight / lh) <= lines && el.scrollWidth <= el.clientWidth + 1;
+  };
+  let lo = min, hi = max, best = min;
+  while (lo <= hi) {
+    const mid = (lo + hi) >> 1;
+    el.style.fontSize = mid + 'px';
+    if (fits()) { best = mid; lo = mid + 1; } else { hi = mid - 1; }
+  }
+  el.style.fontSize = best + 'px';
+}
+
+// Latin tokens like GBU-57 must not break at the hyphen: in RTL text the two
+// halves land on different lines in the wrong order.
+const keepTokens = (s) => s.replace(/([A-Za-z0-9])-(?=[A-Za-z0-9])/g, '$1\u2011');
+
+window.renderPoster = async (d) => {
+  const poster = $('poster');
+  poster.dataset.layout = d.photo ? 'photo' : 'type';
+  poster.dataset.category = d.category;
+  poster.style.setProperty('--accent', d.accent);
+  if (d.photo) {
+    // The date and stamp move onto the print's paper strip.
+    $('photo').append($('year-row'));
+    Object.assign($('year').dataset, { max: 52, min: 36 });
+    Object.assign($('title').dataset, { lines: 2, max: 84, min: 60 });
+    Object.assign($('summary').dataset, { lines: 3, max: 34 });
+  }
+
+  $('year').textContent = d.photo ? (d.yearDetail || d.yearBig) : d.yearBig;
+  $('date-detail').textContent = d.yearDetail || '';
+  $('date-detail').hidden = d.photo || !d.yearDetail;
+  $('stamp').textContent = d.categoryLabel;
+  $('title').textContent = keepTokens(d.title);
+  $('summary').textContent = keepTokens(d.description);
+
+  const src = $('source');
+  src.replaceChildren('مستند به ');
+  const pub = document.createElement('bdi');
+  pub.textContent = d.sourcePublisher;
+  src.append(pub);
+  if (d.moreSources) src.append(` و ${d.moreSources} منبع دیگر`);
+
+  if (d.photo) {
+    const img = $('photo-img');
+    await new Promise((res, rej) => { img.onload = res; img.onerror = rej; img.src = d.photo; });
+    const credit = document.createElement('bdi');
+    credit.textContent = `${d.photoCredit} · ${d.photoLicense}`;
+    $('credit').replaceChildren('عکس: ', credit);
+  }
+
+  await document.fonts.ready;
+  document.querySelectorAll('[data-fit]').forEach(fit);
+
+  // If the copy as a whole is too tall for its frame (including breathing
+  // room), give up size on the decorative year first — it reads at any size —
+  // then the title. The summary is the message and shrinks last.
+  const content = document.querySelector('.content');
+  // Measured from the children: centred flex content overflows upwards too,
+  // which scrollHeight doesn't report.
+  const overflows = () => {
+    const kids = [...content.children].filter((el) => el.offsetParent !== null);
+    const cs = getComputedStyle(content);
+    const used = kids.at(-1).getBoundingClientRect().bottom - kids[0].getBoundingClientRect().top;
+    return used + parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) > content.clientHeight + 1;
+  };
+  for (const [el, step] of [[$('year'), 20], [$('title'), 4], [$('summary'), 2]]) {
+    while (overflows() && +el.dataset.max > +el.dataset.min) {
+      el.dataset.max = Math.max(+el.dataset.min, +el.dataset.max - step);
+      fit(el);
+    }
+  }
+};
+</script>
+</body>
+</html>

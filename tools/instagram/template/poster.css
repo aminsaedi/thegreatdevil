@@ -1,0 +1,253 @@
+@font-face {
+  font-family: 'Vazirmatn';
+  font-weight: 100 900;
+  src: url('../../../assets/fonts/Vazirmatn-arabic.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  font-weight: 100 900;
+  src: url('../../../assets/fonts/Vazirmatn-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  font-weight: 100 900;
+  src: url('../../../assets/fonts/Vazirmatn-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --ink: #0b0e19;
+  --paper: #f3eee4;
+  --muted: #b9b4ab;
+  --accent: #e94560;
+  --pad: 84px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--ink); }
+
+.poster {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 76px var(--pad) 72px;
+  background:
+    radial-gradient(120% 70% at 0% 0%, rgba(233, 69, 96, 0.16), transparent 60%),
+    radial-gradient(90% 60% at 100% 100%, rgba(74, 104, 170, 0.14), transparent 65%),
+    var(--ink);
+  color: var(--paper);
+  font-family: 'Vazirmatn', sans-serif;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Film grain keeps the flat dark field from banding once Instagram recompresses it. */
+.grain {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.09;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── Masthead ─────────────────────────────────────────── */
+.masthead {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 26px;
+  border-bottom: 2px solid rgba(243, 238, 228, 0.18);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.brand-mark {
+  width: 22px;
+  height: 22px;
+  background: var(--accent);
+  transform: rotate(45deg);
+}
+.brand-block { display: flex; align-items: center; gap: 18px; }
+.tagline {
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--muted);
+  padding-inline-start: 18px;
+  border-inline-start: 2px solid rgba(243, 238, 228, 0.25);
+  line-height: 1.3;
+}
+
+/* ── Content ──────────────────────────────────────────── */
+.content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  min-height: 0;
+  padding: 44px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.year-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+.year {
+  flex: 1;
+  min-width: 0;
+  font-size: 260px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* Rubber-stamp category mark — the "documented file" motif. */
+.stamp {
+  flex: none;
+  align-self: flex-start;
+  margin-top: 28px;
+  padding: 2px 14px 4px;
+  border: 3px solid var(--accent);
+  outline: 1.5px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+  color: var(--accent);
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.4;
+  transform: rotate(-6deg);
+  margin-inline-start: 8px;
+}
+
+.date-detail {
+  font-size: 34px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.title {
+  margin-top: 36px;
+  font-size: 96px;
+  font-weight: 900;
+  line-height: 1.28;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.rule {
+  width: 132px;
+  height: 8px;
+  margin: 44px 0 36px;
+  background: var(--accent);
+}
+
+.summary {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.72;
+  color: #ddd8ce;
+  text-wrap: pretty;
+}
+
+/* ── Footer ───────────────────────────────────────────── */
+.footer {
+  position: relative;
+  z-index: 2;
+  padding-top: 28px;
+  border-top: 2px solid rgba(243, 238, 228, 0.18);
+}
+.source {
+  font-size: 26px;
+  line-height: 1.6;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.source bdi { color: var(--paper); font-weight: 600; }
+.cta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 14px;
+}
+.cta { font-size: 28px; font-weight: 700; }
+.site {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.01em;
+}
+
+/* ── Photo layout ─────────────────────────────────────── */
+/* The photo is an "evidence print": framed, on the ink, never under text.
+   It takes whatever height the copy leaves, so long titles shrink the print
+   rather than overflowing (the photo.presence gate guards the floor). */
+.photo { display: none; }
+.poster[data-layout="photo"] .photo {
+  display: block;
+  position: relative;
+  z-index: 2;
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0 8px;
+  padding: 12px 12px 0;
+  background: #ece6da;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  transform: rotate(-1deg);
+}
+.photo img {
+  display: block;
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+  object-fit: cover;
+}
+.photo .year-row { flex: none; height: 76px; padding: 0 14px; }
+.photo .year {
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: 0;
+  color: var(--ink);
+}
+.photo .stamp {
+  /* Darker red: the site accent is too light to read on the paper strip. */
+  --accent: #b01e38;
+  align-self: center;
+  margin-top: 0;
+  font-size: 24px;
+}
+.poster[data-layout="photo"] .content { flex: none; padding: 30px 0 32px; }
+.poster[data-layout="photo"] .title { margin-top: 0; }
+.poster[data-layout="photo"] .rule { margin: 22px 0 18px; height: 6px; }
+.poster[data-layout="photo"] .summary { line-height: 1.66; }
+
+.credit { display: none; }
+.poster[data-layout="photo"] .credit {
+  display: block;
+  font-size: 22px;
+  line-height: 1.6;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.credit bdi { color: var(--paper); }

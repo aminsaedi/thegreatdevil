@@ -1,0 +1,14 @@
+{
+  "name": "thegreatdevil-instagram",
+  "private": true,
+  "type": "module",
+  "description": "Renders an Instagram poster + caption for every event in _events/ and gates each one on quality checks.",
+  "scripts": {
+    "build": "node build.mjs",
+    "sheet": "node build.mjs --sheet"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "playwright": "^1.55.0"
+  }
+}
