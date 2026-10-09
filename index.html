@@ -288,6 +288,10 @@ layout: default
     }
 
     if (showPill === false) return;
+    /* Sit just below the sticky era nav (its height varies as links wrap;
+       on mobile the nav is not sticky and scrolls away) */
+    var nav = document.querySelector('.era-nav');
+    pill.style.top = Math.max(8, (nav ? nav.getBoundingClientRect().bottom : 0) + 8) + 'px';
     clearTimeout(hideTimer);
     pill.classList.add('vtl-visible');
     hideTimer = setTimeout(function() {
