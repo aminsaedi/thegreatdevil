@@ -8,14 +8,15 @@ and a follow card on every event page, and declares it with
 
 - **Avatar:** `avatar.svg` → `avatar.jpg` (640×640), the site favicon's devil,
   scaled to fit Telegram's circular crop.
-- **Bio:** the documented-timeline line, the daily 18:00 schedule and the site URL.
+- **Bio:** the documented-timeline line and the site URL.
 - **Pinned post:** a welcome message with the category hashtags and a site link.
 
-## Daily post
+## Scheduled post
 
-Every day at **18:00 Asia/Tehran** the n8n workflow
-**thegreatdevil: daily Telegram poster** (`dA9VR9JQfkn6xjW2`, on
-https://n8n.aminsaedi.com) posts the next event in timeline order:
+On its **Schedule** trigger, the n8n workflow **thegreatdevil: Telegram poster**
+(`dA9VR9JQfkn6xjW2`, on https://n8n.aminsaedi.com) posts the next event in
+timeline order. The posting time is configured only in n8n. Keep it out of the
+repo, the site and the channel; the exports below have the trigger rule removed.
 
 1. It fetches `https://thegreatdevil.com/posters/manifest.json`, which the deploy
    writes (`tools/instagram/build.mjs --publish`; only posters that passed every
@@ -51,5 +52,6 @@ curl -X POST https://n8n.aminsaedi.com/webhook/thegreatdevil-telegram-post \
 **Re-post or skip an event:** delete its row from the Data Table to post it
 again, or add a row with its slug to skip it.
 
-`n8n-daily-poster.json` and `n8n-failure-alert.json` are exports of both
-workflows. Re-export them after editing in n8n.
+`n8n-poster.json` and `n8n-failure-alert.json` are exports of both workflows,
+with the schedule rule and timezone stripped. Re-export them after editing in
+n8n the same way.

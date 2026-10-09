@@ -34,7 +34,7 @@ const args = process.argv.slice(2);
 const wantSheet = args.includes('--sheet');
 const publishIdx = args.indexOf('--publish');
 const publishDir = publishIdx === -1 ? null : path.resolve(args[publishIdx + 1] || '');
-const filters = args.filter((a, i) => !a.startsWith('--') && i !== publishIdx + 1);
+const filters = args.filter((a, i) => !a.startsWith('--') && (publishIdx === -1 || i !== publishIdx + 1));
 const CHANNEL = yaml.load(fs.readFileSync(path.join(REPO, '_config.yml'), 'utf8')).telegram_channel;
 
 const events = loadEvents(REPO)
@@ -126,7 +126,7 @@ async function buildOne(ev) {
   return gates;
 }
 
-// Posters that passed every gate, in timeline order, for the daily post.
+// Posters that passed every gate, in timeline order, for the channel posts.
 function publish(evs) {
   fs.mkdirSync(publishDir, { recursive: true });
   const items = evs.map((ev) => {

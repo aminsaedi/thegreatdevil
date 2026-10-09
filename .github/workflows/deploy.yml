@@ -36,7 +36,7 @@ jobs:
         env:
           JEKYLL_ENV: production
 
-      # Social posters for the daily Telegram post: rendered with headless Chrome,
+      # Social posters for the Telegram channel: rendered with headless Chrome,
       # quality-gated, and published at /posters/ with a manifest.json that the
       # n8n workflow reads. Posters failing a gate are held back, not deployed.
       - name: Setup Node

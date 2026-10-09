@@ -1,26 +1,17 @@
 {
   "id": "dA9VR9JQfkn6xjW2",
-  "name": "thegreatdevil: daily Telegram poster",
+  "name": "thegreatdevil: Telegram poster",
   "nodes": [
     {
       "id": "a1",
-      "name": "Daily 18:00 Tehran",
+      "name": "Schedule",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
         0,
         0
       ],
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "field": "cronExpression",
-              "expression": "0 18 * * *"
-            }
-          ]
-        }
-      }
+      "parameters": {}
     },
     {
       "id": "a2",
@@ -97,7 +88,7 @@
         100
       ],
       "parameters": {
-        "jsCode": "// Next event in timeline order that hasn't been posted yet. Nothing left → stop quietly.\nconst manifest = $('Fetch manifest').first().json;\nconst posted = new Set($input.all().map((i) => i.json.slug).filter(Boolean));\nconst next = manifest.items.find((it) => !posted.has(it.slug));\nif (!next) return [];\nreturn [{ json: {\n  ...next,\n  channel: manifest.channel,\n  // Local copy for TDLib to upload. n8n may only write under ~/.n8n-files\n  // (mounted from ~/n8n/n8n_files on the host).\n  path: `/home/node/.n8n-files/thegreatdevil-${next.slug}.jpg`,\n  trigger: $('Daily 18:00 Tehran').isExecuted ? 'schedule' : 'post-now',\n} }];"
+        "jsCode": "// Next event in timeline order that hasn't been posted yet. Nothing left → stop quietly.\nconst manifest = $('Fetch manifest').first().json;\nconst posted = new Set($input.all().map((i) => i.json.slug).filter(Boolean));\nconst next = manifest.items.find((it) => !posted.has(it.slug));\nif (!next) return [];\nreturn [{ json: {\n  ...next,\n  channel: manifest.channel,\n  // Local copy for TDLib to upload. n8n may only write under ~/.n8n-files\n  // (mounted from ~/n8n/n8n_files on the host).\n  path: `/home/node/.n8n-files/thegreatdevil-${next.slug}.jpg`,\n  trigger: $('Schedule').isExecuted ? 'schedule' : 'post-now',\n} }];"
       }
     },
     {
@@ -266,7 +257,7 @@
     }
   ],
   "connections": {
-    "Daily 18:00 Tehran": {
+    "Schedule": {
       "main": [
         [
           {
@@ -381,7 +372,6 @@
     "saveManualExecutions": true,
     "saveDataErrorExecution": "all",
     "saveDataSuccessExecution": "all",
-    "timezone": "Asia/Tehran",
     "executionOrder": "v1",
     "errorWorkflow": "rx30r9P87J7DbNSa"
   }

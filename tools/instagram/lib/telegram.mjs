@@ -20,7 +20,7 @@ export const visibleLength = (html) =>
   html.replace(/<[^>]+>/g, '').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').length;
 
 export function buildTelegramCaption(ev, channel) {
-  const link = `${ev.url}?utm_source=telegram&utm_medium=social&utm_campaign=daily`;
+  const link = `${ev.url}?utm_source=telegram&utm_medium=social&utm_campaign=channel`;
   const decade = `#دهه_${toFa(Math.floor(ev.firstYear / 10) * 10)}`;
   const n = (ev.sources || []).length;
 

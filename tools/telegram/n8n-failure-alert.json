@@ -25,7 +25,7 @@
       "parameters": {
         "resource": "message",
         "chat_id": "701578028",
-        "messageText": "=⚠️ thegreatdevil daily Telegram post failed\n\nNode: {{ $json.execution.lastNodeExecuted }}\nError: {{ $json.execution.error.message }}\nExecution: {{ $json.execution.url }}\n\nNothing was recorded as posted, so the next run retries the same event.",
+        "messageText": "=⚠️ thegreatdevil Telegram post failed\n\nNode: {{ $json.execution.lastNodeExecuted }}\nError: {{ $json.execution.error.message }}\nExecution: {{ $json.execution.url }}\n\nNothing was recorded as posted, so the next run retries the same event.",
         "message_thread_id": 0
       },
       "credentials": {
@@ -50,7 +50,6 @@
     }
   },
   "settings": {
-    "timezone": "Asia/Tehran",
     "executionOrder": "v1"
   }
 }
