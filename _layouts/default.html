@@ -90,7 +90,7 @@
   <link rel="shortcut icon" href="{{ '/assets/favicon.svg' | relative_url }}">
 
   <!-- Fonts (self-hosted via assets/fonts/) -->
-  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
   {% if page.collection == "events" and page.image %}
   {% assign hero_img_webp_preload = page.image | replace: '.jpg', '.webp' | replace: '.png', '.webp' %}

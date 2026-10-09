@@ -3,13 +3,15 @@ layout: null
 ---
 /* Service Worker — efficient cache lifetimes for static assets */
 
-var CACHE_VERSION = 'tgd-v3';
+/* Changes every build, so returning visitors' cache-first CSS is replaced
+   instead of being served stale forever after a deploy */
+var CACHE_VERSION = 'tgd-{{ site.time | date: "%s" }}';
 var STATIC_CACHE  = CACHE_VERSION + '-static';
 var IMAGE_CACHE   = CACHE_VERSION + '-images';
 
 /* Static assets to pre-cache on install */
 var PRECACHE_ASSETS = [
-  '/assets/style.css',
+  '/assets/style.css?v={{ site.time | date: "%s" }}',
   '/assets/fonts/Vazirmatn-arabic.woff2',
   '/assets/fonts/Vazirmatn-latin-ext.woff2',
   '/assets/fonts/Vazirmatn-latin.woff2',
