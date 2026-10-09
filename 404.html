@@ -201,14 +201,11 @@ permalink: /404.html
   <nav aria-label="دوره‌های تاریخی">
     <div class="error-404-eras-title">یا مستقیم به یک دوره بروید</div>
     <div class="error-404-eras">
-      <a href="{{ '/' | relative_url }}#era-1900" class="error-404-era-link">۱۹۰۰–۱۹۴۰</a>
-      <a href="{{ '/' | relative_url }}#era-1950" class="error-404-era-link">۱۹۵۰–۱۹۶۰</a>
-      <a href="{{ '/' | relative_url }}#era-1970" class="error-404-era-link">۱۹۷۰–۱۹۸۰</a>
-      <a href="{{ '/' | relative_url }}#era-1980" class="error-404-era-link">۱۹۸۰–۱۹۹۰</a>
-      <a href="{{ '/' | relative_url }}#era-1990" class="error-404-era-link">۱۹۹۰–۲۰۰۰</a>
-      <a href="{{ '/' | relative_url }}#era-2000" class="error-404-era-link">۲۰۰۰–۲۰۱۰</a>
-      <a href="{{ '/' | relative_url }}#era-2010" class="error-404-era-link">۲۰۱۰–۲۰۲۰</a>
-      <a href="{{ '/' | relative_url }}#era-2020" class="error-404-era-link">۲۰۲۰–اکنون</a>
+      {% assign eras_404 = site.events | map: "era_id" | uniq | sort %}
+      {% for era_id in eras_404 %}
+      {% assign era_event = site.events | where: "era_id", era_id | first %}
+      <a href="{{ '/' | relative_url }}#{{ era_id }}" class="error-404-era-link">{{ era_event.era_label }}</a>
+      {% endfor %}
     </div>
   </nav>
 

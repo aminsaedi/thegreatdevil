@@ -24,14 +24,15 @@ layout: default
   <div class="hero-timeline-wrap">
     <div class="hero-tl-svg-host" id="hero-tl-svg-host" aria-label="نمودار رویدادها بر اساس دسته‌بندی — کلیک برای فیلتر"></div>
     <div class="hero-tl-legend" id="hero-tl-legend" aria-label="فیلتر بر اساس نوع رویداد">
-      <button class="hero-tl-leg-btn active" data-cat="all">همه</button>
-      <button class="hero-tl-leg-btn" data-cat="coup"><span class="hero-tl-leg-dot" style="background:#ff6b8a"></span> کودتا</button>
-      <button class="hero-tl-leg-btn" data-cat="military"><span class="hero-tl-leg-dot" style="background:#ffaa6b"></span> نظامی</button>
-      <button class="hero-tl-leg-btn" data-cat="sanction"><span class="hero-tl-leg-dot" style="background:#6bc5ff"></span> تحریم</button>
-      <button class="hero-tl-leg-btn" data-cat="intel"><span class="hero-tl-leg-dot" style="background:#d06bff"></span> اطلاعاتی</button>
-      <button class="hero-tl-leg-btn" data-cat="diplo"><span class="hero-tl-leg-dot" style="background:#fff06b"></span> دیپلماسی</button>
-      <button class="hero-tl-leg-btn" data-cat="cyber"><span class="hero-tl-leg-dot" style="background:#6bffaa"></span> سایبری</button>
+      <button class="hero-tl-leg-btn active" data-cat="all" aria-pressed="true">همه</button>
+      <button class="hero-tl-leg-btn" aria-pressed="false" data-cat="coup"><span class="hero-tl-leg-dot" style="background:#ff6b8a"></span> کودتا</button>
+      <button class="hero-tl-leg-btn" aria-pressed="false" data-cat="military"><span class="hero-tl-leg-dot" style="background:#ffaa6b"></span> نظامی</button>
+      <button class="hero-tl-leg-btn" aria-pressed="false" data-cat="sanction"><span class="hero-tl-leg-dot" style="background:#6bc5ff"></span> تحریم</button>
+      <button class="hero-tl-leg-btn" aria-pressed="false" data-cat="intel"><span class="hero-tl-leg-dot" style="background:#d06bff"></span> اطلاعاتی</button>
+      <button class="hero-tl-leg-btn" aria-pressed="false" data-cat="diplo"><span class="hero-tl-leg-dot" style="background:#fff06b"></span> دیپلماسی</button>
+      <button class="hero-tl-leg-btn" aria-pressed="false" data-cat="cyber"><span class="hero-tl-leg-dot" style="background:#6bffaa"></span> سایبری</button>
     </div>
+    <p class="hero-tl-status" id="hero-tl-status" role="status" aria-live="polite"></p>
   </div>
 </section>
 
@@ -54,7 +55,7 @@ layout: default
     </div>
     <div class="stat-divider" aria-hidden="true"></div>
     <div class="stat-item">
-      <div class="stat-number">۱۹۰۱–۲۰۲۶</div>
+      <div class="stat-number stat-number-range">۱۹۰۱–۲۰۲۶</div>
       <div class="stat-label">بازه زمانی</div>
     </div>
     <div class="stat-divider" aria-hidden="true"></div>
@@ -253,7 +254,7 @@ layout: default
     if (docH <= 0 || sections.length < 2) return;
     wrap.querySelectorAll('.vtl-era-tick').forEach(function(t) { t.remove(); });
     sections.forEach(function(s, i) {
-      if (i === 0) return;
+      if (i === 0 || s.el.hidden) return;
       var pct = (s.el.offsetTop / docH) * 100;
       var tick = document.createElement('div');
       tick.className = 'vtl-era-tick';
@@ -267,13 +268,14 @@ layout: default
     var scrollMid = window.scrollY + window.innerHeight * 0.35;
     var found = sections[0];
     sections.forEach(function(s) {
-      if (s.el.offsetTop <= scrollMid) found = s;
+      /* hidden (category-filtered) eras report offsetTop 0 */
+      if (!s.el.hidden && s.el.offsetTop <= scrollMid) found = s;
     });
     return found;
   }
 
   var hideTimer;
-  function onScroll() {
+  function onScroll(showPill) {
     var docH = document.documentElement.scrollHeight - window.innerHeight;
     if (docH <= 0) return;
     var pct = Math.min(100, (window.scrollY / docH) * 100);
@@ -285,6 +287,7 @@ layout: default
       pill.textContent = sec.label;
     }
 
+    if (showPill === false) return;
     clearTimeout(hideTimer);
     pill.classList.add('vtl-visible');
     hideTimer = setTimeout(function() {
@@ -293,9 +296,9 @@ layout: default
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', function() { buildTicks(); onScroll(); });
+  window.addEventListener('resize', function() { buildTicks(); onScroll(false); });
 
-  setTimeout(function() { buildTicks(); onScroll(); }, 150);
+  setTimeout(function() { buildTicks(); onScroll(false); }, 150);
 })();
 </script>
 
@@ -392,20 +395,23 @@ layout: default
   /* Baseline */
   g.appendChild(svgEl('line', { x1: 0, y1: CH, x2: CW, y2: CH, stroke: 'rgba(255,255,255,0.12)', 'stroke-width': 1 }));
 
-  /* Decade ticks + labels */
+  /* Decade ticks (labels are HTML, added below — SVG text would be
+     distorted by preserveAspectRatio="none" on narrow screens) */
+  var axis = document.createElement('div');
+  axis.className = 'hero-tl-axis';
+  axis.setAttribute('aria-hidden', 'true');
   for (var dec = 1900; dec <= 2020; dec += 10) {
     var dx = xOf(dec);
     g.appendChild(svgEl('line', {
       x1: dx, y1: 0, x2: dx, y2: CH + 4,
-      stroke: 'rgba(255,255,255,0.14)', 'stroke-width': 0.8
+      stroke: 'rgba(255,255,255,0.14)', 'stroke-width': 0.8,
+      'vector-effect': 'non-scaling-stroke'
     }));
-    var lbl = svgEl('text', {
-      x: dx + 2, y: CH + 20,
-      fill: 'rgba(180,210,255,0.45)', 'font-size': '9',
-      'font-family': 'Arial, sans-serif'
-    });
+    var lbl = document.createElement('span');
     lbl.textContent = String(dec);
-    g.appendChild(lbl);
+    lbl.style.left = ((PAD.l + dx) / SVG_W * 100) + '%';
+    if (dec % 20 !== 0) lbl.className = 'hero-tl-axis-minor';
+    axis.appendChild(lbl);
   }
 
   /* Glow filter */
@@ -436,6 +442,7 @@ layout: default
       return catCounts[a] >= catCounts[b] ? a : b;
     });
     var color = CAT_CLR[domCat] || '#e94560';
+    var yearCats = Object.keys(catCounts);
     var eraId = evList[0].e;
 
     var bh = Math.max(4, (count / maxCount) * CH * 0.9);
@@ -449,7 +456,7 @@ layout: default
     });
     bar.classList.add('hero-tl-bar');
     g.appendChild(bar);
-    barEls[year] = { el: bar, cat: domCat, era: eraId };
+    barEls[year] = { el: bar, cats: yearCats, era: eraId };
 
     /* Invisible wider hit zone */
     var hit = svgEl('rect', {
@@ -488,8 +495,7 @@ layout: default
         barEl.setAttribute('filter', 'url(#hero-tl-glow)');
       });
       hit.addEventListener('mouseleave', function() {
-        var dim = activeCat !== 'all' && barEl.getAttribute('data-cat') !== activeCat;
-        barEl.setAttribute('opacity', dim ? '0.15' : '0.8');
+        barEl.setAttribute('opacity', barOpacity(barEls[yr]));
         barEl.removeAttribute('filter');
       });
     })(year, eraId, bar, domCat);
@@ -498,6 +504,11 @@ layout: default
   });
 
   host.appendChild(svg);
+  host.appendChild(axis);
+
+  function barOpacity(b) {
+    return activeCat === 'all' || b.cats.indexOf(activeCat) !== -1 ? '0.8' : '0.12';
+  }
 
   /* Category legend interaction */
   document.querySelectorAll('.hero-tl-leg-btn').forEach(function(btn) {
@@ -507,18 +518,35 @@ layout: default
 
       /* Update legend active state */
       document.querySelectorAll('.hero-tl-leg-btn').forEach(function(b) {
-        b.classList.toggle('active', b.dataset.cat === cat);
+        var on = b.dataset.cat === cat;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', String(on));
       });
 
       /* Sync bar opacity */
       Object.keys(barEls).forEach(function(yr) {
-        var b = barEls[yr];
-        b.el.setAttribute('opacity', cat === 'all' || b.cat === cat ? '0.8' : '0.12');
+        barEls[yr].el.setAttribute('opacity', barOpacity(barEls[yr]));
       });
 
-      /* Trigger the main category filter buttons to keep the grid in sync */
-      var mainBtn = document.querySelector('#cat-filters .filter-btn[data-value="' + cat + '"]');
-      if (mainBtn) mainBtn.click();
+      /* Filter the timeline itself; hide eras left with no matching events */
+      var shown = 0;
+      document.querySelectorAll('.timeline-wrapper .timeline-item').forEach(function(it) {
+        var match = cat === 'all' || it.dataset.category === cat;
+        it.hidden = !match;
+        if (match) shown++;
+      });
+      document.querySelectorAll('.era-section').forEach(function(sec) {
+        sec.hidden = !sec.querySelector('.timeline-item:not([hidden])');
+      });
+      /* Page height changed: let the progress bar re-measure era ticks */
+      window.dispatchEvent(new Event('resize'));
+
+      var status = document.getElementById('hero-tl-status');
+      if (status) {
+        status.textContent = cat === 'all' ? '' :
+          String(shown).replace(/\d/g, function(d) { return '۰۱۲۳۴۵۶۷۸۹'[d]; }) +
+          ' رویداد «' + this.textContent.trim() + '» نمایش داده می‌شود';
+      }
     });
   });
 })();

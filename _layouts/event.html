@@ -788,7 +788,18 @@ layout: default
   }
 
   if (floatBtn) {
-    floatBtn.classList.add('toc-ready');
+    /* The inline accordion already offers the TOC near the top of the page;
+       only float the button once that accordion has scrolled out of view,
+       so the two don't duplicate each other or cover the hero text. */
+    if (accordionEl) {
+      var syncFloatBtn = function() {
+        floatBtn.classList.toggle('toc-ready', accordionEl.getBoundingClientRect().bottom < 0);
+      };
+      window.addEventListener('scroll', syncFloatBtn, { passive: true });
+      syncFloatBtn();
+    } else {
+      floatBtn.classList.add('toc-ready');
+    }
     floatBtn.addEventListener('click', function() {
       var isOpen = mobilePanel.classList.toggle('open');
       floatBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');

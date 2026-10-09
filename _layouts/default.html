@@ -94,7 +94,8 @@
 
   {% if page.collection == "events" and page.image %}
   {% assign hero_img_webp_preload = page.image | replace: '.jpg', '.webp' | replace: '.png', '.webp' %}
-  <link rel="preload" as="image" href="{{ page.image }}" fetchpriority="high">
+  <!-- Preload the WebP the hero <picture> will pick; preloading the JPEG made browsers fetch both -->
+  <link rel="preload" as="image" href="{{ hero_img_webp_preload }}" type="image/webp" fetchpriority="high">
   {% endif %}
 </head>
 <body>

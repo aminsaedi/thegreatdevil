@@ -51,9 +51,17 @@
 
 /* Prevent horizontal scroll caused by negative-margin full-bleed elements,
    scroll-reveal transforms, and other subtle overflow sources.
-   Using 'clip' instead of 'hidden' so position:sticky on .era-nav still works. */
+   Using 'clip' instead of 'hidden' so position:sticky on .era-nav still works.
+   body must use 'clip' too: 'hidden' makes body a scroll container (overflow-y
+   computes to auto), which silently breaks every sticky descendant. */
 html { overflow-x: clip; }
-body { overflow-x: hidden; }
+body { overflow-x: clip; }
+
+/* Keep anchor targets clear of the sticky era nav */
+.era-section,
+.event-body h2,
+.event-body h3,
+.footnote-item { scroll-margin-top: calc(var(--era-nav-h, 60px) + 1rem); }
 
 body {
   background: #f7f8fc;
@@ -306,8 +314,40 @@ header p { color: #556080; font-size: 0.9rem; }
 }
 
 .hero-tl-svg-host {
+  position: relative;
   width: 100%;
   margin-bottom: 1rem;
+}
+
+/* Decade labels under the hero chart (HTML so they never stretch with the SVG) */
+.hero-tl-axis {
+  position: absolute;
+  inset: auto 0 2px 0;
+  height: 14px;
+  direction: ltr;
+  pointer-events: none;
+}
+
+.hero-tl-axis span {
+  position: absolute;
+  top: 0;
+  padding-left: 2px;
+  font-size: 9px;
+  line-height: 14px;
+  color: rgba(180, 210, 255, 0.5);
+  font-family: Arial, sans-serif;
+}
+
+@media (max-width: 600px) {
+  .hero-tl-axis-minor { display: none; }
+}
+
+.hero-tl-status {
+  min-height: 1.4em;
+  margin-top: 0.6rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(200, 220, 255, 0.75);
 }
 
 .hero-tl-legend {
@@ -389,7 +429,12 @@ header p { color: #556080; font-size: 0.9rem; }
   line-height: 1.1;
   margin-bottom: 0.3rem;
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
+
+/* The year range is twice as long as the other figures; scale it down so it
+   stays on one line instead of breaking after the dash */
+.stat-number.stat-number-range { font-size: clamp(1.3rem, 3vw, 2rem); }
 
 .stat-label {
   font-size: 0.78rem;
@@ -409,6 +454,7 @@ header p { color: #556080; font-size: 0.9rem; }
   .stats-bar-inner { gap: 0; }
   .stat-item { padding: 0.35rem 0.5rem; }
   .stat-number { font-size: clamp(1.4rem, 6vw, 1.75rem); }
+  .stat-number.stat-number-range { font-size: clamp(0.95rem, 4vw, 1.2rem); }
   .stat-label { font-size: 0.72rem; }
   .stat-divider { height: 36px; }
 }
@@ -694,6 +740,10 @@ main { padding: 2rem; max-width: 1400px; margin: auto; }
   border-radius: 2px;
 }
 
+/* Category filter (hero legend) hides cards and empty eras */
+.timeline-item[hidden],
+.era-section[hidden] { display: none !important; }
+
 /* Timeline item wrapper */
 .timeline-item {
   position: relative;
@@ -776,40 +826,44 @@ main { padding: 2rem; max-width: 1400px; margin: auto; }
     padding-right: 0;
   }
 
-  /* Odd items → right column (RTL reading order: right = first) */
-  .timeline-item:nth-child(odd) {
-    grid-column: 3;
+  /* Odd items → right column (RTL reading order: right = first).
+     The grid inherits direction:rtl, so column 1 is the physical RIGHT edge. */
+  .timeline-item:nth-child(odd of :not([hidden])) {
+    grid-column: 1;
     padding-right: 0.25rem;
     padding-left: 0;
   }
 
-  /* Even items → left column */
-  .timeline-item:nth-child(even) {
-    grid-column: 1;
+  /* Even items → left column. An even item shares its row with the odd item
+     before it, so drop it a little: their spine nodes and date badges would
+     otherwise sit at the same height and overlap. */
+  .timeline-item:nth-child(even of :not([hidden])) {
+    grid-column: 3;
     padding-left: 0.25rem;
     padding-right: 0;
+    margin-top: 2.75rem;
   }
 
   /* Node centered on spine — odd (right col): spine is to the left at -2.25rem */
-  .timeline-item:nth-child(odd) .timeline-node {
+  .timeline-item:nth-child(odd of :not([hidden])) .timeline-node {
     right: auto;
     left: calc(-2.25rem - 7px);
   }
 
   /* Node — even (left col): spine is to the right at -2.25rem */
-  .timeline-item:nth-child(even) .timeline-node {
+  .timeline-item:nth-child(even of :not([hidden])) .timeline-node {
     right: calc(-2.25rem - 7px);
     left: auto;
   }
 
   /* Connector: from card edge to node right/left edge */
-  .timeline-item:nth-child(odd)::before {
+  .timeline-item:nth-child(odd of :not([hidden]))::before {
     right: auto;
     left: calc(-2.25rem + 7px);
     width: calc(2.25rem - 7px);
   }
 
-  .timeline-item:nth-child(even)::before {
+  .timeline-item:nth-child(even of :not([hidden]))::before {
     right: calc(-2.25rem + 7px);
     left: auto;
     width: calc(2.25rem - 7px);
@@ -829,24 +883,30 @@ main { padding: 2rem; max-width: 1400px; margin: auto; }
     padding: 0.15em 0.35em;
     top: 1.15rem;
     z-index: 4;
+    /* Month-range labels ("آوریل–ژوئن ۲۰۲۵") are wider than the spine
+       gutter; wrap them instead of spilling over the cards */
+    white-space: normal;
+    line-height: 1.35;
   }
 
-  .timeline-item:nth-child(odd) .timeline-date {
+  .timeline-item:nth-child(odd of :not([hidden])) .timeline-date {
     right: auto;
     left: -4.25rem; /* spine-center = left: -2.25rem; badge-half = -2rem → total: -4.25rem */
     width: 4rem;
   }
 
-  .timeline-item:nth-child(even) .timeline-date {
+  .timeline-item:nth-child(even of :not([hidden])) .timeline-date {
     right: -4.25rem;
     left: auto;
     width: 4rem;
   }
 
   /* Featured items span all columns for full-width drama */
-  .timeline-item.featured-item {
+  /* .timeline-wrapper prefix: must outrank the :nth-child(… of …) column rules */
+  .timeline-wrapper .timeline-item.featured-item {
     grid-column: 1 / -1;
     padding: 0;
+    margin-top: 0;
   }
 
   /* Featured items: hide the node/connector since they span the full width */
@@ -1698,6 +1758,19 @@ article:hover img {
   padding-top: 1.5rem;
 }
 
+.event-body a:not(.inline-fn-ref) {
+  color: #1d5fa8;
+  text-decoration: underline;
+  text-decoration-color: rgba(29, 95, 168, 0.35);
+  text-underline-offset: 0.25em;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+
+.event-body a:not(.inline-fn-ref):hover {
+  color: #e94560;
+  text-decoration-color: currentColor;
+}
+
 /* Pull quotes — visually prominent callout for memorable quotes */
 .event-body blockquote {
   position: relative;
@@ -1747,13 +1820,16 @@ article:hover img {
   border: 1px solid rgba(233, 69, 96, 0.2);
   border-right: 5px solid #e94560;
   border-radius: 0 10px 10px 0;
-  color: #1a1a2e;
+  color: #1a2a4a;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  font-weight: 500;
   box-shadow: 3px 2px 14px rgba(26, 26, 46, 0.07), 0 1px 4px rgba(233, 69, 96, 0.06);
 }
 
 .event-body .key-fact::before {
   content: 'واقعیت کلیدی';
-  display: inline-block;
+  display: table; /* own line even when the fact is bare text, not a <p> */
   font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -2661,10 +2737,10 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
 
 /* (TGD-102) Alternating slide-in directions: even items (left col) slide from the left */
 @media screen and (min-width: 900px) {
-  .js-scroll-anim .timeline-wrapper .timeline-item:nth-child(even) {
+  .js-scroll-anim .timeline-wrapper .timeline-item:nth-child(even of :not([hidden])) {
     transform: translateX(-30px);
   }
-  .timeline-wrapper .timeline-item:nth-child(even).scroll-visible {
+  .timeline-wrapper .timeline-item:nth-child(even of :not([hidden])).scroll-visible {
     transform: translateX(0);
   }
 }
@@ -3140,6 +3216,14 @@ header {
   border-right-color: rgba(233,69,96,0.5);
   color: #a8bcdc;
 }
+[data-theme="dark"] .event-body .key-fact {
+  background: linear-gradient(135deg, rgba(233,69,96,0.08) 0%, #172035 100%);
+  border-color: rgba(233,69,96,0.25);
+  border-right-color: #e94560;
+  color: #d8e6fa;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.3);
+}
+[data-theme="dark"] .event-body .key-fact p { color: #d8e6fa; }
 [data-theme="dark"] .event-body th,
 [data-theme="dark"] .event-body td    { border-color: #2a3d5e; }
 [data-theme="dark"] .event-body th    { background: #1e2d4a; color: #e0eeff; }
@@ -3151,8 +3235,8 @@ header {
 }
 [data-theme="dark"] .event-hero-credit .hero-credit-attrib { color: #7d8ba6; }
 [data-theme="dark"] .event-hero-credit a:hover { color: #d8e6ff; }
-[data-theme="dark"] .event-body a     { color: #7eb8e8; }
-[data-theme="dark"] .event-body a:hover { color: #a8d0ff; }
+[data-theme="dark"] .event-body a:not(.inline-fn-ref)       { color: #7eb8e8; text-decoration-color: rgba(126,184,232,0.35); }
+[data-theme="dark"] .event-body a:not(.inline-fn-ref):hover { color: #a8d0ff; }
 
 [data-theme="dark"] .event-header-plain {
   background: linear-gradient(135deg, #0d1b35, #1a2a4a);
@@ -3196,7 +3280,15 @@ header {
 }
 
 /* 404 page */
-[data-theme="dark"] .error-page { background: #0f1219; color: #c8d8f0; }
-[data-theme="dark"] .error-code { color: #e94560; }
+[data-theme="dark"] .error-404-title-fa   { color: #e8f2ff; }
+[data-theme="dark"] .error-404-desc-fa    { color: #a8bcdc; }
+[data-theme="dark"] .error-404-desc-en    { color: #7888a8; }
+[data-theme="dark"] .error-404-code       { opacity: 0.3; }
+[data-theme="dark"] .error-404-era-link   { background: #172035; border-color: #2a3d5e; color: #c8d8f0; }
+[data-theme="dark"] .error-404-era-link:hover { background: #1e2d4a; border-color: #3a5480; }
+[data-theme="dark"] .error-404-featured   { background: #141c2e; border-color: #1e2d4a; border-right-color: #e94560; }
+[data-theme="dark"] .error-404-featured a { color: #e0eeff; }
+[data-theme="dark"] .error-404-featured a:hover { color: #e94560; }
+[data-theme="dark"] .error-404-featured-desc { color: #8898b8; }
 
 /* ── end dark theme ── */
