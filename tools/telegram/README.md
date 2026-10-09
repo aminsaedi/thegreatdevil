@@ -1,0 +1,55 @@
+# Telegram channel — @thegreatdevil_com
+
+Public channel: https://t.me/thegreatdevil_com (id `-1003863453204`), owned by
+the primary account @saedi_amin. The site links to it from the hero, the footer
+and a follow card on every event page, and declares it with
+`<meta name="telegram:channel">` and schema.org `sameAs`. The handle lives in
+`_config.yml` as `telegram_channel`.
+
+- **Avatar:** `avatar.svg` → `avatar.jpg` (640×640), the site favicon's devil,
+  scaled to fit Telegram's circular crop.
+- **Bio:** the documented-timeline line, the daily 18:00 schedule and the site URL.
+- **Pinned post:** a welcome message with the category hashtags and a site link.
+
+## Daily post
+
+Every day at **18:00 Asia/Tehran** the n8n workflow
+**thegreatdevil: daily Telegram poster** (`dA9VR9JQfkn6xjW2`, on
+https://n8n.aminsaedi.com) posts the next event in timeline order:
+
+1. It fetches `https://thegreatdevil.com/posters/manifest.json`, which the deploy
+   writes (`tools/instagram/build.mjs --publish`; only posters that passed every
+   quality gate are listed).
+2. It skips slugs already in the n8n Data Table **thegreatdevil_telegram_posts**
+   (`qR7N8cxcmdn3fm3F`), then takes the first remaining one. When none are left,
+   it stops quietly.
+3. It downloads the poster to `/home/node/.n8n-files/` (mounted from
+   `~/n8n/n8n_files` on toronto — n8n may only write under that path).
+4. It sends the poster to the channel through **TelePilot** (TDLib, credential
+   *Personal Telegram CoPilot account*). The caption is the event's HTML
+   Telegram caption, parsed by `parseTextEntities`.
+5. It records the slug in the Data Table. Since a failed send records nothing,
+   the next run retries the same event.
+
+A new event added to `_events/` gets a poster on the next deploy and is posted
+after the ones before it in the timeline.
+
+**Failure alert:** **thegreatdevil: post failure alert** (`rx30r9P87J7DbNSa`) is
+the error workflow. It messages the primary account's Saved Messages with the
+failed node, the error and the execution link. It must stay **active**, or n8n
+won't run it.
+
+**Post now** (outside the schedule). The token is in
+`~/.config/thegreatdevil/n8n-post-token`; the n8n credential is
+*thegreatdevil post-now token*.
+
+```bash
+curl -X POST https://n8n.aminsaedi.com/webhook/thegreatdevil-telegram-post \
+  -H "X-TGD-Token: $(cat ~/.config/thegreatdevil/n8n-post-token)"
+```
+
+**Re-post or skip an event:** delete its row from the Data Table to post it
+again, or add a row with its slug to skip it.
+
+`n8n-daily-poster.json` and `n8n-failure-alert.json` are exports of both
+workflows. Re-export them after editing in n8n.

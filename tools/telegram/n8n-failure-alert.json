@@ -1,0 +1,56 @@
+{
+  "id": "rx30r9P87J7DbNSa",
+  "name": "thegreatdevil: post failure alert",
+  "nodes": [
+    {
+      "id": "e1",
+      "name": "On error",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "e2",
+      "name": "Alert Saved Messages",
+      "type": "@telepilotco/n8n-nodes-telepilot.telePilot",
+      "typeVersion": 1,
+      "position": [
+        240,
+        0
+      ],
+      "parameters": {
+        "resource": "message",
+        "chat_id": "701578028",
+        "messageText": "=⚠️ thegreatdevil daily Telegram post failed\n\nNode: {{ $json.execution.lastNodeExecuted }}\nError: {{ $json.execution.error.message }}\nExecution: {{ $json.execution.url }}\n\nNothing was recorded as posted, so the next run retries the same event.",
+        "message_thread_id": 0
+      },
+      "credentials": {
+        "telePilotApi": {
+          "id": "hg0ym3b81VExWu22",
+          "name": "Personal Telegram CoPilot account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "On error": {
+      "main": [
+        [
+          {
+            "node": "Alert Saved Messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "timezone": "Asia/Tehran",
+    "executionOrder": "v1"
+  }
+}

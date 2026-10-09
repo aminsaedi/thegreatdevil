@@ -1,0 +1,388 @@
+{
+  "id": "dA9VR9JQfkn6xjW2",
+  "name": "thegreatdevil: daily Telegram poster",
+  "nodes": [
+    {
+      "id": "a1",
+      "name": "Daily 18:00 Tehran",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 18 * * *"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "a2",
+      "name": "Post now",
+      "webhookId": "7b0f3c52-9a61-4d3e-8f4e-2b1d6c0a9e11",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        200
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "thegreatdevil-telegram-post",
+        "authentication": "headerAuth",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "okTVjAyNatom9qka",
+          "name": "thegreatdevil post-now token"
+        }
+      }
+    },
+    {
+      "id": "a3",
+      "name": "Fetch manifest",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        100
+      ],
+      "parameters": {
+        "url": "=https://thegreatdevil.com/posters/manifest.json?ts={{ $now.toMillis() }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "a4",
+      "name": "Already posted",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "alwaysOutputData": true,
+      "position": [
+        480,
+        100
+      ],
+      "parameters": {
+        "resource": "row",
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "qR7N8cxcmdn3fm3F"
+        },
+        "returnAll": true
+      }
+    },
+    {
+      "id": "a5",
+      "name": "Pick next event",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        100
+      ],
+      "parameters": {
+        "jsCode": "// Next event in timeline order that hasn't been posted yet. Nothing left → stop quietly.\nconst manifest = $('Fetch manifest').first().json;\nconst posted = new Set($input.all().map((i) => i.json.slug).filter(Boolean));\nconst next = manifest.items.find((it) => !posted.has(it.slug));\nif (!next) return [];\nreturn [{ json: {\n  ...next,\n  channel: manifest.channel,\n  // Local copy for TDLib to upload. n8n may only write under ~/.n8n-files\n  // (mounted from ~/n8n/n8n_files on the host).\n  path: `/home/node/.n8n-files/thegreatdevil-${next.slug}.jpg`,\n  trigger: $('Daily 18:00 Tehran').isExecuted ? 'schedule' : 'post-now',\n} }];"
+      }
+    },
+    {
+      "id": "a6",
+      "name": "Download poster",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        960,
+        100
+      ],
+      "parameters": {
+        "url": "={{ $json.poster }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "a7",
+      "name": "Save poster",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        100
+      ],
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ $('Pick next event').item.json.path }}",
+        "dataPropertyName": "data",
+        "options": {}
+      }
+    },
+    {
+      "id": "a8",
+      "name": "Find channel",
+      "type": "@telepilotco/n8n-nodes-telepilot.telePilot",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        100
+      ],
+      "parameters": {
+        "resource": "request",
+        "request_json": "={{ JSON.stringify({ _: 'searchPublicChat', username: $('Pick next event').item.json.channel }) }}"
+      },
+      "credentials": {
+        "telePilotApi": {
+          "id": "hg0ym3b81VExWu22",
+          "name": "Personal Telegram CoPilot account"
+        }
+      }
+    },
+    {
+      "id": "a9",
+      "name": "Format caption",
+      "type": "@telepilotco/n8n-nodes-telepilot.telePilot",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        100
+      ],
+      "parameters": {
+        "resource": "request",
+        "request_json": "={{ JSON.stringify({ _: 'parseTextEntities', text: $('Pick next event').item.json.telegram_caption_html, parse_mode: { _: 'textParseModeHTML' } }) }}"
+      },
+      "credentials": {
+        "telePilotApi": {
+          "id": "hg0ym3b81VExWu22",
+          "name": "Personal Telegram CoPilot account"
+        }
+      }
+    },
+    {
+      "id": "a10",
+      "name": "Send to channel",
+      "type": "@telepilotco/n8n-nodes-telepilot.telePilot",
+      "typeVersion": 1,
+      "position": [
+        1920,
+        100
+      ],
+      "parameters": {
+        "resource": "request",
+        "request_json": "={{ JSON.stringify({ _: 'sendMessage', chat_id: $('Find channel').item.json.id, input_message_content: { _: 'inputMessagePhoto', photo: { _: 'inputFileLocal', path: $('Pick next event').item.json.path }, width: $('Pick next event').item.json.width, height: $('Pick next event').item.json.height, added_sticker_file_ids: [], caption: { _: 'formattedText', text: $('Format caption').item.json.text, entities: $('Format caption').item.json.entities } } }) }}"
+      },
+      "credentials": {
+        "telePilotApi": {
+          "id": "hg0ym3b81VExWu22",
+          "name": "Personal Telegram CoPilot account"
+        }
+      }
+    },
+    {
+      "id": "a11",
+      "name": "Record post",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        2160,
+        100
+      ],
+      "parameters": {
+        "resource": "row",
+        "operation": "insert",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "qR7N8cxcmdn3fm3F"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "slug": "={{ $('Pick next event').item.json.slug }}",
+            "title": "={{ $('Pick next event').item.json.title }}",
+            "posted_at": "={{ $now.toISO() }}",
+            "trigger": "={{ $('Pick next event').item.json.trigger }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "slug",
+              "displayName": "slug",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "posted_at",
+              "displayName": "posted_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "trigger",
+              "displayName": "trigger",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {}
+      }
+    }
+  ],
+  "connections": {
+    "Daily 18:00 Tehran": {
+      "main": [
+        [
+          {
+            "node": "Fetch manifest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Post now": {
+      "main": [
+        [
+          {
+            "node": "Fetch manifest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch manifest": {
+      "main": [
+        [
+          {
+            "node": "Already posted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Already posted": {
+      "main": [
+        [
+          {
+            "node": "Pick next event",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pick next event": {
+      "main": [
+        [
+          {
+            "node": "Download poster",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download poster": {
+      "main": [
+        [
+          {
+            "node": "Save poster",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save poster": {
+      "main": [
+        [
+          {
+            "node": "Find channel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find channel": {
+      "main": [
+        [
+          {
+            "node": "Format caption",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format caption": {
+      "main": [
+        [
+          {
+            "node": "Send to channel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send to channel": {
+      "main": [
+        [
+          {
+            "node": "Record post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "saveManualExecutions": true,
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "timezone": "Asia/Tehran",
+    "executionOrder": "v1",
+    "errorWorkflow": "rx30r9P87J7DbNSa"
+  }
+}

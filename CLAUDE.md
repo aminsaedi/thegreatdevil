@@ -84,3 +84,14 @@ GitHub Actions workflow at `.github/workflows/deploy.yml` builds with Jekyll and
 bundle install
 bundle exec jekyll serve
 ```
+
+## Social: posters & Telegram channel
+
+- `tools/instagram/` renders a quality-gated 1080×1350 poster plus Instagram and
+  Telegram captions per event (`node build.mjs`; see its README). The deploy
+  publishes passing posters and `/posters/manifest.json`.
+- Telegram channel **@thegreatdevil_com** (`telegram_channel` in `_config.yml`).
+  An n8n workflow posts the next unposted event daily at 18:00 Tehran time from
+  that manifest. Ops, IDs and the "post now" webhook: `tools/telegram/README.md`.
+- A new event needs nothing extra: if its poster passes the gates, it joins the
+  manifest and is posted in timeline order.
