@@ -55,6 +55,12 @@
       "@type": "Organization",
       "name": "{{ site.title }}",
       "url": "{{ site.url }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}/assets/images/brand/logo.png",
+        "width": 256,
+        "height": 256
+      },
       "sameAs": ["https://t.me/{{ site.telegram_channel }}", "https://github.com/aminsaedi/thegreatdevil"]
     }
   }
@@ -80,6 +86,12 @@
       "@type": "Organization",
       "name": "{{ site.title | escape }}",
       "url": "{{ site.url }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}/assets/images/brand/logo.png",
+        "width": 256,
+        "height": 256
+      },
       "sameAs": ["https://t.me/{{ site.telegram_channel }}"]
     }
   }
@@ -90,8 +102,11 @@
   {% feed_meta %}
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
-  <link rel="shortcut icon" href="{{ '/assets/favicon.svg' | relative_url }}">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="16x16 32x32 48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/images/brand/icon-192.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+  <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+  <meta name="theme-color" content="#0d1b35">
 
   <!-- Fonts (self-hosted via assets/fonts/) -->
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
@@ -110,7 +125,10 @@
   <button class="theme-toggle" id="theme-toggle" aria-label="تغییر پوسته روشن/تاریک" title="تغییر پوسته">
     <span class="theme-toggle-icon" aria-hidden="true"></span>
   </button>
-  <div class="site-logo"></div>
+  <picture class="site-logo">
+    <source srcset="{{ '/assets/images/brand/logo.webp' | relative_url }}" type="image/webp">
+    <img src="{{ '/assets/images/brand/logo.png' | relative_url }}" alt="" width="128" height="128" fetchpriority="high">
+  </picture>
   <h1>{{ site.title }}</h1>
   <p class="title-en" lang="en">{{ site.title_en }}</p>
   <p>{{ site.description_fa }}</p>
@@ -162,7 +180,10 @@
   <div class="footer-inner">
 
     <div class="footer-mission">
-      <div class="footer-logo"></div>
+      <picture class="footer-logo">
+        <source srcset="{{ '/assets/images/brand/logo.webp' | relative_url }}" type="image/webp">
+        <img src="{{ '/assets/images/brand/logo.png' | relative_url }}" alt="" width="96" height="96" loading="lazy" decoding="async">
+      </picture>
       <h2 class="footer-site-title">شیطان بزرگ</h2>
       <p class="footer-description-fa">{{ site.description_fa }}</p>
       <p class="footer-description-en" lang="en">{{ site.description }}</p>

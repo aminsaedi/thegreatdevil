@@ -76,10 +76,9 @@ html, body { background: var(--ink); }
   letter-spacing: -0.01em;
 }
 .brand-mark {
-  width: 22px;
-  height: 22px;
-  background: var(--accent);
-  transform: rotate(45deg);
+  width: 56px;
+  height: 56px;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5));
 }
 .brand-block { display: flex; align-items: center; gap: 18px; }
 .tagline {

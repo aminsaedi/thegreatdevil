@@ -86,10 +86,24 @@ header {
   border-bottom: 3px solid #e94560;
 }
 
-.site-logo {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  line-height: 1;
+.site-logo,
+.footer-logo {
+  display: block;
+  margin: 0 auto 0.75rem;
+  line-height: 0;
+}
+
+.site-logo img,
+.footer-logo img {
+  height: auto;
+  filter: drop-shadow(0 6px 10px rgba(13, 27, 53, 0.35));
+}
+
+.site-logo img { width: 128px; }
+.footer-logo img { width: 96px; }
+
+@media (max-width: 600px) {
+  .site-logo img { width: 96px; }
 }
 
 header h1 {
@@ -2365,12 +2379,6 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
 .footer-mission {
   text-align: center;
   margin-bottom: 2.5rem;
-}
-
-.footer-logo {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  line-height: 1;
 }
 
 .footer-site-title {

@@ -74,6 +74,15 @@ Use `1400>` for `featured: true` events (rendered as a wide banner), `1000>` oth
 Both a `.jpg` and a matching `.webp` are required — the templates emit a `<picture>` with
 the WebP as the preferred source and the JPEG as fallback.
 
+## Logo
+
+The logo is the wax-seal emblem in `tools/brand/logo-source.jpg`. `tools/brand/build.sh`
+derives every variant from it: `assets/images/brand/` (transparent `logo.webp`/`logo.png`
+for the header, footer and JSON-LD; PWA icons; the default share card `og.jpg`),
+`/favicon.ico`, `/apple-touch-icon.png` and `tools/telegram/avatar.jpg`. The posters use
+`logo.png` as their brand mark. To change the logo, replace the source and re-run the
+script — don't edit the outputs by hand.
+
 ## Build & Deploy
 
 GitHub Actions workflow at `.github/workflows/deploy.yml` builds with Jekyll and deploys to GitHub Pages on every push to `main`.

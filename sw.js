@@ -15,7 +15,7 @@ var PRECACHE_ASSETS = [
   '/assets/fonts/Vazirmatn-arabic.woff2',
   '/assets/fonts/Vazirmatn-latin-ext.woff2',
   '/assets/fonts/Vazirmatn-latin.woff2',
-  '/assets/favicon.svg'
+  '/assets/images/brand/logo.webp'
 ];
 
 /* Install: pre-cache known static assets */

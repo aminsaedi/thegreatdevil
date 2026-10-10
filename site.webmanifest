@@ -1,0 +1,14 @@
+{
+  "name": "شیطان بزرگ — دخالت‌های آمریکا در ایران",
+  "short_name": "شیطان بزرگ",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f7f8fc",
+  "theme_color": "#0d1b35",
+  "icons": [
+    { "src": "/assets/images/brand/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/images/brand/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
