@@ -587,7 +587,7 @@ header p { color: #556080; font-size: 0.85rem; }
 
 .era-nav a.era-active {
   background: rgba(233, 69, 96, 0.15);
-  color: #e94560;
+  color: #b3203f;
   border-color: rgba(233, 69, 96, 0.5);
   font-weight: 600;
   box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.12);
@@ -1322,7 +1322,7 @@ article h3 { font-size: 1.55rem; font-weight: 700; color: #0d1b35; margin-bottom
 
 .year-badge {
   display: inline-block;
-  background: #e94560;
+  background: #c22745;
   color: #fff;
   font-size: 0.72rem;
   font-weight: 600;
@@ -1548,7 +1548,7 @@ article:hover img {
 
 .breadcrumb {
   font-size: 0.85rem;
-  color: #6678a0;
+  color: #56688f;
   margin-bottom: 2rem;
   display: flex;
   gap: 0.5rem;
@@ -1561,7 +1561,7 @@ article:hover img {
   align-items: center;
   min-height: 44px;
   padding: 0 0.15rem;
-  color: #e94560;
+  color: #c22745;
   text-decoration: none;
 }
 .breadcrumb a:hover { text-decoration: underline; }
@@ -1654,7 +1654,7 @@ article:hover img {
 .event-hero-credit .hero-credit-attrib {
   display: block;
   font-size: 0.68rem;
-  color: #74809a;
+  color: #56688f;
   direction: ltr;
   unicode-bidi: isolate;
   text-align: end;
@@ -2041,7 +2041,7 @@ article:hover img {
   flex-shrink: 0;
   font-size: 0.72rem;
   color: #fff;
-  background: #6678a0;
+  background: #56688f;
   font-weight: 700;
   min-width: 1.6rem;
   height: 1.6rem;
@@ -2087,7 +2087,7 @@ article:hover img {
   align-items: center;
   font-size: 0.72rem;
   color: #fff;
-  background: #5a7ab0;
+  background: #4d6ca3;
   text-decoration: none;
   border: none;
   border-radius: 3px;
@@ -2110,13 +2110,13 @@ article:hover img {
 
 .source-meta {
   font-size: 0.76rem;
-  color: #667788;
+  color: #5b6b7c;
   font-style: italic;
 }
 
 .source-type-text {
   font-style: normal;
-  color: #8899aa;
+  color: #5b6b7c;
 }
 
 /* Inline footnote superscripts — academic-style numbered refs in body text */
@@ -2153,7 +2153,7 @@ article:hover img {
 
 .event-era-info h3 {
   font-size: 0.95rem;
-  color: #e94560;
+  color: #c22745;
   margin-bottom: 0.3rem;
 }
 
@@ -2362,7 +2362,7 @@ article:hover img {
 .nav-year {
   font-size: 0.8rem;
   font-weight: 700;
-  color: #e94560;
+  color: #c22745;
 }
 .nav-title {
   font-size: 0.9rem;
@@ -2524,7 +2524,7 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
   align-items: center;
   font-size: 0.68rem;
   color: #fff;
-  background: #5a7ab0;
+  background: #4d6ca3;
   text-decoration: none;
   border-radius: 3px;
   padding: 0.1em 0.4em;
@@ -3280,7 +3280,7 @@ header {
 [data-theme="dark"] .era-nav a:hover     { background: rgba(255,255,255,0.07); color: #e8f2ff; border-color: rgba(255,255,255,0.12); }
 [data-theme="dark"] .era-nav a.era-active {
   background: rgba(233, 69, 96, 0.18);
-  color: #e94560;
+  color: #ff6b84;
   border-color: rgba(233, 69, 96, 0.45);
 }
 [data-theme="dark"] .era-nav-count { background: rgba(255,255,255,0.08); color: #6878a8; }
@@ -3415,10 +3415,17 @@ header {
 [data-theme="dark"] .source-link:hover { color: #a8d0ff; }
 [data-theme="dark"] .footnote-item    { color: #8898b8; border-bottom-color: rgba(60,80,130,0.3); }
 [data-theme="dark"] .source-title     { color: #c8d8f0; }
-[data-theme="dark"] .source-meta      { color: #5a6a8a; }
+[data-theme="dark"] .source-meta      { color: #8494b4; }
 [data-theme="dark"] .source-archived-link { background: #2a4a70; color: #c8d8f0; }
 [data-theme="dark"] .source-archived-link:hover { background: #3a6090; }
-[data-theme="dark"] .source-type-text { color: #5a6a8a; }
+[data-theme="dark"] .source-type-text { color: #8494b4; }
+/* The light theme's darker red is too dim on dark backgrounds */
+[data-theme="dark"] .breadcrumb a,
+[data-theme="dark"] .event-era-info h3,
+[data-theme="dark"] .nav-year,
+[data-theme="dark"] .error-404-title-en,
+[data-theme="dark"] .error-404-featured-label { color: #ff6b84; }
+[data-theme="dark"] .breadcrumb { color: #8494b4; }
 [data-theme="dark"] .sources-section > .sources-title { border-bottom-color: #1e2d4a; }
 
 
