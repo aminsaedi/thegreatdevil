@@ -78,6 +78,9 @@ html, body { background: var(--ink); }
 .brand-mark {
   width: 56px;
   height: 56px;
+  /* Overhangs the text line instead of making the masthead taller, which
+     would take height from the photo */
+  margin-block: -14px;
   filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5));
 }
 .brand-block { display: flex; align-items: center; gap: 18px; }
