@@ -4,8 +4,8 @@ year: "۱۹۴۱"
 order: 4
 era_id: era-1900
 era_title: "دوره اول"
-era_range: "۱۹۰۰–۱۹۴۰"
-era_label: "۱۹۰۰–۱۹۴۰"
+era_range: "نفت، مستشاران و اشغال"
+era_label: "۱۹۰۰–۱۹۵۰"
 category: military
 category_label: "نظامی"
 featured: false
@@ -18,20 +18,20 @@ sources:
     year: 1941
     type: official
     type_label: "سند رسمی دولتی"
-  - title: "The Anglo-Soviet Occupation of Iran, 1941"
-    url: "https://www.britannica.com/event/Anglo-Soviet-invasion-of-Iran"
-    publisher: "Encyclopaedia Britannica"
-    year: 2024
-    type: general
+  - title: "ANGLO-IRANIAN RELATIONS iii. Pahlavi period"
+    url: "https://www.iranicaonline.org/articles/anglo-iranian-relations-iii/"
+    publisher: "Ronald W. Ferrier — Encyclopaedia Iranica"
+    year: 1985
+    type: reference
     type_label: "منبع دایرةالمعارفی"
-  - title: "Iran in World War II: The Allied Occupation"
-    url: "https://nsarchive.gwu.edu/briefing-book/iran"
-    publisher: "National Security Archive"
-    year: 2001
-    type: archive
-    type_label: "آرشیو"
+  - title: "The Persian Corridor and Aid to Russia (CMH Pub 8-1)"
+    url: "https://archive.org/details/CMHPub8-1-nsia"
+    publisher: "T. H. Vail Motter — U.S. Army Center of Military History"
+    year: 1952
+    type: official
+    type_label: "سند رسمی نظامی"
   - title: "A History of Modern Iran"
-    url: "https://www.cambridge.org/core/books/history-of-modern-iran/9780521528917"
+    url: "https://www.cambridge.org/core/books/history-of-modern-iran/96733B4BF86FFB9B9C867798EEE839F8"
     publisher: "Ervand Abrahamian — Cambridge University Press"
     year: 2008
     type: academic
@@ -59,7 +59,7 @@ sources:
 
 ## ورود آمریکا
 
-آمریکا در دسامبر ۱۹۴۱ رسماً وارد جنگ شد و در ژانویه ۱۹۴۲ نیروهایش را به ایران فرستاد تا اداره «کریدور ایران» را به دست بگیرد. برای این کار فرماندهی آمریکایی نیروی خدماتی خلیج فارس (PGSC) تشکیل شد.
+آمریکا در دسامبر ۱۹۴۱ رسماً وارد جنگ شد و در ۱۹۴۲ اداره بخش بزرگی از «کریدور ایران» را به دست گرفت. برای این کار فرماندهی آمریکایی نیروی خدماتی خلیج فارس (PGSC) در اوت ۱۹۴۲ تشکیل شد و نخستین گروه بزرگ سربازان آمریکایی در دسامبر همان سال به خرمشهر رسید.
 
 ## کریدور ایران — شاهرگ جنگ
 
@@ -75,9 +75,9 @@ sources:
 
 روزولت، چرچیل و استالین در نوامبر–دسامبر ۱۹۴۳ در تهران، پایتخت کشوری اشغال‌شده، دیدار کردند. این نخستین کنفرانس سران سه قدرت بزرگ بود. سرنوشت جنگ و نظم پس از آن در ایران به بحث گذاشته شد، اما ایرانی‌ها در این مذاکرات هیچ نقشی نداشتند.
 
-## تأخیر خروج آمریکا و شوروی
+## تأخیر خروج شوروی
 
-طبق توافق سه‌جانبه ایران و متفقین در ۱۹۴۲، نیروهای خارجی باید تا شش ماه پس از پایان جنگ از ایران بیرون می‌رفتند. بریتانیا و آمریکا تا ژانویه ۱۹۴۶ نیروهایشان را خارج کردند. شوروی اما نرفت و در آذربایجان و کردستان ایران دو دولت دست‌نشانده برپا کرد. این بحران با فشار آمریکا و مذاکرات دیپلماتیک در ۱۹۴۶ و با خروج شوروی تمام شد.
+طبق توافق سه‌جانبه ایران و متفقین در ۱۹۴۲، نیروهای خارجی باید تا شش ماه پس از پایان جنگ از ایران بیرون می‌رفتند. آمریکا تا ژانویه ۱۹۴۶ و بریتانیا پس از آن، پیش از پایان مهلت ۲ مارس ۱۹۴۶، نیروهایشان را خارج کردند. شوروی اما نرفت و در آذربایجان و کردستان ایران دو دولت دست‌نشانده برپا کرد. این بحران با فشار آمریکا و مذاکرات دیپلماتیک در ۱۹۴۶ و با خروج شوروی تمام شد.
 
 ## تأثیر بلندمدت
 

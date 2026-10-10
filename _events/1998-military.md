@@ -17,9 +17,9 @@ sources:
     year: 2020
     type: official
     type_label: "سند رسمی نظامی"
-  - title: "Gulf Security and US Policy"
-    url: "https://www.brookings.edu/articles/gulf-security-and-u-s-policy/"
-    publisher: "Brookings Institution"
+  - title: "Searching for Stable Peace in the Persian Gulf"
+    url: "https://www.govinfo.gov/content/pkg/GOVPUB-D101-PURL-LPS12549/pdf/GOVPUB-D101-PURL-LPS12549.pdf"
+    publisher: "Kenneth Katzman — Strategic Studies Institute, U.S. Army War College"
     year: 1998
     type: academic
     type_label: "پژوهش سیاسی"

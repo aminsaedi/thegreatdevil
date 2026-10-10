@@ -11,8 +11,8 @@ category_label: "تحریم"
 featured: false
 description: "قطع ایران از شبکه بانکی SWIFT — مؤثرترین تحریم اقتصادی پیش از برجام."
 sources:
-  - title: "SWIFT and Iran Sanctions — US Treasury Department"
-    url: "https://home.treasury.gov/policy-issues/financial-sanctions/sanctions-programs-and-country-information/iran-sanctions"
+  - title: "Iran Sanctions — Office of Foreign Assets Control (OFAC)"
+    url: "https://ofac.treasury.gov/sanctions-programs-and-country-information/iran-sanctions"
     publisher: "U.S. Department of the Treasury"
     year: 2012
     type: official
@@ -43,7 +43,7 @@ SWIFT (Society for Worldwide Interbank Financial Telecommunication) شبکه‌�
 
 - ۲۰۱۰: کنگره آمریکا قوانینی تصویب کرد که بانک‌های خارجی را وادار می‌کرد میان معامله با ایران و دسترسی به بازار مالی آمریکا یکی را برگزینند
 - دسامبر ۲۰۱۱: کنگره تحریم‌های تازه‌ای علیه بانک مرکزی ایران تصویب کرد
-- فوریه ۲۰۱۲: اتحادیه اروپا به آمریکا پیوست و تحریم نفتی اعمال کرد
+- ژانویه ۲۰۱۲: اتحادیه اروپا به آمریکا پیوست و تحریم نفتی اعمال کرد
 - مارس ۲۰۱۲: [ایران رسماً از SWIFT قطع شد](/events/2012-swift-exclusion/) و ۳۰ بانک ایرانی از شبکه جهانی کنار گذاشته شدند
 
 ## تأثیر اقتصادی

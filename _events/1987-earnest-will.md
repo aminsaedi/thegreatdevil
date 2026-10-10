@@ -11,9 +11,9 @@ category_label: "نظامی"
 featured: false
 description: "نیروی دریایی آمریکا نفتکش‌های کویتی را در خلیج‌فارس اسکورت کرد — مداخله مستقیم در جنگ ایران–عراق."
 sources:
-  - title: "Operation Earnest Will — Naval History and Heritage Command"
-    url: "https://www.history.navy.mil/research/library/online-reading-room/title-list-alphabetically/o/operation-earnest-will.html"
-    publisher: "U.S. Naval History and Heritage Command"
+  - title: "H-Gram 018-1: Tanker War"
+    url: "https://www.history.navy.mil/content/history/nhhc/about-us/leadership/director/directors-corner/h-grams/h-gram-018/h-018-1.html"
+    publisher: "Samuel J. Cox — U.S. Naval History and Heritage Command"
     year: 2018
     type: official
     type_label: "سند رسمی نظامی"
@@ -67,7 +67,7 @@ sources:
 عملیات ارنست ویل موازنه جنگ را آشکارا به ضرر ایران برهم زد:
 - ایران دیگر نمی‌توانست نفتکش‌های کویتی را بزند بی‌آنکه مستقیماً با ارتش آمریکا روبه‌رو شود
 - درآمد نفتی کویت و عربستان، که به عراق می‌رسید، تضمین شد
-- ایران از نظر نظامی ضعیف‌تر شد و این وضع سرانجام به پذیرش آتش‌بس در اوت ۱۹۸۸ انجامید
+- ایران از نظر نظامی ضعیف‌تر شد و این وضع سرانجام به پذیرش قطعنامه ۵۹۸ در ژوئیه ۱۹۸۸ و آتش‌بس اوت ۱۹۸۸ انجامید
 - آیت‌الله خمینی آتش‌بس را «نوشیدن جام زهر» نامید
 
 ## ارتباط با حمایت آمریکا از عراق

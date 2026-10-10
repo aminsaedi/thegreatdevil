@@ -9,7 +9,7 @@ era_label: "۱۹۹۰–۲۰۰۰"
 category: sanction
 category_label: "تحریم"
 featured: false
-description: "کلینتون با فرامین اجرایی همه تجارت آمریکا با ایران را ممنوع و دارایی‌های ایران را مسدود کرد."
+description: "کلینتون با فرامین اجرایی همه تجارت و سرمایه‌گذاری آمریکا در ایران را ممنوع کرد."
 sources:
   - title: "Executive Order 12957 — Prohibiting Transactions with Iran"
     url: "https://www.federalregister.gov/documents/1995/03/17/95-6679/prohibiting-certain-transactions-with-respect-to-the-development-of-iranian-petroleum-resources"
@@ -18,17 +18,17 @@ sources:
     type: official
     type_label: "فرمان اجرایی"
   - title: "Executive Order 12959 — Prohibiting Trade with Iran"
-    url: "https://www.federalregister.gov/documents/1995/05/09/95-11579/prohibiting-certain-transactions-with-respect-to-iran"
+    url: "https://www.federalregister.gov/documents/1995/05/09/95-11694/prohibiting-certain-transactions-with-respect-to-iran"
     publisher: "Federal Register, U.S. Government"
     year: 1995
     type: official
     type_label: "فرمان اجرایی"
-  - title: "Iran Sanctions: A Timeline"
-    url: "https://iranprimer.usip.org/resource/timeline-us-sanctions"
+  - title: "U.S. Sanctions — The Iran Primer (Patrick Clawson)"
+    url: "https://web.archive.org/web/20260612045415/https://iranprimer.usip.org/resource/us-sanctions"
     publisher: "Iran Primer — United States Institute of Peace"
-    year: 2020
-    type: archive
-    type_label: "آرشیو"
+    year: 2010
+    type: academic
+    type_label: "تحلیل سیاسی"
   - title: "US Economic Sanctions on Iran: History and Current Status"
     url: "https://crsreports.congress.gov/product/pdf/RS/RS20871"
     publisher: "Congressional Research Service"
@@ -37,7 +37,7 @@ sources:
     type_label: "گزارش کنگره"
 ---
 
-کلینتون با فرمان‌های اجرایی ۱۲۹۵۷ و ۱۲۹۵۹ همه تجارت آمریکا با ایران را ممنوع کرد، دارایی‌های ایران را مسدود کرد و شرکت‌های آمریکایی را از سرمایه‌گذاری در ایران منع کرد.
+کلینتون با فرمان‌های اجرایی ۱۲۹۵۷ و ۱۲۹۵۹ همه تجارت آمریکا با ایران را ممنوع کرد و شرکت‌های آمریکایی را از سرمایه‌گذاری در ایران منع کرد.
 
 ## زمینه تاریخی
 
@@ -64,7 +64,7 @@ sources:
 
 این تحریم‌ها آغاز دهه‌ها تحریم فزاینده بود:
 
-- شرکت‌های آمریکایی به‌کلی از بازار نفت ایران، صاحب دهمین ذخایر نفتی جهان، کنار گذاشته شدند
+- شرکت‌های آمریکایی به‌کلی از بازار نفت ایران، صاحب یکی از بزرگ‌ترین ذخایر نفتی جهان، کنار گذاشته شدند
 - شرکت‌های اروپایی (انگلیسی، فرانسوی، ایتالیایی) جای آن‌ها را گرفتند و از نبود رقیب آمریکایی سود بردند
 - دسترسی ایران به سیستم مالی دلاری محدود شد
 - اقتصاد ایران زیر فشار فزاینده قرار گرفت، اما تا اواسط دهه ۲۰۰۰ توانست خود را با آن وفق دهد

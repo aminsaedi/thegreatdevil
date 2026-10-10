@@ -4,8 +4,8 @@ year: "۱۹۰۱"
 order: 1
 era_id: era-1900
 era_title: "دوره اول"
-era_range: "۱۹۰۰–۱۹۴۰"
-era_label: "۱۹۰۰–۱۹۴۰"
+era_range: "نفت، مستشاران و اشغال"
+era_label: "۱۹۰۰–۱۹۵۰"
 category: diplo
 category_label: "دیپلماسی"
 featured: false
@@ -17,12 +17,12 @@ sources:
     year: 2009
     type: general
     type_label: "منبع"
-  - title: "A History of the Iranian Oil Industry"
-    url: "https://www.cambridge.org/core/books/iran-and-the-united-states/9781107016682"
-    publisher: "Cambridge University Press"
-    year: 2017
-    type: academic
-    type_label: "پژوهش دانشگاهی"
+  - title: "ANGLO-PERSIAN OIL COMPANY"
+    url: "https://www.iranicaonline.org/articles/anglo-persian-oil-company/"
+    publisher: "Farhad Kazemi — Encyclopaedia Iranica"
+    year: 1985
+    type: reference
+    type_label: "دانشنامه"
   - title: "Iran: A Modern History"
     url: "https://yalebooks.yale.edu/book/9780300231465/iran/"
     publisher: "Abbas Amanat — Yale University Press"
@@ -64,4 +64,4 @@ sources:
 
 امتیاز دارسی به کشف نفت در ۱۹۰۸ و تأسیس شرکتی انجامید که بعدها BP نام گرفت. ثروت نفتی ایران دهه‌ها به جیب بریتانیا رفت و همین وضع زمینه ملی‌سازی نفت به دست مصدق در ۱۹۵۱ را فراهم کرد.
 
-این امتیاز اولین حلقه از زنجیره‌ای بود که ایران را تا یک قرن به وابستگی نفتی بست. خشمی که از این استثمار انباشته شد جنبش ملی‌شدن نفت را به حرکت درآورد و سرانجام به انقلاب ۱۳۵۷ رسید. رویدادهای بعدی، از [اخراج شوستر](/events/1911-shuster/) تا [کودتای مصدق](/events/1953-coup/)، بدون این ریشه‌ها فهمیده نمی‌شوند.
+این امتیاز اولین حلقه از زنجیره‌ای بود که ایران را تا یک قرن به وابستگی نفتی بست. خشمی که از این استثمار انباشته شد جنبش ملی‌شدن نفت را به حرکت درآورد و سرانجام به انقلاب ۱۳۵۷ رسید. رویدادهای بعدی، از [اخراج شوستر](/events/1911-shuster/) تا [کودتای ۲۸ مرداد](/events/1953-coup/)، بدون این ریشه‌ها فهمیده نمی‌شوند.

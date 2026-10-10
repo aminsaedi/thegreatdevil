@@ -17,25 +17,25 @@ sources:
     year: 2024
     type: official
     type_label: "سند رسمی نظامی"
-  - title: "How Iran's Attack on Israel Was Thwarted"
-    url: "https://www.bbc.com/news/world-middle-east-68820788"
-    publisher: "BBC News"
+  - title: "How Israel and allied defenses intercepted more than 300 Iranian missiles and drones"
+    url: "https://www.cnn.com/2024/04/14/middleeast/israel-air-missile-defense-iran-attack-intl-hnk-ml"
+    publisher: "CNN"
     year: 2024
-    type: journalism
-    type_label: "گزارش خبری"
-  - title: "Iran Strikes Israel: Full Timeline"
-    url: "https://foreignpolicy.com/2024/04/14/iran-attack-israel-drones-missiles-timeline/"
-    publisher: "Foreign Policy"
+    type: news
+    type_label: "خبرگزاری"
+  - title: "Iran attacks Israel with over 300 drones, missiles: What you need to know"
+    url: "https://www.aljazeera.com/news/2024/4/14/iran-attacks-israel-with-over-300-drones-missiles-what-you-need-to-know"
+    publisher: "Al Jazeera"
     year: 2024
-    type: journalism
-    type_label: "گزارش تحلیلی"
+    type: news
+    type_label: "خبرگزاری"
 ---
 
 پس از حمله اسرائیل به کنسولگری ایران در دمشق، ایران صدها پهپاد و موشک به سوی اسرائیل شلیک کرد و آمریکا در سرنگون کردن آنها فعالانه شرکت داشت.
 
 ## پیش‌زمینه: کنسولگری دمشق
 
-در ۱ آوریل ۲۰۲۴، روز عید پاک، اسرائیل ساختمانی را در مجاورت سفارت ایران در دمشق بمباران کرد که کنسولگری ایران در آن مستقر بود. در این حمله این افراد کشته شدند:
+در ۱ آوریل ۲۰۲۴ اسرائیل ساختمانی را در مجاورت سفارت ایران در دمشق بمباران کرد که کنسولگری ایران در آن مستقر بود. در این حمله این افراد کشته شدند:
 
 - محمدرضا زاهدی، فرمانده ارشد سپاه قدس در سوریه و لبنان
 - محمد هادی حاجی‌رحیمی، معاون او

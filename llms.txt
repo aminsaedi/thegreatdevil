@@ -20,7 +20,8 @@ Each event page includes:
 - Year and category (coup, sanction, military, cyber, intelligence, diplomatic)
 - Detailed description in Farsi
 - Historical images where available
-- Sources from Wikipedia, Britannica, USIP Iran Primer, GWU National Security Archive
+- Cited sources for every claim: US government records (FRUS, Treasury, State), the GWU National
+  Security Archive, news agencies, human rights organisations and academic works
 
 ## Key Historical Events Documented
 
@@ -37,7 +38,8 @@ Each event page includes:
 - Jun 2025: Operation Midnight Hammer — B-2 strikes on Fordow, Natanz and Isfahan (Twelve-Day War)
 - 28 Feb 2026: Operation Epic Fury — start of the ongoing 2026 Iran war; Supreme Leader Ali Khamenei
   killed in a joint CIA/Mossad-planned strike; Shajareh Tayyebeh girls' school in Minab hit
-  (156-180 killed, ~120 of them children, per Amnesty International)
+  (156 killed including 120 children according to Iranian authorities cited by Amnesty
+  International; Iranian media reported up to 180)
 - Mar 2026: Strikes on South Pars gas field, Tehran refineries, Khuzestan and Mobarakeh steel,
   Qeshm desalination plant, and Iranian universities
 - 16-17 Mar 2026: Assassination of Ali Larijani
@@ -57,7 +59,7 @@ Each event page includes:
 
 - Wikipedia: https://en.wikipedia.org/wiki/CIA_activities_in_Iran
 - Britannica: https://www.britannica.com/topic/US-Iran-Relations-A-Timeline
-- Iran Primer (USIP): https://iranprimer.usip.org/resource/timeline-us-sanctions
+- Arms Control Association, JCPOA at a glance: https://www.armscontrol.org/factsheets/joint-comprehensive-plan-action-jcpoa-glance
 - GWU National Security Archive: https://nsarchive2.gwu.edu/NSAEBB/NSAEBB435/
 - Amnesty International (2026 war reporting): https://www.amnesty.org/en/latest/news/2026/03/
 - HRANA casualty documentation: https://www.en-hrana.org/

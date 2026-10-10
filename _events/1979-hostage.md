@@ -13,7 +13,7 @@ image: "/assets/images/events/hostage-crisis.jpg"
 description: "پذیرش شاه معزول در آمریکا منجر به ۴۴۴ روز گروگان‌گیری دیپلمات‌های آمریکایی در تهران شد."
 sources:
   - title: "The Iranian Hostage Crisis — Office of the Historian"
-    url: "https://history.state.gov/milestones/1977-1980/iran-hostage-crisis"
+    url: "https://history.state.gov/departmenthistory/short-history/iraniancrises"
     publisher: "U.S. Department of State, Office of the Historian"
     year: 2016
     type: official
@@ -30,12 +30,18 @@ sources:
     year: 1988
     type: academic
     type_label: "پژوهش دانشگاهی"
-  - title: "Iran Hostage Crisis — National Security Archive"
-    url: "https://nsarchive.gwu.edu/briefing-book/iran/2021-10-29/iran-hostage-crisis-40-years-later"
+  - title: "1979 Iran Hostage Crisis Recalled"
+    url: "https://nsarchive.gwu.edu/briefing-book/iran/2019-11-04/1979-iran-hostage-crisis-recalled"
     publisher: "National Security Archive"
-    year: 2021
+    year: 2019
     type: archive
     type_label: "آرشیو"
+  - title: "Bruce Laingen cable to State Department, \"Shah's Desire to Reside in the U.S.,\" July 28, 1979"
+    url: "https://nsarchive.gwu.edu/document/19701-national-security-archive-doc-02-bruce-laingen"
+    publisher: "National Security Archive"
+    year: 2019
+    type: official
+    type_label: "اسناد طبقه‌بندی‌زدایی‌شده"
 ---
 
 کارتر با وجود هشدارهای سفارت، شاه بیمار را برای درمان به آمریکا پذیرفت. در پی این تصمیم، دانشجویان انقلابی سفارت آمریکا را تصرف کردند و بحران ۴۴۴ روزه گروگان‌گیری آغاز شد.
@@ -44,7 +50,7 @@ sources:
 
 پس از انقلاب ۱۳۵۷، محمدرضا شاه ایران را ترک کرد. بسیاری از ایرانیان نگران بودند که آمریکا دوباره بکوشد شاه را به قدرت بازگرداند، همان کاری که [در ۱۹۵۳ علیه مصدق](/events/1953-coup/) کرده بود. در اکتبر ۱۹۷۹، دولت کارتر زیر فشار هنری کیسینجر و دیوید راکفلر شاه بیمار را برای درمان سرطان پذیرفت.
 
-کارشناسان سفارت آمریکا در تهران صریحاً هشدار داده بودند که این تصمیم پیامدهای خطرناکی خواهد داشت. ویلیام سالیوان، سفیر آمریکا در تهران، و بروس لینگن، کاردار سفارت، هر دو با آن مخالف بودند. اما کیسینجر و راکفلر، که با شاه روابط شخصی و مالی داشتند، پافشاری کردند و کارتر کوتاه آمد.
+کارشناسان سفارت آمریکا در تهران صریحاً هشدار داده بودند که این تصمیم پیامدهای خطرناکی خواهد داشت. بروس لینگن، کاردار سفارت که پس از پایان مأموریت سفیر ویلیام سالیوان در بهار ۱۹۷۹ سفارت را اداره می‌کرد، در تلگرامی در ژوئیه ۱۹۷۹ نوشت پناه دادن به شاه «تقریباً به‌طور قطع تظاهرات گسترده علیه سفارت ما را به راه می‌اندازد». اما کیسینجر و راکفلر، که با شاه روابط شخصی و مالی داشتند، پافشاری کردند و کارتر کوتاه آمد.
 
 ## ریشه‌های بدبینی ایرانیان
 

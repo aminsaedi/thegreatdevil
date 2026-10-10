@@ -18,36 +18,36 @@ sources:
     year: 2020
     type: academic
     type_label: "تحلیل حقوقی"
-  - title: "Trump Ordered Killing of Soleimani — Congressional War Powers Debate"
-    url: "https://foreignpolicy.com/2020/01/03/soleimani-killing-trump-war-powers/"
+  - title: "U.S.-Iran Tensions Fuel New War Powers Debate in Congress"
+    url: "https://foreignpolicy.com/2020/01/09/united-states-iran-tensions-war-powers-debate-congress-suleimani-trump/"
     publisher: "Foreign Policy"
     year: 2020
-    type: journalism
+    type: news
     type_label: "گزارش تحلیلی"
-  - title: "Inspector General Report on Soleimani Strike Authorizations"
-    url: "https://media.defense.gov/2020/Sep/30/2002510576/-1/-1/1/DODIG-2020-105.PDF"
-    publisher: "Department of Defense Inspector General"
-    year: 2020
-    type: official
-    type_label: "سند رسمی دولتی"
   - title: "Iran Attack on Ain al-Assad Base: Congressional Research Service Report"
     url: "https://crsreports.congress.gov/product/pdf/IN/IN11212"
     publisher: "Congressional Research Service"
     year: 2020
     type: official
     type_label: "گزارش کنگره"
-  - title: "How Trump Decided to Kill Qassim Suleimani"
-    url: "https://www.newyorker.com/news/news-desk/how-trump-decided-to-kill-qassim-suleimani"
-    publisher: "The New Yorker"
+  - title: "Seven Days in January: How Trump Pushed U.S. and Iran to the Brink of War"
+    url: "https://www.nytimes.com/2020/01/11/us/politics/iran-trump.html"
+    publisher: "The New York Times"
     year: 2020
-    type: journalism
+    type: news
     type_label: "روزنامه‌نگاری تحقیقی"
-  - title: "The Iran Crisis: U.S. Withdrawal from the JCPOA and Maximum Pressure"
-    url: "https://www.congressionalresearch.org/iran-us-policy"
+  - title: "U.S. Killing of Qasem Soleimani: Frequently Asked Questions (R46148)"
+    url: "https://www.congress.gov/crs_external_products/R/PDF/R46148/R46148.7.pdf"
     publisher: "Congressional Research Service"
     year: 2020
     type: official
     type_label: "گزارش کنگره"
+  - title: "'Imminent threat' explanation noticeably absent in White House report justifying Soleimani strike"
+    url: "https://www.cnn.com/2020/02/14/politics/trump-soleimani-strike-legal-justification/index.html"
+    publisher: "CNN"
+    year: 2020
+    type: news
+    type_label: "خبرگزاری"
 ---
 
 ## ترور در فرودگاه بغداد
@@ -60,19 +60,19 @@ sources:
 
 ## توجیهات آمریکا
 
-وزارت دفاع آمریکا اعلام کرد سلیمانی «حملات قریب‌الوقوعی» علیه نیروهای آمریکایی در منطقه طراحی می‌کرد. این ادعای «تهدید قریب‌الوقوع» هیچ‌وقت با اسناد محرمانه به‌طور کامل اثبات نشد. بازرس کل وزارت دفاع بعدها در گزارشی نشان داد اطلاعاتی که پیش از عملیات به کنگره داده شد ناقص بود.
+وزارت دفاع آمریکا اعلام کرد سلیمانی «فعالانه طرح حمله به دیپلمات‌ها و نظامیان آمریکایی در عراق و سراسر منطقه را می‌ریخت». ترامپ و پمپئو از «تهدید قریب‌الوقوع» حرف زدند، اما پمپئو چند روز بعد پذیرفت که آمریکا اطلاعات مشخصی درباره زمان و مکان حمله نداشت. گزارش رسمی کاخ سفید به کنگره در ۱۴ فوریه ۲۰۲۰ هم هیچ اشاره‌ای به تهدید قریب‌الوقوع نداشت و حمله را پاسخ به حملات پیشین و بازدارندگی در برابر حملات آینده توصیف کرد.
 
 ## واکنش ایران
 
-ایران ۱۳ موشک بالستیک به پایگاه عین‌الاسد در عراق، محل استقرار نیروهای آمریکایی، شلیک کرد. ارتش آمریکا اول اعلام کرد تلفاتی نداده است، اما این ادعا بعدها نادرست از آب درآمد.
+ایران در ۸ ژانویه به پایگاه‌های عین‌الاسد و اربیل در عراق، محل استقرار نیروهای آمریکایی، موشک بالستیک شلیک کرد؛ به گفته پنتاگون ۱۶ موشک که ۱۱ تا به عین‌الاسد خورد. ارتش آمریکا اول اعلام کرد تلفاتی نداده است، اما این ادعا بعدها نادرست از آب درآمد.
 
 <div class="key-fact">بیش از ۱۰۰ نظامی آمریکایی دچار آسیب مغزی ناشی از موج انفجار (TBI) شدند. پنتاگون آمار اولیه را مدت‌ها پنهان نگه داشت و ترامپ این آسیب‌ها را «سردرد ناچیز» خواند.</div>
 
 ## پیامدهای منطقه‌ای
 
 - پارلمان عراق با اکثریت آرا به اخراج نیروهای آمریکایی رأی داد
-- ایران رسماً [از برجام خارج](/events/2018-jcpoa-exit/) و پنجمین مرحله کاهش تعهدات را اعلام کرد
-- سه روز بعد، در فضای آشفته پس از حمله، سامانه موشکی ایران پرواز PS752 اوکراین ایرلاین را به اشتباه سرنگون کرد و ۱۷۶ نفر کشته شدند
+- ایران گام پنجم و آخر [کاهش تعهدات برجامی](/events/2018-jcpoa-exit/) را اعلام کرد و گفت دیگر به هیچ محدودیت عملیاتی پایبند نیست، هرچند رسماً از توافق خارج نشد
+- در ۸ ژانویه، چند ساعت پس از حمله موشکی ایران، در فضای آشفته آن شب، سامانه موشکی ایران پرواز PS752 اوکراین ایرلاین را به اشتباه سرنگون کرد و ۱۷۶ نفر کشته شدند
 
 ## جنجال قانونی
 

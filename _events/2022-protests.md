@@ -17,15 +17,21 @@ sources:
     year: 2022
     type: official
     type_label: "سند رسمی دولتی"
-  - title: "Iran Protests 2022 — Amnesty International"
-    url: "https://www.amnesty.org/en/latest/news/2022/09/iran-protests-mahsa-amini/"
+  - title: "Iran: Deadly crackdown on protests against Mahsa Amini's death in custody needs urgent global action"
+    url: "https://www.amnesty.org/en/latest/news/2022/09/iran-deadly-crackdown-on-protests-against-mahsa-aminis-death-in-custody-needs-urgent-global-action/"
     publisher: "Amnesty International"
     year: 2022
-    type: official
-    type_label: "گزارش حقوق بشری"
-  - title: "US Internet Freedom Programs for Iran"
-    url: "https://www.state.gov/bureaus-offices/under-secretary-for-public-diplomacy-and-public-affairs/bureau-of-democracy-human-rights-and-labor/internet-freedom/"
+    type: ngo
+    type_label: "سازمان حقوق بشری"
+  - title: "Advancing the Free Flow of Information for the Iranian People"
+    url: "https://2021-2025.state.gov/advancing-the-free-flow-of-information-for-the-iranian-people/"
     publisher: "U.S. Department of State"
+    year: 2022
+    type: official
+    type_label: "سند رسمی دولتی"
+  - title: "Statement by President Biden on the Violent Crackdown in Iran"
+    url: "https://ge.usembassy.gov/statement-by-president-biden-on-the-violent-crackdown-in-iran/"
+    publisher: "U.S. Embassy in Georgia (White House statement)"
     year: 2022
     type: official
     type_label: "سند رسمی دولتی"
@@ -37,11 +43,11 @@ sources:
 
 مهسا (ژینا) امینی، دختر ۲۲ ساله کرد، در ۱۶ سپتامبر ۲۰۲۲ پس از بازداشت به دست گشت ارشاد تهران جان باخت. پزشکی قانونی ایران علت مرگ را «بیماری قبلی» اعلام کرد، اما خانواده و شاهدان می‌گفتند او زیر ضرب کشته شده است. خبر مرگش در چند ساعت در شبکه‌های اجتماعی پخش شد و بزرگ‌ترین اعتراضات دو دهه اخیر ایران را به راه انداخت.
 
-اعتراضات با شعار «زن، زندگی، آزادی»، که از جنبش آزادی‌خواهی کردستان آمده بود، در چند هفته به بیش از ۱۵۰ شهر رسید. نیروهای امنیتی با گلوله جنگی، گاز اشک‌آور و باتوم به معترضان حمله کردند. سازمان‌های حقوق بشری از ۳۰۰ تا ۵۰۰ کشته، هزاران بازداشتی و ده‌ها اعدام مرتبط با اعتراضات خبر دادند.
+اعتراضات با شعار «زن، زندگی، آزادی»، که از جنبش آزادی‌خواهی کردستان آمده بود، در چند هفته به بیش از ۱۵۰ شهر رسید. نیروهای امنیتی با گلوله جنگی، گاز اشک‌آور و باتوم به معترضان حمله کردند. سازمان‌های حقوق بشری از بیش از ۵۰۰ کشته، هزاران بازداشتی و دست‌کم ده اعدام مرتبط با اعتراضات خبر دادند.
 
 ## واکنش دولت ایران: قطع اینترنت
 
-جمهوری اسلامی دسترسی به اینترنت را به‌شدت محدود کرد و اینستاگرام و واتس‌اپ را که معترضان بیشتر از همه برای سازمان‌دهی به کار می‌بردند، مسدود کرد. در مناطقی که اعتراضات شدیدتر بود، اینترنت کاملاً قطع شد. این کار سابقه داشت: در اعتراضات آبان ۱۳۹۸ هم اینترنت سراسر ایران یک هفته قطع شده بود.
+جمهوری اسلامی دسترسی به اینترنت را به‌شدت محدود کرد و اینستاگرام و واتس‌اپ را که معترضان بیشتر از همه برای سازمان‌دهی به کار می‌بردند، مسدود کرد. در مناطقی که اعتراضات شدیدتر بود، اینترنت کاملاً قطع شد. این کار سابقه داشت: در اعتراضات آبان ۱۳۹۸ هم اینترنت سراسر ایران حدود یک هفته قطع شده بود.
 
 ## کمک‌های آمریکا
 
@@ -51,7 +57,7 @@ sources:
 - **ابزارهای ارتباطی:** شرکت‌های فناوری آمریکایی اجازه یافتند VPN، پروکسی و ابزارهای امنیت ارتباطی را رایگان در اختیار کاربران ایرانی بگذارند
 - **پلتفرم‌های اجتماعی:** ارائه خدماتی به ایرانیان که پیش‌تر در منطقه خاکستری تحریم‌ها بود مجاز شد
 
-رئیس‌جمهور بایدن گفت آمریکا «از شجاعت مردم ایران» حمایت می‌کند و برای حفظ دسترسی ایرانیان به اینترنت آزاد تلاش خواهد کرد.
+رئیس‌جمهور بایدن در ۳ اکتبر ۲۰۲۲ گفت آمریکا «در کنار زنان ایران و همه شهروندان ایرانی ایستاده که با شجاعتشان الهام‌بخش جهان شده‌اند» و دسترسی ایرانیان به اینترنت را آسان‌تر می‌کند.
 
 ## ابعاد برنامه آزادی اینترنت
 

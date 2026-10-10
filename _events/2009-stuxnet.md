@@ -36,8 +36,8 @@ sources:
     year: 2014
     type: journalism
     type_label: "گزارش تحلیلی"
-  - title: "ICS-CERT Alert on Stuxnet Malware"
-    url: "https://www.cisa.gov/news-events/ics-alerts/ics-alert-10-272-01"
+  - title: "ICS-CERT Advisory ICSA-10-272-01: Primary Stuxnet Advisory"
+    url: "https://www.cisa.gov/news-events/ics-advisories/icsa-10-272-01"
     publisher: "CISA (Cybersecurity and Infrastructure Security Agency)"
     year: 2010
     type: official
@@ -56,7 +56,7 @@ sources:
 
 ## طراحی سلاح
 
-«عملیات المپیک گیمز» (Olympic Games) برنامه مخفی مشترک آمریکا و اسرائیل بود که در دوره ریاست‌جمهوری بوش شروع شد و اوباما آن را گسترش داد. استاکس‌نت، بدافزاری با حدود ۵۰۰٬۰۰۰ خط کد، پیچیده‌ترین سلاح سایبری تاریخ بود:
+«عملیات المپیک گیمز» (Olympic Games) برنامه مخفی مشترک آمریکا و اسرائیل بود که در دوره ریاست‌جمهوری بوش شروع شد و اوباما آن را گسترش داد. استاکس‌نت، بدافزاری به حجم حدود ۵۰۰ کیلوبایت، پیچیده‌ترین سلاح سایبری تاریخ بود:
 
 > استاکس‌نت اولین سلاح دیجیتالی بود که بدون اعلام جنگ و بدون تأیید رسمی به زیرساخت فیزیکی یک کشور حاکم آسیب رساند.
 

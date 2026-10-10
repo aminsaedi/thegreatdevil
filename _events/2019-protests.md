@@ -11,24 +11,30 @@ category_label: "اطلاعاتی"
 featured: false
 description: "آمریکا در جریان اعتراضات آبان ۱۳۹۸ از معترضان حمایت کرد — دولت ایران اینترنت را قطع کرد."
 sources:
-  - title: "Iran Internet Shutdown and US Response — NetBlocks"
-    url: "https://netblocks.org/reports/iran-internet-shut-down-amid-protests-over-fuel-prices-dAmqddA2"
+  - title: "Internet disrupted in Iran amid fuel protests in multiple cities"
+    url: "https://netblocks.org/reports/internet-disrupted-in-iran-amid-fuel-protests-in-multiple-cities-pA25L18b"
     publisher: "NetBlocks"
     year: 2019
     type: journalism
     type_label: "گزارش فنی"
-  - title: "Iran Protests — Amnesty International"
-    url: "https://www.amnesty.org/en/latest/news/2019/11/iran-1500-protesters-feared-killed-as-top-officials-give-green-light-to-crush-protests/"
+  - title: "Iran: More than 100 protesters believed to be killed as top officials give green light to crush protests"
+    url: "https://www.amnesty.org/en/latest/press-release/2019/11/iran-more-than-100-protesters-believed-to-be-killed-as-top-officials-give-green-light-to-crush-protests/"
     publisher: "Amnesty International"
     year: 2019
-    type: official
-    type_label: "گزارش حقوق بشری"
+    type: ngo
+    type_label: "سازمان حقوق بشری"
   - title: "U.S. Statement on Iran Protests — State Department"
     url: "https://2017-2021.state.gov/u-s-secretary-of-state-michael-r-pompeo-calls-on-iran-to-restore-internet-access-and-respect-its-peoples-rights/"
     publisher: "U.S. Department of State"
     year: 2019
     type: official
     type_label: "سند رسمی دولتی"
+  - title: "ذوالنور: ۲۳۰ نفر در وقایع آبان ۱۳۹۸ کشته شدند"
+    url: "https://iranwire.com/fa/news/38606/"
+    publisher: "IranWire"
+    year: 2020
+    type: news
+    type_label: "خبرگزاری"
 ---
 
 آمریکا در جریان اعتراضات آبان ۱۳۹۸ با بیانیه‌ها و کمک‌های ارتباطی از معترضان ایرانی حمایت کرد.
@@ -45,7 +51,7 @@ sources:
 
 ## سرکوب
 
-به گزارش عفو بین‌الملل، بیش از ۱۵۰۰ نفر در این اعتراضات کشته شدند. این سنگین‌ترین سرکوب از انقلاب ۱۳۵۷ بود.
+رویترز به نقل از سه مقام وزارت کشور ایران گزارش داد حدود ۱۵۰۰ نفر در این اعتراضات کشته شدند. عفو بین‌الملل در روزهای نخست از بیش از ۱۰۰ کشته خبر داد و بعدها مرگ دست‌کم ۳۰۴ نفر را مستند کرد. این سنگین‌ترین سرکوب از انقلاب ۱۳۵۷ بود.
 
 ## بستر اقتصادی: چرا بنزین؟
 
@@ -53,7 +59,7 @@ sources:
 
 ## قطع اینترنت: بی‌سابقه‌ترین اقدام
 
-دولت ایران در ۲۵ آبان ۱۳۹۸ اینترنت سراسر کشور را قطع کرد. قطعی پنج روز طول کشید و طولانی‌ترین و کامل‌ترین قطعی اینترنت در تاریخ ایران بود. به گفته سازمان NetBlocks، اتصال ایران به ۴ الی ۷ درصد حالت عادی رسید. هدف روشن بود: تصاویر و ویدیوهای سرکوب نباید از کشور بیرون می‌رفت و معترضان نباید می‌توانستند با هم هماهنگ شوند.
+دولت ایران در ۲۵ آبان ۱۳۹۸ اینترنت سراسر کشور را قطع کرد. قطعی تقریباً کامل حدود یک هفته طول کشید (اینترنت ثابت پس از پنج روز و اینترنت همراه چند روز بعد کم‌کم وصل شد) و طولانی‌ترین و کامل‌ترین قطعی اینترنت در تاریخ ایران بود. به گزارش NetBlocks، در چهار روز نخست قطعی، اتصال ایران به ۴ تا ۷ درصد سطح عادی افتاده بود. هدف روشن بود: تصاویر و ویدیوهای سرکوب نباید از کشور بیرون می‌رفت و معترضان نباید می‌توانستند با هم هماهنگ شوند.
 
 ## موضع آمریکا و ابزارهای فشار
 
@@ -72,7 +78,7 @@ sources:
 - جلوگیری از انتقال زخمی‌ها به بیمارستان
 - گم‌شدن اجساد و مانع‌تراشی برای خانواده‌های داغدار
 
-عفو بین‌الملل رقم ۱٬۵۰۰ کشته را اعلام کرد، اما دولت ایران هیچ‌وقت آمار رسمی منتشر نکرد.
+رقم ۱٬۵۰۰ کشته را رویترز به نقل از مقامات وزارت کشور ایران گزارش کرد و عفو بین‌الملل دست‌کم ۳۰۴ کشته را مستند کرد. دولت ایران هیچ‌وقت آمار رسمی کاملی منتشر نکرد و تنها مجتبی ذوالنور، رئیس پیشین کمیسیون امنیت ملی مجلس، در خرداد ۱۳۹۹ به استناد آمار پزشکی قانونی از ۲۳۰ کشته سخن گفت.
 
 ## ارتباط با سیاست فشار حداکثری
 

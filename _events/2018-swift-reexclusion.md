@@ -11,20 +11,20 @@ category_label: "تحریم"
 featured: false
 description: "پس از خروج ترامپ از برجام، SWIFT بار دوم بانک‌های ایران را قطع کرد — اتصالی که با برجام ۲۰۱۶ برقرار شده بود."
 sources:
-  - title: "SWIFT Compliance with US Secondary Sanctions on Iran"
-    url: "https://home.treasury.gov/policy-issues/financial-sanctions/sanctions-programs-and-country-information/iran-sanctions"
-    publisher: "U.S. Department of the Treasury"
+  - title: "Briefing on Iran Sanctions — Pompeo and Mnuchin on SWIFT"
+    url: "https://2017-2021.state.gov/briefing-on-iran-sanctions/"
+    publisher: "U.S. Department of State"
     year: 2018
     type: official
     type_label: "سند رسمی دولتی"
-  - title: "Swift Cuts Iran Banks After US Sanctions Threat"
-    url: "https://www.bbc.com/news/business-46091556"
-    publisher: "BBC News"
+  - title: "What SWIFT is and why it matters in the US-Iran spat"
+    url: "https://www.aljazeera.com/economy/2018/11/5/what-swift-is-and-why-it-matters-in-the-us-iran-spat"
+    publisher: "Al Jazeera"
     year: 2018
-    type: media
-    type_label: "رسانه معتبر"
-  - title: "Reimposing Iran Sanctions — US Treasury OFAC"
-    url: "https://home.treasury.gov/system/files/126/07162018_ofac_iran_faq.pdf"
+    type: news
+    type_label: "خبرگزاری"
+  - title: "Publication of New Iran-related FAQs; Updates to OFAC's SDN List (Nov. 5, 2018)"
+    url: "https://ofac.treasury.gov/recent-actions/20181105"
     publisher: "U.S. Department of the Treasury — OFAC"
     year: 2018
     type: official
@@ -81,7 +81,7 @@ INSTEX در ۲۰۲۳ رسماً منحل شد.
 
 قطع دوباره سوئیفت، همراه با بازگشت تحریم‌های نفتی و مالی، به اقتصاد ایران ضربه سنگینی زد:
 
-- ریال ایران در ۲۰۱۸–۲۰۱۹ بیش از ۸۰ درصد ارزش خود را از دست داد
+- ریال ایران تا پایان دوره ترامپ حدود ۸۰ درصد ارزشش را در برابر دلار از دست داد
 - تورم از ۴۰ درصد گذشت
 - صادرات نفت از ۲.۵ میلیون بشکه در روز به کمتر از ۳۰۰ هزار بشکه رسید
 - بیکاری، فقر و نارضایتی اجتماعی به [اعتراضات ۲۰۱۹](/events/2019-protests/) و [۲۰۲۲](/events/2022-protests/) انجامید

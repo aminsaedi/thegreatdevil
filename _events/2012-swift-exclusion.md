@@ -11,18 +11,18 @@ category_label: "تحریم"
 featured: false
 description: "اتحادیه اروپا تحت فشار آمریکا ایران را از شبکه SWIFT قطع کرد — بزرگ‌ترین انزوای مالی یک کشور در تاریخ این شبکه."
 sources:
-  - title: "Treasury Department Statement on SWIFT and Iran"
-    url: "https://home.treasury.gov/policy-issues/financial-sanctions/sanctions-programs-and-country-information/iran-sanctions"
+  - title: "Statement by Under Secretary David Cohen on Action by the EU and SWIFT to Terminate Service for Sanctioned Iranian Banks"
+    url: "https://home.treasury.gov/news/press-releases/tg1451"
     publisher: "U.S. Department of the Treasury"
     year: 2012
     type: official
     type_label: "سند رسمی دولتی"
-  - title: "Iran and the SWIFT Disconnect — USIP Iran Primer"
-    url: "https://iranprimer.usip.org/blog/2012/mar/17/iran-and-swift"
-    publisher: "United States Institute of Peace"
+  - title: "Iranian banks cut off from SWIFT system"
+    url: "https://www.aljazeera.com/economy/2012/3/17/iranian-banks-cut-off-from-swift-system"
+    publisher: "Al Jazeera"
     year: 2012
-    type: academic
-    type_label: "تحلیل سیاسی"
+    type: news
+    type_label: "خبرگزاری"
   - title: "EU Regulation Suspending Swift Services to Iranian Banks"
     url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32012R0267"
     publisher: "Official Journal of the European Union"
@@ -31,7 +31,7 @@ sources:
     type_label: "سند رسمی اروپایی"
 ---
 
-در مارس ۲۰۱۲ سازمان SWIFT زیر فشار اتحادیه اروپا و آمریکا دسترسی همه بانک‌های ایرانی را به این شبکه جهانی انتقال مالی قطع کرد و اقتصاد ایران به‌سرعت فلج شد.
+در مارس ۲۰۱۲ سازمان SWIFT زیر فشار اتحادیه اروپا و آمریکا دسترسی حدود ۳۰ بانک ایرانی، از جمله بانک مرکزی، را به این شبکه جهانی انتقال مالی قطع کرد و اقتصاد ایران به‌سرعت فلج شد.
 
 ## پیش‌زمینه
 

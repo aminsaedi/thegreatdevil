@@ -18,9 +18,9 @@ sources:
     type: journalism
     type_label: "روزنامه‌نگاری تحقیقی"
   - title: "Bush Authorizes New Covert Action Against Iran"
-    url: "https://abcnews.go.com/Blotter/story?id=4109007"
-    publisher: "ABC News / Brian Ross Investigation"
-    year: 2008
+    url: "https://web.archive.org/web/20070524025649/http://blogs.abcnews.com/theblotter/2007/05/bush_authorizes.html"
+    publisher: "ABC News — Brian Ross & Richard Esposito"
+    year: 2007
     type: journalism
     type_label: "گزارش تحقیقی"
   - title: "Preparing the Battlefield — Covert Operations in Iran"
