@@ -9,7 +9,7 @@ era_label: "۲۰۱۰–۲۰۲۰"
 category: sanction
 category_label: "تحریم"
 featured: false
-description: "اتحادیه اروپا تحت فشار آمریکا ایران را از شبکه SWIFT قطع کرد — بزرگ‌ترین انزوای مالی یک کشور در تاریخ این شبکه."
+description: "اتحادیه اروپا تحت فشار آمریکا ایران را از شبکه SWIFT قطع کرد؛ بزرگ‌ترین انزوای مالی یک کشور در تاریخ این شبکه."
 sources:
   - title: "Statement by Under Secretary David Cohen on Action by the EU and SWIFT to Terminate Service for Sanctioned Iranian Banks"
     url: "https://home.treasury.gov/news/press-releases/tg1451"

@@ -523,7 +523,7 @@ layout: default
             {% else %}
             <span class="source-title" lang="en">{{ source.title }}</span>
             {% endif %}
-            <span class="source-meta" lang="en">{% if source.publisher %}{{ source.publisher }}{% endif %}{% if source.year %} — {{ source.year }}{% endif %}{% if source.type_label %} · <span class="source-type-text" lang="fa">{{ source.type_label }}</span>{% endif %}</span>
+            <span class="source-meta" lang="en">{% if source.publisher %}{{ source.publisher }}{% endif %}{% if source.year %}, {{ source.year }}{% endif %}{% if source.type_label %} · <span class="source-type-text" lang="fa">{{ source.type_label }}</span>{% endif %}</span>
           </div>
         </li>
         {% endfor %}

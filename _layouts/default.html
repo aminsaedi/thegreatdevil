@@ -130,10 +130,10 @@
     <img src="{{ '/assets/images/brand/logo.png' | relative_url }}" alt="" width="128" height="128" fetchpriority="high">
   </picture>
   <div class="header-text">
-    {% assign title_parts = site.title | split: ' — ' %}
+    {% assign title_parts = site.title | split: ': ' %}
     {% if page.url == "/" %}{% assign title_tag = "h1" %}{% else %}{% assign title_tag = "p" %}{% endif %}
     {%- comment -%} Only the home page's site name is its main heading; other pages have their own h1 {%- endcomment %}
-    {% capture site_title %}<span class="h1-main">{{ title_parts[0] }}</span><span class="h1-sep"> — </span><span class="h1-sub">{{ title_parts[1] }}</span>{% endcapture %}
+    {% capture site_title %}<span class="h1-main">{{ title_parts[0] }}</span><span class="h1-sep">: </span><span class="h1-sub">{{ title_parts[1] }}</span>{% endcapture %}
     <{{ title_tag }} class="site-title">{% if page.url == "/" %}{{ site_title }}{% else %}<a href="{{ '/' | relative_url }}">{{ site_title }}</a>{% endif %}</{{ title_tag }}>
     <p class="title-en" lang="en">{{ site.title_en }}</p>
     {% unless page.url == "/" %}<p class="header-desc">{{ site.description_fa }}</p>{% endunless %}
@@ -203,23 +203,22 @@
         <li>
           <span class="footer-source-type">دانشنامه</span>
           <a href="https://en.wikipedia.org/wiki/CIA_activities_in_Iran" target="_blank" rel="noopener noreferrer">
-            ویکی‌پدیا — فعالیت‌های CIA در ایران
+            ویکی‌پدیا: فعالیت‌های CIA در ایران
           </a>
           <a href="https://web.archive.org/web/https://en.wikipedia.org/wiki/CIA_activities_in_Iran" target="_blank" rel="noopener noreferrer" class="footer-archive-link" title="Archived version on Wayback Machine">⏎ archived</a>
         </li>
         <li>
           <span class="footer-source-type">دانشنامه</span>
           <a href="https://www.britannica.com/topic/US-Iran-Relations-A-Timeline" target="_blank" rel="noopener noreferrer">
-            بریتانیکا — روابط ایران و آمریکا
+            بریتانیکا: روابط ایران و آمریکا
           </a>
           <a href="https://web.archive.org/web/https://www.britannica.com/topic/US-Iran-Relations-A-Timeline" target="_blank" rel="noopener noreferrer" class="footer-archive-link" title="Archived version on Wayback Machine">⏎ archived</a>
         </li>
         <li>
           <span class="footer-source-type">اتاق فکر</span>
-          <a href="https://iranprimer.usip.org/resource/timeline-us-sanctions" target="_blank" rel="noopener noreferrer">
-            Iran Primer — موسسه صلح ایالات متحده (USIP)
+          <a href="https://web.archive.org/web/20260612045415/https://iranprimer.usip.org/resource/us-sanctions" target="_blank" rel="noopener noreferrer">
+            Iran Primer، موسسه صلح ایالات متحده (USIP): تحریم‌های آمریکا
           </a>
-          <a href="https://web.archive.org/web/https://iranprimer.usip.org/resource/timeline-us-sanctions" target="_blank" rel="noopener noreferrer" class="footer-archive-link" title="Archived version on Wayback Machine">⏎ archived</a>
         </li>
         <li>
           <span class="footer-source-type">آرشیو محرمانه</span>

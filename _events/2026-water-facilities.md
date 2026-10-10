@@ -9,7 +9,7 @@ era_label: "۲۰۲۵–اکنون"
 category: military
 category_label: "نظامی"
 featured: false
-description: "آمریکا آب‌شیرین‌کن قشم و سپس مخازن آب سیریک را بمباران کرد؛ آب آشامیدنی بیش از ۲۰ هزار نفر در گرمای بالای ۴۵ درجه قطع شد — در کشوری که پنجمین سال خشکسالی را می‌گذراند."
+description: "آمریکا آب‌شیرین‌کن قشم و سپس مخازن آب سیریک را بمباران کرد؛ آب آشامیدنی بیش از ۲۰ هزار نفر در گرمای بالای ۴۵ درجه قطع شد، آن هم در کشوری که پنجمین سال خشکسالی را می‌گذراند."
 sources:
   - title: "US bombs Iran's water facilities: Why that's so significant"
     url: "https://www.aljazeera.com/news/2026/6/10/us-bombs-irans-water-facilities-why-thats-so-significant"

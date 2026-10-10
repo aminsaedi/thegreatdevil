@@ -9,7 +9,7 @@ era_label: "۲۰۱۰–۲۰۲۰"
 category: intel
 category_label: "اطلاعاتی"
 featured: false
-description: "چندین دانشمند هسته‌ای ایران در تهران ترور شدند — گزارش‌ها از نقش CIA و موساد حکایت دارد."
+description: "چندین دانشمند هسته‌ای ایران در تهران ترور شدند؛ گزارش‌ها به نقش موساد و آگاهی آمریکا از این ترورها اشاره دارند."
 sources:
   - title: "Israel teams with terror group to kill Iran's nuclear scientists, U.S. officials tell NBC News"
     url: "https://www.nbcnews.com/news/world/israel-teams-terror-group-kill-irans-nuclear-scientists-u-s-flna241673"
@@ -25,7 +25,7 @@ sources:
     type_label: "خبرگزاری"
   - title: "Iranian Scientists and U.S. Targeted Killings"
     url: "https://www.cfr.org/articles/iranian-scientists-and-us-targeted-killings"
-    publisher: "Council on Foreign Relations — Micah Zenko"
+    publisher: "Council on Foreign Relations, Micah Zenko"
     year: 2012
     type: academic
     type_label: "تحلیل سیاسی"

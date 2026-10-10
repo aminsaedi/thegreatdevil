@@ -1,14 +1,14 @@
-# The Great Devil — US Interventions in Iran
+# The Great Devil: US Interventions in Iran
 # https://thegreatdevil.com
 
 > A documented timeline of 57 US interventions in Iran's internal affairs,
-> from 1901 to the ongoing 2026 war — coups, sanctions, cyber attacks, assassinations,
+> from 1901 to the ongoing 2026 war: coups, sanctions, cyber attacks, assassinations,
 > military strikes, and attacks on civilian infrastructure.
 > Content is in Farsi (Persian) with English metadata.
 
 ## Telegram Channel
 
-https://t.me/thegreatdevil_com — documented events posted as posters with a Farsi
+https://t.me/thegreatdevil_com: documented events posted as posters with a Farsi
 summary and a link to the full, sourced event page.
 
 ## About This Site
@@ -35,8 +35,8 @@ Each event page includes:
 - 2015: JCPOA nuclear deal
 - 2018: Trump's unilateral withdrawal from JCPOA
 - 2020: Assassination of General Qasem Soleimani
-- Jun 2025: Operation Midnight Hammer — B-2 strikes on Fordow, Natanz and Isfahan (Twelve-Day War)
-- 28 Feb 2026: Operation Epic Fury — start of the ongoing 2026 Iran war; Supreme Leader Ali Khamenei
+- Jun 2025: Operation Midnight Hammer, B-2 strikes on Fordow, Natanz and Isfahan (Twelve-Day War)
+- 28 Feb 2026: Operation Epic Fury, the start of the ongoing 2026 Iran war; Supreme Leader Ali Khamenei
   killed in a joint CIA/Mossad-planned strike; Shajareh Tayyebeh girls' school in Minab hit
   (156 killed including 120 children according to Iranian authorities cited by Amnesty
   International; Iranian media reported up to 180)

@@ -9,7 +9,7 @@ era_label: "۲۰۱۰–۲۰۲۰"
 category: sanction
 category_label: "تحریم"
 featured: false
-description: "ترامپ بیش از ۱۵۰۰ تحریم اعمال کرد — سنگین‌ترین بار تحریم در تاریخ روابط آمریکا–ایران."
+description: "ترامپ بیش از ۱۵۰۰ تحریم وضع کرد، سنگین‌ترین بار تحریم در تاریخ روابط آمریکا و ایران."
 sources:
   - title: "U.S. Government Fully Re-Imposes Sanctions on the Iranian Regime As Part of Unprecedented U.S. Economic Pressure Campaign"
     url: "https://home.treasury.gov/news/press-releases/sm541"
@@ -23,7 +23,7 @@ sources:
     year: 2019
     type: official
     type_label: "گزارش حقوق بشری"
-  - title: "Iran Sanctions Under Maximum Pressure — CRS"
+  - title: "Iran Sanctions Under Maximum Pressure: CRS"
     url: "https://crsreports.congress.gov/product/pdf/R/R45204"
     publisher: "Congressional Research Service"
     year: 2020

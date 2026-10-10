@@ -51,6 +51,11 @@ Event description in Farsi here.
 
 `index.html` sorts events within each era by `order`, so every event file must have one.
 
+No em dashes (—) anywhere in content: titles, descriptions, captions, headings, bodies,
+source titles and publishers, and template text. Use a comma, colon, semicolon,
+parentheses or a new sentence. En dashes stay only in numeric ranges and compound
+names (۱۹۵۳–۱۹۷۹, ایران–عراق).
+
 ## Images
 
 Only use images that are public domain or Creative Commons licensed — no press-agency

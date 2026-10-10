@@ -9,7 +9,7 @@ era_label: "۲۰۱۰–۲۰۲۰"
 category: intel
 category_label: "اطلاعاتی"
 featured: false
-description: "آمریکا در جریان اعتراضات آبان ۱۳۹۸ از معترضان حمایت کرد — دولت ایران اینترنت را قطع کرد."
+description: "آمریکا در جریان اعتراضات آبان ۱۳۹۸ از معترضان حمایت کرد و دولت ایران اینترنت را قطع کرد."
 sources:
   - title: "Internet disrupted in Iran amid fuel protests in multiple cities"
     url: "https://netblocks.org/reports/internet-disrupted-in-iran-amid-fuel-protests-in-multiple-cities-pA25L18b"
@@ -23,7 +23,7 @@ sources:
     year: 2019
     type: ngo
     type_label: "سازمان حقوق بشری"
-  - title: "U.S. Statement on Iran Protests — State Department"
+  - title: "U.S. Statement on Iran Protests: State Department"
     url: "https://2017-2021.state.gov/u-s-secretary-of-state-michael-r-pompeo-calls-on-iran-to-restore-internet-access-and-respect-its-peoples-rights/"
     publisher: "U.S. Department of State"
     year: 2019

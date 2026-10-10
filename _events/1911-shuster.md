@@ -10,23 +10,23 @@ category: diplo
 category_label: "دیپلماسی"
 featured: true
 image: "/assets/images/events/shuster.jpg"
-description: "اخراج مشاور مالی آمریکایی مجلس ایران تحت فشار روسیه و بریتانیا — با بی‌تفاوتی واشنگتن."
+description: "اخراج مشاور مالی آمریکایی مجلس ایران زیر فشار روسیه و بریتانیا، در حالی که واشنگتن بی‌تفاوت ماند."
 sources:
   - title: "The Strangling of Persia"
     url: "https://archive.org/details/stranglingofpers00shusuoft"
-    publisher: "W. Morgan Shuster — Century Co., New York"
+    publisher: "W. Morgan Shuster, Century Co., New York"
     year: 1912
     type: academic
-    type_label: "کتاب — خاطرات شوستر"
+    type_label: "کتاب: خاطرات شوستر"
   - title: "Iran and America: A forgotten friendship"
     url: "https://theconversation.com/iran-and-america-a-forgotten-friendship-99350"
-    publisher: "Daniel T. Potts — The Conversation"
+    publisher: "Daniel T. Potts, The Conversation"
     year: 2018
     type: news
     type_label: "گزارش تحلیلی"
   - title: "Iran: A Modern History"
     url: "https://yalebooks.yale.edu/book/9780300231465/iran/"
-    publisher: "Abbas Amanat — Yale University Press"
+    publisher: "Abbas Amanat, Yale University Press"
     year: 2017
     type: academic
     type_label: "پژوهش دانشگاهی"

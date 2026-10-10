@@ -11,7 +11,7 @@ category_label: "اطلاعاتی"
 featured: false
 description: "آمریکا اینترنت ماهواره‌ای و ابزارهای دور زدن فیلتر را برای معترضان ایران فراهم کرد."
 sources:
-  - title: "Starlink Access for Iran — State Dept. License"
+  - title: "Starlink Access for Iran: State Dept. License"
     url: "https://2017-2021.state.gov/u-s-secretary-of-state-michael-r-pompeo-calls-on-iran-to-restore-internet-access-and-respect-its-peoples-rights/"
     publisher: "U.S. Department of State"
     year: 2022

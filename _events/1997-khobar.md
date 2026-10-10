@@ -17,7 +17,7 @@ sources:
     year: 2001
     type: official
     type_label: "سند رسمی دولتی"
-  - title: "The Khobar Towers Bombing — State Department"
+  - title: "The Khobar Towers Bombing: State Department"
     url: "https://1997-2001.state.gov/global/terrorism/khobar_report.html"
     publisher: "U.S. Department of State"
     year: 2001

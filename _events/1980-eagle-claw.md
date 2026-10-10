@@ -1,5 +1,5 @@
 ---
-title: "عملیات پنجه عقاب — شکست نظامی"
+title: "عملیات پنجه عقاب: شکست نظامی"
 year: "۱۹۸۰"
 order: 1
 era_id: era-1980
@@ -9,15 +9,15 @@ era_label: "۱۹۸۰–۱۹۹۰"
 category: military
 category_label: "نظامی"
 featured: false
-description: "عملیات نظامی ناموفق آمریکا برای آزادسازی گروگان‌ها — ۸ سرباز آمریکایی در بیابان ایران کشته شدند."
+description: "عملیات نظامی ناموفق آمریکا برای آزادسازی گروگان‌ها که در آن ۸ نظامی آمریکایی در بیابان ایران کشته شدند."
 sources:
-  - title: "Eagle Claw — Joint Chiefs of Staff After-Action Review"
+  - title: "Eagle Claw: Joint Chiefs of Staff After-Action Review"
     url: "https://nsarchive2.gwu.edu/NSAEBB/NSAEBB63/"
     publisher: "National Security Archive"
     year: 2000
     type: declassified
     type_label: "اسناد طبقه‌بندی‌زدایی‌شده"
-  - title: "Break in Diplomatic Relations and the Rescue Mission — FRUS 1977–1980, Vol. XI, Part 1"
+  - title: "Break in Diplomatic Relations and the Rescue Mission: FRUS 1977–1980, Vol. XI, Part 1"
     url: "https://history.state.gov/historicaldocuments/frus1977-80v11p1/ch4"
     publisher: "U.S. Department of State, Office of the Historian"
     year: 2020
@@ -25,7 +25,7 @@ sources:
     type_label: "سند رسمی دولتی"
   - title: "The Guts to Try: The Untold Story of the Iran Hostage Rescue Mission"
     url: "https://www.goodreads.com/book/show/971695.The_Guts_to_Try"
-    publisher: "Col. James H. Kyle — Orion Books"
+    publisher: "Col. James H. Kyle, Orion Books"
     year: 1990
     type: academic
     type_label: "کتاب"

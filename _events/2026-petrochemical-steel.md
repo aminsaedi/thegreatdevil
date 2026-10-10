@@ -9,7 +9,7 @@ era_label: "۲۰۲۵–اکنون"
 category: military
 category_label: "نظامی"
 featured: false
-description: "میدان گازی پارس جنوبی، پالایشگاه‌های تهران، فولاد خوزستان و فولاد مبارکه در مارس ۲۰۲۶ بمباران شدند — صنایعی که تولیدشان عمدتاً مصرف داخلی ایران را تأمین می‌کرد."
+description: "میدان گازی پارس جنوبی، پالایشگاه‌های تهران، فولاد خوزستان و فولاد مبارکه در مارس ۲۰۲۶ بمباران شدند؛ صنایعی که تولیدشان بیشتر صرف نیاز داخلی ایران می‌شد."
 sources:
   - title: "2026 South Pars field attack"
     url: "https://en.wikipedia.org/wiki/2026_South_Pars_field_attack"

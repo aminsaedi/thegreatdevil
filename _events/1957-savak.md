@@ -17,7 +17,7 @@ sources:
     year: 1976
     type: ngo
     type_label: "گزارش حقوق بشری"
-  - title: "National Security Archive — Iran Collection"
+  - title: "National Security Archive: Iran Collection"
     url: "https://nsarchive2.gwu.edu/NSAEBB/NSAEBB21/"
     publisher: "National Security Archive, George Washington University"
     year: 2000
@@ -25,11 +25,11 @@ sources:
     type_label: "آرشیو"
   - title: "Iran Between Two Revolutions"
     url: "https://press.princeton.edu/books/paperback/9780691101347/iran-between-two-revolutions"
-    publisher: "Ervand Abrahamian — Princeton University Press"
+    publisher: "Ervand Abrahamian, Princeton University Press"
     year: 1982
     type: academic
     type_label: "پژوهش دانشگاهی"
-  - title: "SAVAK Documents — CIA FOIA Reading Room"
+  - title: "SAVAK Documents: CIA FOIA Reading Room"
     url: "https://www.cia.gov/readingroom/search/site/SAVAK"
     publisher: "CIA FOIA Electronic Reading Room"
     year: 2004
@@ -37,7 +37,7 @@ sources:
     type_label: "اسناد FOIA"
   - title: "Central Intelligence Agency (CIA) in Persia"
     url: "https://www.iranicaonline.org/articles/central-intelligence-agency-cia-in-persia/"
-    publisher: "Encyclopaedia Iranica — Mark J. Gasiorowski"
+    publisher: "Encyclopaedia Iranica, Mark J. Gasiorowski"
     year: 1991
     type: reference
     type_label: "دانشنامه"

@@ -11,7 +11,7 @@ category_label: "نظامی"
 featured: false
 description: "رزمایش‌های نظامی گسترده آمریکا در خلیج‌فارس به‌عنوان فشار نمادین علیه ایران."
 sources:
-  - title: "FIFTH Fleet — Bahrain (history of the U.S. Navy presence and the 1995 recommissioning of 5th Fleet/NAVCENT)"
+  - title: "FIFTH Fleet: Bahrain (history of the U.S. Navy presence and the 1995 recommissioning of 5th Fleet/NAVCENT)"
     url: "https://www.navsea.navy.mil/Home/RMC/FDRMC/Bahrain/WhyBahrain/OurMission/5thFleet.aspx"
     publisher: "U.S. Navy, Naval Sea Systems Command"
     year: 2025
@@ -19,7 +19,7 @@ sources:
     type_label: "سند رسمی نظامی"
   - title: "Searching for Stable Peace in the Persian Gulf"
     url: "https://www.govinfo.gov/content/pkg/GOVPUB-D101-PURL-LPS12549/pdf/GOVPUB-D101-PURL-LPS12549.pdf"
-    publisher: "Kenneth Katzman — Strategic Studies Institute, U.S. Army War College"
+    publisher: "Kenneth Katzman, Strategic Studies Institute, U.S. Army War College"
     year: 1998
     type: academic
     type_label: "پژوهش سیاسی"

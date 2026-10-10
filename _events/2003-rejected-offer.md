@@ -10,9 +10,9 @@ category: diplo
 category_label: "دیپلماسی"
 featured: true
 image: "/assets/images/events/bush-2003.jpg"
-description: "ایران پیشنهاد مذاکره جامع داد — آمریکا بدون پاسخ آن را رد کرد. تحلیلگران این را بزرگ‌ترین فرصت از‌دست‌رفته می‌دانند."
+description: "ایران پیشنهاد مذاکره جامع داد و آمریکا بی‌پاسخ ردش کرد. برخی تحلیلگران این را بزرگ‌ترین فرصت از‌دست‌رفته می‌دانند."
 sources:
-  - title: "The Iran Proposal of 2003 — Flynt Leverett Analysis"
+  - title: "The Iran Proposal of 2003: Flynt Leverett Analysis"
     url: "https://nsarchive.gwu.edu/NSAEBB/NSAEBB318/index.htm"
     publisher: "National Security Archive"
     year: 2007
@@ -20,13 +20,13 @@ sources:
     type_label: "آرشیو"
   - title: "In 2003, U.S. Spurned Iran's Offer of Dialogue"
     url: "https://www.washingtonpost.com/wp-dyn/content/article/2006/06/17/AR2006061700727.html"
-    publisher: "Washington Post — Glenn Kessler"
+    publisher: "Washington Post, Glenn Kessler"
     year: 2006
     type: news
     type_label: "خبرگزاری"
   - title: "Going to Tehran: Why the United States Must Come to Terms with the Islamic Republic"
     url: "https://www.goodreads.com/book/show/15798028-going-to-tehran"
-    publisher: "Flynt Leverett & Hillary Mann Leverett — Metropolitan Books"
+    publisher: "Flynt Leverett & Hillary Mann Leverett, Metropolitan Books"
     year: 2013
     type: academic
     type_label: "کتاب"

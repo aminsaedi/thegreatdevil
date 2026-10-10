@@ -10,9 +10,9 @@ category: military
 category_label: "نظامی"
 featured: true
 image: "/assets/images/events/rumsfeld-saddam.jpg"
-description: "آمریکا صدام حسین را در جنگ با ایران حمایت کرد — حتی پس از استفاده از سلاح‌های شیمیایی علیه غیرنظامیان."
+description: "آمریکا در جنگ با ایران از صدام حسین حمایت کرد، حتی پس از آنکه او علیه غیرنظامیان سلاح شیمیایی به کار برد."
 sources:
-  - title: "Rumsfeld-Saddam Handshake — Declassified State Dept. Cables"
+  - title: "Rumsfeld-Saddam Handshake: Declassified State Dept. Cables"
     url: "https://nsarchive2.gwu.edu/NSAEBB/NSAEBB82/"
     publisher: "National Security Archive"
     year: 2003
@@ -24,7 +24,7 @@ sources:
     year: 2003
     type: archive
     type_label: "آرشیو"
-  - title: "CIA Support to Iraq During Iran-Iraq War — Declassified"
+  - title: "CIA Support to Iraq During Iran-Iraq War: Declassified"
     url: "https://www.cia.gov/readingroom/search/site/iran+iraq+war"
     publisher: "CIA FOIA Reading Room"
     year: 2004
@@ -32,7 +32,7 @@ sources:
     type_label: "اسناد طبقه‌بندی‌زدایی‌شده"
   - title: "Exclusive: CIA Files Prove America Helped Saddam as He Gassed Iran"
     url: "https://foreignpolicy.com/2013/08/26/exclusive-cia-files-prove-america-helped-saddam-as-he-gassed-iran/"
-    publisher: "Shane Harris & Matthew M. Aid — Foreign Policy"
+    publisher: "Shane Harris & Matthew M. Aid, Foreign Policy"
     year: 2013
     type: news
     type_label: "روزنامه‌نگاری تحقیقی"

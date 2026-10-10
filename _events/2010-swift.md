@@ -9,15 +9,15 @@ era_label: "۲۰۱۰–۲۰۲۰"
 category: sanction
 category_label: "تحریم"
 featured: false
-description: "قطع ایران از شبکه بانکی SWIFT — مؤثرترین تحریم اقتصادی پیش از برجام."
+description: "قطع ایران از شبکه بانکی SWIFT، مؤثرترین تحریم اقتصادی پیش از برجام."
 sources:
-  - title: "Iran Sanctions — Office of Foreign Assets Control (OFAC)"
+  - title: "Iran Sanctions: Office of Foreign Assets Control (OFAC)"
     url: "https://ofac.treasury.gov/sanctions-programs-and-country-information/iran-sanctions"
     publisher: "U.S. Department of the Treasury"
     year: 2012
     type: official
     type_label: "سند رسمی دولتی"
-  - title: "Iran's Exclusion from SWIFT — Congressional Research Service"
+  - title: "Iran's Exclusion from SWIFT: Congressional Research Service"
     url: "https://crsreports.congress.gov/product/pdf/RS/RS20871"
     publisher: "Congressional Research Service"
     year: 2012

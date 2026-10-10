@@ -9,7 +9,7 @@ era_label: "۲۰۲۰–۲۰۲۴"
 category: sanction
 category_label: "تحریم"
 featured: false
-description: "بایدن مذاکرات احیای برجام را آغاز کرد اما توافقی حاصل نشد — تحریم‌ها ادامه یافت."
+description: "بایدن مذاکرات احیای برجام را آغاز کرد، اما توافقی به دست نیامد و تحریم‌ها ادامه یافت."
 sources:
   - title: "Senior State Department Official On the JCPOA Talks (Vienna, Jan. 31, 2022)"
     url: "https://2021-2025.state.gov/senior-state-department-official-on-the-jcpoa-talks/"

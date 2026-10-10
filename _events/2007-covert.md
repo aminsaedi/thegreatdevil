@@ -9,9 +9,9 @@ era_label: "۲۰۰۰–۲۰۱۰"
 category: intel
 category_label: "اطلاعاتی"
 featured: false
-description: "بوش دستور عملیات مخفی CIA را در مرزهای ایران صادر کرد — از کمک به اقلیت‌های قومی تا نظارت اطلاعاتی."
+description: "بوش دستور عملیات مخفی CIA را در مرزهای ایران صادر کرد، از کمک به اقلیت‌های قومی تا نظارت اطلاعاتی."
 sources:
-  - title: "Seymour Hersh — The Iran Plans"
+  - title: "Seymour Hersh: The Iran Plans"
     url: "https://www.newyorker.com/magazine/2006/04/17/the-iran-plans"
     publisher: "The New Yorker"
     year: 2006
@@ -19,13 +19,13 @@ sources:
     type_label: "روزنامه‌نگاری تحقیقی"
   - title: "Bush Authorizes New Covert Action Against Iran"
     url: "https://web.archive.org/web/20070524025649/http://blogs.abcnews.com/theblotter/2007/05/bush_authorizes.html"
-    publisher: "ABC News — Brian Ross & Richard Esposito"
+    publisher: "ABC News, Brian Ross & Richard Esposito"
     year: 2007
     type: journalism
     type_label: "گزارش تحقیقی"
-  - title: "Preparing the Battlefield — Covert Operations in Iran"
+  - title: "Preparing the Battlefield: Covert Operations in Iran"
     url: "https://www.newyorker.com/magazine/2008/07/07/preparing-the-battlefield"
-    publisher: "The New Yorker — Seymour Hersh"
+    publisher: "The New Yorker, Seymour Hersh"
     year: 2008
     type: journalism
     type_label: "روزنامه‌نگاری تحقیقی"

@@ -9,9 +9,9 @@ era_label: "۲۰۱۰–۲۰۲۰"
 category: diplo
 category_label: "دیپلماسی"
 featured: false
-description: "ترامپ علی‌رغم پایبندی تأیید‌شده ایران، از برجام خارج شد — متحدان اروپایی را شوکه کرد."
+description: "ترامپ با وجود پایبندی تأییدشده ایران از برجام خارج شد و متحدان اروپایی‌اش را غافلگیر کرد."
 sources:
-  - title: "Trump's Withdrawal from the Iran Deal — White House Statement"
+  - title: "Trump's Withdrawal from the Iran Deal: White House Statement"
     url: "https://trumpwhitehouse.archives.gov/briefings-statements/president-donald-j-trump-ending-united-states-participation-unacceptable-iran-deal/"
     publisher: "White House"
     year: 2018

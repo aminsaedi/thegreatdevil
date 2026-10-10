@@ -15,7 +15,7 @@ image_credit: "محمد برنو / Avash Photo"
 image_license: "CC BY 4.0"
 image_license_url: "https://creativecommons.org/licenses/by/4.0/"
 image_source: "https://commons.wikimedia.org/wiki/File:Airstrike_on_the_residential_town_of_Shahid_Boroujerdi_11_Avash.webp"
-description: "بیش از ۳٬۴۰۰ غیرنظامی کشته، بیش از ۳۳ هزار زخمی، ۱۰۰ هزار واحد مسکونی آسیب‌دیده و ده‌ها مرکز درمانی هدف حمله — جمع‌بندی مستند هزینه انسانی جنگ ۲۰۲۶."
+description: "بیش از ۳٬۴۰۰ غیرنظامی کشته، بیش از ۳۳ هزار زخمی، ۱۰۰ هزار واحد مسکونی آسیب‌دیده و ده‌ها مرکز درمانی هدف حمله: جمع‌بندی مستند هزینه انسانی جنگ ۲۰۲۶."
 sources:
   - title: "Urgent call to protect civilians and respect international law amid escalating regional conflict following US and Israeli attacks on Iran"
     url: "https://www.amnesty.org/en/latest/news/2026/03/urgent-call-to-protect-civilians-and-respect-international-law-amid-escalating-regional-conflict-following-us-and-israeli-attacks-on-iran/"
@@ -25,7 +25,7 @@ sources:
     type_label: "سازمان حقوق بشری"
   - title: "Day 38 of U.S. and Israeli Attacks on Iran: Highest Rate of Strikes in the Past Ten Days"
     url: "https://www.en-hrana.org/day-38-of-u-s-and-israeli-attacks-on-iran-highest-rate-of-strikes-in-the-past-ten-days/"
-    publisher: "HRANA — Human Rights Activists News Agency"
+    publisher: "HRANA, Human Rights Activists News Agency"
     year: 2026
     type: ngo
     type_label: "سازمان حقوق بشری"

@@ -28,7 +28,7 @@ sources:
     year: 2026
     type: reference
     type_label: "گاهشمار"
-  - title: "2026 Iran war — Deal, Explained, United States, Israel, Strait of Hormuz"
+  - title: "2026 Iran war: Deal, Explained, United States, Israel, Strait of Hormuz"
     url: "https://www.britannica.com/event/2026-Iran-war"
     publisher: "Encyclopædia Britannica"
     year: 2026

@@ -12,7 +12,7 @@ featured: false
 image: "/assets/images/events/allied-occupation.png"
 description: "نیروهای آمریکا، بریتانیا و شوروی در جنگ جهانی دوم ایران را اشغال کردند و رضاشاه را از قدرت برانداختند."
 sources:
-  - title: "Iran in World War II — Foreign Relations of the United States"
+  - title: "Iran in World War II: Foreign Relations of the United States"
     url: "https://history.state.gov/historicaldocuments/frus1941v03/d1"
     publisher: "U.S. Department of State, Office of the Historian"
     year: 1941
@@ -20,19 +20,19 @@ sources:
     type_label: "سند رسمی دولتی"
   - title: "ANGLO-IRANIAN RELATIONS iii. Pahlavi period"
     url: "https://www.iranicaonline.org/articles/anglo-iranian-relations-iii/"
-    publisher: "Ronald W. Ferrier — Encyclopaedia Iranica"
+    publisher: "Ronald W. Ferrier, Encyclopaedia Iranica"
     year: 1985
     type: reference
     type_label: "منبع دایرةالمعارفی"
   - title: "The Persian Corridor and Aid to Russia (CMH Pub 8-1)"
     url: "https://archive.org/details/CMHPub8-1-nsia"
-    publisher: "T. H. Vail Motter — U.S. Army Center of Military History"
+    publisher: "T. H. Vail Motter, U.S. Army Center of Military History"
     year: 1952
     type: official
     type_label: "سند رسمی نظامی"
   - title: "A History of Modern Iran"
     url: "https://www.cambridge.org/core/books/history-of-modern-iran/96733B4BF86FFB9B9C867798EEE839F8"
-    publisher: "Ervand Abrahamian — Cambridge University Press"
+    publisher: "Ervand Abrahamian, Cambridge University Press"
     year: 2008
     type: academic
     type_label: "پژوهش دانشگاهی"
@@ -61,7 +61,7 @@ sources:
 
 آمریکا در دسامبر ۱۹۴۱ رسماً وارد جنگ شد و در ۱۹۴۲ اداره بخش بزرگی از «کریدور ایران» را به دست گرفت. برای این کار فرماندهی آمریکایی نیروی خدماتی خلیج فارس (PGSC) در اوت ۱۹۴۲ تشکیل شد و نخستین گروه بزرگ سربازان آمریکایی در دسامبر همان سال به خرمشهر رسید.
 
-## کریدور ایران — شاهرگ جنگ
+## کریدور ایران، شاهرگ جنگ
 
 ایران از ۱۹۴۲ تا ۱۹۴۵ مهم‌ترین مسیر رساندن تسلیحات به شوروی بود. ابعاد این عملیات بسیار بزرگ بود:
 
@@ -71,7 +71,7 @@ sources:
 - بنادر خرمشهر و بندرعباس توسعه یافتند و راه‌آهن سراسری ایران ارتقا پیدا کرد
 - بسیاری معتقدند شوروی بدون این شریان در برابر آلمان شکست می‌خورد
 
-## کنفرانس تهران — ۱۹۴۳
+## کنفرانس تهران (۱۹۴۳)
 
 روزولت، چرچیل و استالین در نوامبر–دسامبر ۱۹۴۳ در تهران، پایتخت کشوری اشغال‌شده، دیدار کردند. این نخستین کنفرانس سران سه قدرت بزرگ بود. سرنوشت جنگ و نظم پس از آن در ایران به بحث گذاشته شد، اما ایرانی‌ها در این مذاکرات هیچ نقشی نداشتند.
 

@@ -12,7 +12,7 @@ featured: false
 image: "/assets/images/events/iran-contra.jpg"
 description: "دولت ریگان مخفیانه به ایران سلاح فروخت و پول را به شورشیان نیکاراگوئه رساند."
 sources:
-  - title: "The Iran-Contra Affair — National Security Archive"
+  - title: "The Iran-Contra Affair: National Security Archive"
     url: "https://nsarchive.gwu.edu/special-exhibits/iran-contra-affair"
     publisher: "National Security Archive, George Washington University"
     year: 2017

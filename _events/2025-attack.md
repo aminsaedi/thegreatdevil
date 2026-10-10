@@ -10,7 +10,7 @@ category: military
 category_label: "نظامی"
 featured: true
 image: "/assets/images/events/midnight-hammer-b2.jpg"
-image_caption: "بمب‌افکن B-2 در جریان عملیات «چکش نیمه‌شب» — تصویر با دوربین دید در شب"
+image_caption: "بمب‌افکن B-2 در جریان عملیات «چکش نیمه‌شب» (تصویر دید در شب)"
 image_credit: "U.S. Air Force"
 image_license: "Public domain (U.S. Gov work)"
 image_source: "https://commons.wikimedia.org/wiki/File:The_B-2_Spirit_supports_Operation_MIDNIGHT_HAMMER.jpg"

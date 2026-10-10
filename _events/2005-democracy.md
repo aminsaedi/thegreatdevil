@@ -9,15 +9,15 @@ era_label: "۲۰۰۰–۲۰۱۰"
 category: intel
 category_label: "اطلاعاتی"
 featured: false
-description: "آمریکا ۷۵ میلیون دلار برای 'ترویج دموکراسی' در ایران — از اپوزیسیون تا رسانه فارسی‌زبان — اختصاص داد."
+description: "آمریکا ۷۵ میلیون دلار برای «ترویج دموکراسی» در ایران، از حمایت از اپوزیسیون تا رسانه‌های فارسی‌زبان، اختصاص داد."
 sources:
-  - title: "U.S. Funding for Iran Democracy Programs — State Dept."
+  - title: "U.S. Funding for Iran Democracy Programs: State Dept."
     url: "https://2009-2017.state.gov/p/nea/rls/82519.htm"
     publisher: "U.S. Department of State"
     year: 2009
     type: official
     type_label: "سند رسمی دولتی"
-  - title: "Iran 2019 — NED Grants"
+  - title: "Iran 2019: NED Grants"
     url: "https://web.archive.org/web/20201126075626/https://www.ned.org/region/middle-east-and-northern-africa/iran-2019/"
     publisher: "National Endowment for Democracy"
     year: 2019
@@ -25,13 +25,13 @@ sources:
     type_label: "گزارش دولتی"
   - title: "Covert Regime Change: America's Secret Cold War"
     url: "https://www.goodreads.com/book/show/57915940-covert-regime-change"
-    publisher: "Lindsey A. O'Rourke — Cornell University Press"
+    publisher: "Lindsey A. O'Rourke, Cornell University Press"
     year: 2018
     type: academic
     type_label: "پژوهش دانشگاهی"
   - title: "Condi's Baffling New Iran Strategy"
     url: "https://slate.com/news-and-politics/2006/02/condi-s-baffling-new-iran-strategy.html"
-    publisher: "Slate — Fred Kaplan"
+    publisher: "Slate, Fred Kaplan"
     year: 2006
     type: news
     type_label: "خبرگزاری"

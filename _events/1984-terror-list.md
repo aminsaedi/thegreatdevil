@@ -9,15 +9,15 @@ era_label: "۱۹۸۰–۱۹۹۰"
 category: sanction
 category_label: "تحریم"
 featured: false
-description: "آمریکا ایران را در فهرست دولت‌های حامی تروریسم قرار داد — پایه قانونی تحریم‌های دهه‌ها بعد."
+description: "آمریکا ایران را در فهرست دولت‌های حامی تروریسم قرار داد؛ این فهرست پایه قانونی تحریم‌های دهه‌های بعد شد."
 sources:
-  - title: "State Sponsors of Terrorism — State Dept. List"
+  - title: "State Sponsors of Terrorism: State Dept. List"
     url: "https://www.state.gov/state-sponsors-of-terrorism/"
     publisher: "U.S. Department of State"
     year: 1984
     type: official
     type_label: "سند رسمی دولتی"
-  - title: "Iran on the State Sponsors List — CRS Report"
+  - title: "Iran on the State Sponsors List: CRS Report"
     url: "https://crsreports.congress.gov/product/pdf/RL/RL32048"
     publisher: "Congressional Research Service"
     year: 2010

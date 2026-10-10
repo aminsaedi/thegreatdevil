@@ -11,7 +11,7 @@ category_label: "دیپلماسی"
 featured: false
 description: "آمریکا با قرارداد استعماری که ایران را عملاً تحت‌الحمایه بریتانیا می‌کرد مخالفت دیپلماتیک کرد، اما کاری برای متوقف کردنش نکرد."
 sources:
-  - title: "Agreement between Persia and Great Britain, August 9, 1919 — FRUS 1919, Vol. II"
+  - title: "Agreement between Persia and Great Britain, August 9, 1919: FRUS 1919, Vol. II"
     url: "https://history.state.gov/historicaldocuments/frus1919v02/ch68"
     publisher: "U.S. Department of State, Office of the Historian"
     year: 1919
@@ -19,7 +19,7 @@ sources:
     type_label: "سند دیپلماتیک"
   - title: "Modern Iran: Roots and Results of Revolution"
     url: "https://www.goodreads.com/book/show/418699.Modern_Iran"
-    publisher: "Nikki R. Keddie — Yale University Press"
+    publisher: "Nikki R. Keddie, Yale University Press"
     year: 2003
     type: academic
     type_label: "پژوهش دانشگاهی"

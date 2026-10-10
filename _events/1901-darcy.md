@@ -9,7 +9,7 @@ era_label: "۱۹۰۰–۱۹۵۰"
 category: diplo
 category_label: "دیپلماسی"
 featured: false
-description: "امتیاز نفتی که بریتانیا از ایران گرفت و آمریکا از آن پشتیبانی کرد — آغاز یک قرن دخالت نفتی."
+description: "امتیاز نفتی که بریتانیا از ایران گرفت و آمریکا از آن پشتیبانی کرد؛ آغاز یک قرن دخالت نفتی."
 sources:
   - title: "The D'Arcy Concession and the Origins of the Anglo-Persian Oil Company"
     url: "https://www.bp.com/en/global/corporate/who-we-are/our-history.html"
@@ -19,13 +19,13 @@ sources:
     type_label: "منبع"
   - title: "ANGLO-PERSIAN OIL COMPANY"
     url: "https://www.iranicaonline.org/articles/anglo-persian-oil-company/"
-    publisher: "Farhad Kazemi — Encyclopaedia Iranica"
+    publisher: "Farhad Kazemi, Encyclopaedia Iranica"
     year: 1985
     type: reference
     type_label: "دانشنامه"
   - title: "Iran: A Modern History"
     url: "https://yalebooks.yale.edu/book/9780300231465/iran/"
-    publisher: "Abbas Amanat — Yale University Press"
+    publisher: "Abbas Amanat, Yale University Press"
     year: 2017
     type: academic
     type_label: "پژوهش دانشگاهی"

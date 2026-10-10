@@ -1,5 +1,5 @@
 ---
-title: "تحریم‌های کلینتون — ممنوعیت تجاری"
+title: "تحریم‌های کلینتون: ممنوعیت تجاری"
 year: "۱۹۹۵"
 order: 1
 era_id: era-1990
@@ -11,21 +11,21 @@ category_label: "تحریم"
 featured: false
 description: "کلینتون با فرامین اجرایی همه تجارت و سرمایه‌گذاری آمریکا در ایران را ممنوع کرد."
 sources:
-  - title: "Executive Order 12957 — Prohibiting Transactions with Iran"
+  - title: "Executive Order 12957: Prohibiting Transactions with Iran"
     url: "https://www.federalregister.gov/documents/1995/03/17/95-6679/prohibiting-certain-transactions-with-respect-to-the-development-of-iranian-petroleum-resources"
     publisher: "Federal Register, U.S. Government"
     year: 1995
     type: official
     type_label: "فرمان اجرایی"
-  - title: "Executive Order 12959 — Prohibiting Trade with Iran"
+  - title: "Executive Order 12959: Prohibiting Trade with Iran"
     url: "https://www.federalregister.gov/documents/1995/05/09/95-11694/prohibiting-certain-transactions-with-respect-to-iran"
     publisher: "Federal Register, U.S. Government"
     year: 1995
     type: official
     type_label: "فرمان اجرایی"
-  - title: "U.S. Sanctions — The Iran Primer (Patrick Clawson)"
+  - title: "U.S. Sanctions: The Iran Primer (Patrick Clawson)"
     url: "https://web.archive.org/web/20260612045415/https://iranprimer.usip.org/resource/us-sanctions"
-    publisher: "Iran Primer — United States Institute of Peace"
+    publisher: "Iran Primer, United States Institute of Peace"
     year: 2010
     type: academic
     type_label: "تحلیل سیاسی"

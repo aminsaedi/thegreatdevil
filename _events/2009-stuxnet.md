@@ -1,5 +1,5 @@
 ---
-title: "عملیات المپیک گیمز — ویروس استاکس‌نت"
+title: "عملیات المپیک گیمز: ویروس استاکس‌نت"
 year: "۲۰۰۹–۲۰۱۰"
 order: 6
 era_id: era-2000
@@ -10,7 +10,7 @@ category: cyber
 category_label: "سایبری"
 featured: true
 image: "/assets/images/events/natanz.jpg"
-description: "استاکس‌نت — اولین سلاح سایبری تاریخ — توسط آمریکا و اسرائیل علیه تأسیسات هسته‌ای ایران به‌کار رفت."
+description: "آمریکا و اسرائیل استاکس‌نت، نخستین سلاح سایبری تاریخ، را علیه تأسیسات هسته‌ای ایران به کار بردند."
 sources:
   - title: "Confirmed: US and Israel Created Stuxnet, Lost Control of It"
     url: "https://www.wired.com/2012/06/obama-ordered-stuxnet-continued/"
@@ -26,7 +26,7 @@ sources:
     type_label: "روزنامه‌نگاری تحقیقی"
   - title: "Countdown to Zero Day: Stuxnet and the Launch of the World's First Digital Weapon"
     url: "https://www.goodreads.com/book/show/18465875-countdown-to-zero-day"
-    publisher: "Kim Zetter — Crown Publishers"
+    publisher: "Kim Zetter, Crown Publishers"
     year: 2014
     type: academic
     type_label: "کتاب"

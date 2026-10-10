@@ -9,9 +9,9 @@ era_label: "۲۰۱۰–۲۰۲۰"
 category: sanction
 category_label: "تحریم"
 featured: false
-description: "پس از خروج ترامپ از برجام، SWIFT بار دوم بانک‌های ایران را قطع کرد — اتصالی که با برجام ۲۰۱۶ برقرار شده بود."
+description: "پس از خروج ترامپ از برجام، SWIFT برای بار دوم بانک‌های ایران را قطع کرد، اتصالی که با اجرای برجام در ۲۰۱۶ برقرار شده بود."
 sources:
-  - title: "Briefing on Iran Sanctions — Pompeo and Mnuchin on SWIFT"
+  - title: "Briefing on Iran Sanctions: Pompeo and Mnuchin on SWIFT"
     url: "https://2017-2021.state.gov/briefing-on-iran-sanctions/"
     publisher: "U.S. Department of State"
     year: 2018
@@ -25,7 +25,7 @@ sources:
     type_label: "خبرگزاری"
   - title: "Publication of New Iran-related FAQs; Updates to OFAC's SDN List (Nov. 5, 2018)"
     url: "https://ofac.treasury.gov/recent-actions/20181105"
-    publisher: "U.S. Department of the Treasury — OFAC"
+    publisher: "U.S. Department of the Treasury, OFAC"
     year: 2018
     type: official
     type_label: "سند رسمی دولتی"

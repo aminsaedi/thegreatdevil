@@ -1,5 +1,5 @@
 ---
-title: "اتم‌ها برای صلح — واگذاری فناوری هسته‌ای"
+title: "اتم‌ها برای صلح: واگذاری فناوری هسته‌ای"
 year: "۱۹۵۷"
 order: 3
 era_id: era-1950
@@ -9,9 +9,9 @@ era_label: "۱۹۵۰–۱۹۶۰"
 category: diplo
 category_label: "هسته‌ای"
 featured: false
-description: "آمریکا فناوری هسته‌ای را به شاه داد — همان فناوری که بعدها محور تنش اتمی با ایران شد."
+description: "آمریکا فناوری هسته‌ای را به شاه داد؛ همان فناوری که بعدها محور تنش اتمی با ایران شد."
 sources:
-  - title: "Atoms for Peace Program — Eisenhower Presidential Library"
+  - title: "Atoms for Peace Program: Eisenhower Presidential Library"
     url: "https://www.eisenhowerlibrary.gov/research/online-documents/atoms-peace"
     publisher: "Eisenhower Presidential Library"
     year: 2003
@@ -25,13 +25,13 @@ sources:
     type_label: "آرشیو"
   - title: "Iran's Nuclear Ambitions"
     url: "https://carnegieendowment.org/research/2006/09/irans-nuclear-ambitions"
-    publisher: "Shahram Chubin — Carnegie Endowment for International Peace"
+    publisher: "Shahram Chubin, Carnegie Endowment for International Peace"
     year: 2006
     type: academic
     type_label: "پژوهش دانشگاهی"
   - title: "A Brief History of U.S.-Iranian Nuclear Negotiations"
     url: "https://www.tandfonline.com/doi/full/10.2968/065001004"
-    publisher: "William Burr — Bulletin of the Atomic Scientists"
+    publisher: "William Burr, Bulletin of the Atomic Scientists"
     year: 2009
     type: academic
     type_label: "پژوهش دانشگاهی"

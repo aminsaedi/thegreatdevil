@@ -23,13 +23,13 @@ sources:
     year: 2026
     type: official
     type_label: "گزارش پارلمانی"
-  - title: "2026 Iran war — Deal, Explained, United States, Israel, Strait of Hormuz"
+  - title: "2026 Iran war: Deal, Explained, United States, Israel, Strait of Hormuz"
     url: "https://www.britannica.com/event/2026-Iran-war"
     publisher: "Encyclopædia Britannica"
     year: 2026
     type: reference
     type_label: "دانشنامه"
-  - title: "Conflict With Iran — Global Conflict Tracker"
+  - title: "Conflict With Iran: Global Conflict Tracker"
     url: "https://www.cfr.org/global-conflict-tracker/conflict/confrontation-between-united-states-and-iran"
     publisher: "Council on Foreign Relations"
     year: 2026

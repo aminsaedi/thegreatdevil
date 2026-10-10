@@ -10,7 +10,7 @@ category: military
 category_label: "نظامی"
 featured: true
 image: "/assets/images/events/soleimani.jpg"
-description: "ترور سردار قاسم سلیمانی توسط پهپاد آمریکایی در فرودگاه بغداد — خطرناک‌ترین تصعید مستقیم بین ایران و آمریکا."
+description: "ترور سردار قاسم سلیمانی با پهپاد آمریکایی در فرودگاه بغداد؛ خطرناک‌ترین رویارویی مستقیم میان ایران و آمریکا."
 sources:
   - title: "Soleimani Killing: Trump Administration's Legal Justification"
     url: "https://www.justsecurity.org/67813/the-soleimani-killing-the-trump-administrations-shaky-legal-justifications/"

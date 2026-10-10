@@ -1,5 +1,5 @@
 ---
-title: "قانون داماتو — تحریم شرکت‌های خارجی"
+title: "قانون داماتو: تحریم شرکت‌های خارجی"
 year: "۱۹۹۶"
 order: 2
 era_id: era-1990
@@ -10,7 +10,7 @@ category: sanction
 category_label: "تحریم"
 featured: true
 image: "/assets/images/events/damato.jpg"
-description: "آمریکا شرکت‌های خارجی سرمایه‌گذار در ایران را هم تحریم کرد — یک‌جانبه‌گرایی تجاری بی‌سابقه."
+description: "آمریکا شرکت‌های خارجی سرمایه‌گذار در ایران را هم تحریم کرد؛ اقدامی یک‌جانبه که سابقه نداشت."
 sources:
   - title: "Iran and Libya Sanctions Act of 1996 (ILSA)"
     url: "https://www.congress.gov/bill/104th-congress/house-bill/3107"
@@ -18,15 +18,15 @@ sources:
     year: 1996
     type: official
     type_label: "قانون مصوب کنگره"
-  - title: "Iran Sanctions: ILSA's Impact — CRS Report"
+  - title: "Iran Sanctions: ILSA's Impact: CRS Report"
     url: "https://crsreports.congress.gov/product/pdf/RS/RS20871"
     publisher: "Congressional Research Service"
     year: 2007
     type: official
     type_label: "گزارش کنگره"
-  - title: "U.S. Sanctions — The Iran Primer (Patrick Clawson)"
+  - title: "U.S. Sanctions: The Iran Primer (Patrick Clawson)"
     url: "https://web.archive.org/web/20260612045415/https://iranprimer.usip.org/resource/us-sanctions"
-    publisher: "Iran Primer — United States Institute of Peace"
+    publisher: "Iran Primer, United States Institute of Peace"
     year: 2010
     type: academic
     type_label: "تحلیل سیاسی"

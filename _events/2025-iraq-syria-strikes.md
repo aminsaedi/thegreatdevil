@@ -9,7 +9,7 @@ era_label: "۲۰۲۵–اکنون"
 category: military
 category_label: "نظامی"
 featured: false
-description: "بزرگ‌ترین موج حملات در ۲ فوریه ۲۰۲۴ بیش از ۸۵ هدف را در عراق و سوریه در بر گرفت؛ ۱۶ کشته در عراق و ۲۳ کشته در سوریه — الگویی که تا آستانه جنگ ۲۰۲۶ ادامه یافت."
+description: "بزرگ‌ترین موج حملات در ۲ فوریه ۲۰۲۴ بیش از ۸۵ هدف را در عراق و سوریه در بر گرفت؛ ۱۶ کشته در عراق و ۲۳ کشته در سوریه. این الگو تا آستانه جنگ ۲۰۲۶ ادامه یافت."
 sources:
   - title: "February 2024 United States airstrikes in Iraq and Syria"
     url: "https://en.wikipedia.org/wiki/February_2024_United_States_airstrikes_in_Iraq_and_Syria"

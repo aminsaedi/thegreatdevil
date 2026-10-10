@@ -9,7 +9,7 @@ era_label: "۲۰۱۰–۲۰۲۰"
 category: sanction
 category_label: "تحریم"
 featured: false
-description: "ترامپ از همان ابتدای ریاست جمهوری تحریم‌های جدید اعمال کرد — پیش‌درآمد خروج از برجام."
+description: "ترامپ از همان ابتدای ریاست جمهوری تحریم‌های تازه‌ای وضع کرد که پیش‌درآمد خروج از برجام بود."
 sources:
   - title: "Treasury Sanctions Supporters of Iran's Ballistic Missile Program and Iran's Islamic Revolutionary Guard Corps – Qods Force"
     url: "https://home.treasury.gov/news/press-releases/as0004"
@@ -17,7 +17,7 @@ sources:
     year: 2017
     type: official
     type_label: "سند رسمی دولتی"
-  - title: "Iran Sanctions Under Trump — CRS Report"
+  - title: "Iran Sanctions Under Trump: CRS Report"
     url: "https://crsreports.congress.gov/product/pdf/R/R45204"
     publisher: "Congressional Research Service"
     year: 2019
@@ -41,7 +41,7 @@ sources:
 - شرکت‌های چینی و اماراتی که به ایران در تهیه تجهیزات کمک کرده بودند هم تحریم شدند
 - دارایی‌های آن‌ها در حوزه قضایی آمریکا مسدود شد
 
-## قانون CAATSA — اوت ۲۰۱۷
+## قانون CAATSA (اوت ۲۰۱۷)
 
 کنگره آمریکا در اوت ۲۰۱۷ قانون «مقابله با دشمنان آمریکا از طریق تحریم» (CAATSA) را تصویب کرد. این قانون:
 - تحریم‌های ایران، روسیه و کره شمالی را در یک بسته گرد آورد

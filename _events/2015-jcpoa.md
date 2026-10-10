@@ -1,5 +1,5 @@
 ---
-title: "برجام — توافق هسته‌ای"
+title: "برجام: توافق هسته‌ای"
 year: "۲۰۱۵"
 order: 4
 era_id: era-2010
@@ -10,9 +10,9 @@ category: diplo
 category_label: "دیپلماسی"
 featured: true
 image: "/assets/images/events/kerry-zarif.jpg"
-description: "برجام — نادرترین دستاورد دیپلماتیک در روابط آمریکا–ایران — که سه سال بعد نابود شد."
+description: "برجام، کمیاب‌ترین دستاورد دیپلماتیک در روابط آمریکا و ایران، سه سال بعد از میان رفت."
 sources:
-  - title: "Joint Comprehensive Plan of Action (JCPOA) — Main Text"
+  - title: "Joint Comprehensive Plan of Action (JCPOA): Main Text"
     url: "https://2009-2017.state.gov/documents/organization/245317.pdf"
     publisher: "U.S. Department of State"
     year: 2015

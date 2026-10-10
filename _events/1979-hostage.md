@@ -1,5 +1,5 @@
 ---
-title: "پذیرش شاه در آمریکا — آغاز بحران گروگان‌گیری"
+title: "پذیرش شاه در آمریکا و آغاز بحران گروگان‌گیری"
 year: "۱۹۷۹"
 order: 4
 era_id: era-1970
@@ -12,13 +12,13 @@ featured: false
 image: "/assets/images/events/hostage-crisis.jpg"
 description: "پذیرش شاه معزول در آمریکا منجر به ۴۴۴ روز گروگان‌گیری دیپلمات‌های آمریکایی در تهران شد."
 sources:
-  - title: "The Iranian Hostage Crisis — Office of the Historian"
+  - title: "The Iranian Hostage Crisis: Office of the Historian"
     url: "https://history.state.gov/departmenthistory/short-history/iraniancrises"
     publisher: "U.S. Department of State, Office of the Historian"
     year: 2016
     type: official
     type_label: "سند رسمی دولتی"
-  - title: "Iran Hostage Crisis — Jimmy Carter Library"
+  - title: "Iran Hostage Crisis: Jimmy Carter Library"
     url: "https://www.jimmycarterlibrary.gov/research/hostage_crisis_in_iran"
     publisher: "Jimmy Carter Presidential Library and Museum"
     year: 1981
@@ -26,7 +26,7 @@ sources:
     type_label: "آرشیو ریاست جمهوری"
   - title: "The Eagle and the Lion: The Tragedy of American–Iranian Relations"
     url: "https://yalebooks.yale.edu/book/9780300044461/the-eagle-and-the-lion/"
-    publisher: "James A. Bill — Yale University Press"
+    publisher: "James A. Bill, Yale University Press"
     year: 1988
     type: academic
     type_label: "پژوهش دانشگاهی"

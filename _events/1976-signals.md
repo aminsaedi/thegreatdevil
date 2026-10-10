@@ -11,7 +11,7 @@ category_label: "نظامی"
 featured: false
 description: "آمریکا پایگاه‌های شنود الکترونیک در شمال ایران داشت که آزمایش‌های موشکی شوروی را رصد می‌کردند."
 sources:
-  - title: "Signals Intelligence Sites in Iran — Declassified"
+  - title: "Signals Intelligence Sites in Iran: Declassified"
     url: "https://nsarchive2.gwu.edu/NSAEBB/NSAEBB21/"
     publisher: "National Security Archive"
     year: 2000

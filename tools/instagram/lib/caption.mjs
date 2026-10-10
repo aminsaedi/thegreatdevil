@@ -22,7 +22,7 @@ export function buildCaption(ev) {
   );
 
   const sources = (ev.sources || []).slice(0, MAX_SOURCES)
-    .map((s) => `• ${s.publisher} — ${s.title}${s.year ? ` (${s.year})` : ''}`);
+    .map((s) => `• ${s.publisher}: ${s.title}${s.year ? ` (${s.year})` : ''}`);
   const more = (ev.sources || []).length - sources.length;
 
   return [

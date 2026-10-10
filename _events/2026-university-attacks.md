@@ -9,7 +9,7 @@ era_label: "۲۰۲۵–اکنون"
 category: military
 category_label: "نظامی"
 featured: false
-description: "دانشگاه علم و صنعت ایران در ۲۸ مارس و دانشگاهی در اصفهان در ۲۹ مارس ۲۰۲۶ هدف حملات آمریکا و اسرائیل قرار گرفتند — ادامه دو دهه هدف‌گیری بنیه علمی ایران."
+description: "دانشگاه علم و صنعت ایران در ۲۸ مارس و دانشگاهی در اصفهان در ۲۹ مارس ۲۰۲۶ هدف حملات آمریکا و اسرائیل قرار گرفتند؛ ادامه دو دهه هدف‌گیری توان علمی ایران."
 sources:
   - title: "Schools, water, industry: What civilian targets have US, Israel, Iran hit?"
     url: "https://aljazeera.com/news/2026/3/30/schools-water-industry-what-civilian-targets-have-us-israel-iran-hit"
