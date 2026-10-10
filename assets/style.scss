@@ -111,12 +111,15 @@ header .site-logo { margin: 0; flex: none; }
 
 .header-text { min-width: 0; }
 
-header h1 {
+header .site-title {
   font-size: clamp(1.4rem, 1rem + 1.4vw, 2.1rem);
   font-weight: 700;
   color: #0d1b35;
   line-height: 1.25;
 }
+
+.site-title a { color: inherit; text-decoration: none; }
+.site-title a:hover .h1-main { color: #e94560; }
 
 .h1-main { display: block; }
 
@@ -470,7 +473,7 @@ header p { color: #556080; font-size: 0.85rem; }
 @media (max-height: 480px) {
   header { padding-block: 0.4rem; }
   .site-logo img { width: 36px; }
-  header h1 { font-size: 1.25rem; }
+  header .site-title { font-size: 1.25rem; }
   .h1-main, .h1-sub { display: inline; }
   .h1-sep { position: static; width: auto; height: auto; clip-path: none; }
   .hero { padding-block: 0.6rem; }
@@ -2635,7 +2638,7 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
     line-height: 1.8;
   }
 
-  header h1 {
+  header .site-title {
     font-size: 1.45rem;
     line-height: 1.25;
   }
@@ -3253,7 +3256,7 @@ header {
   background: linear-gradient(135deg, #0d1b35 0%, #1a2a4a 100%);
   border-bottom-color: rgba(233, 69, 96, 0.6);
 }
-[data-theme="dark"] header h1 { color: #e8f2ff; }
+[data-theme="dark"] header .site-title { color: #e8f2ff; }
 [data-theme="dark"] .h1-sub { color: #9fb2d4; }
 [data-theme="dark"] header p  { color: #7888a8; }
 [data-theme="dark"] .title-en { color: #e94560; }

@@ -131,7 +131,10 @@
   </picture>
   <div class="header-text">
     {% assign title_parts = site.title | split: ' — ' %}
-    <h1><span class="h1-main">{{ title_parts[0] }}</span><span class="h1-sep"> — </span><span class="h1-sub">{{ title_parts[1] }}</span></h1>
+    {% if page.url == "/" %}{% assign title_tag = "h1" %}{% else %}{% assign title_tag = "p" %}{% endif %}
+    {%- comment -%} Only the home page's site name is its main heading; other pages have their own h1 {%- endcomment %}
+    {% capture site_title %}<span class="h1-main">{{ title_parts[0] }}</span><span class="h1-sep"> — </span><span class="h1-sub">{{ title_parts[1] }}</span>{% endcapture %}
+    <{{ title_tag }} class="site-title">{% if page.url == "/" %}{{ site_title }}{% else %}<a href="{{ '/' | relative_url }}">{{ site_title }}</a>{% endif %}</{{ title_tag }}>
     <p class="title-en" lang="en">{{ site.title_en }}</p>
     {% unless page.url == "/" %}<p class="header-desc">{{ site.description_fa }}</p>{% endunless %}
   </div>
