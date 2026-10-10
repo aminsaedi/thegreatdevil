@@ -30,14 +30,15 @@ magick "$SRC" "$TMP/mask.png" -alpha off -compose CopyOpacity -composite -compos
 magick "$SRC" -crop 1170x1170+39+16 +repage "$TMP/paper.png"
 
 # Transparent seal: header, footer, 404, JSON-LD publisher logo.
-magick "$TMP/seal.png" -strip -resize 256x256 "$OUT/logo.png"
+magick "$TMP/seal.png" -strip -resize 256x256 PNG8:"$OUT/logo.png"
 magick "$TMP/seal.png" -strip -resize 256x256 -quality 82 -define webp:method=6 "$OUT/logo.webp"
 
-# Favicons and PWA icons.
+# Favicons and PWA icons. PNG8 (palette) keeps them a fraction of the size
+# with no visible loss on a photo this busy.
 magick "$TMP/seal.png" -strip \( -clone 0 -resize 16x16 \) \( -clone 0 -resize 32x32 \) \
   \( -clone 0 -resize 48x48 \) -delete 0 "$ROOT/favicon.ico"
-magick "$TMP/seal.png" -strip -resize 192x192 "$OUT/icon-192.png"
-magick "$TMP/seal.png" -strip -resize 512x512 "$OUT/icon-512.png"
+magick "$TMP/seal.png" -strip -resize 192x192 PNG8:"$OUT/icon-192.png"
+magick "$TMP/seal.png" -strip -resize 512x512 PNG8:"$OUT/icon-512.png"
 magick "$TMP/paper.png" -strip -resize 180x180 "$ROOT/apple-touch-icon.png"
 
 # Telegram avatar (circular crop, so the parchment version fills the corners).
