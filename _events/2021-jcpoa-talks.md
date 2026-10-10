@@ -17,8 +17,8 @@ sources:
     year: 2022
     type: official
     type_label: "سند رسمی دولتی"
-  - title: "Why the Iran Nuclear Talks Failed"
-    url: "https://www.crisisgroup.org/middle-east-north-africa/gulf-and-arabian-peninsula/iran/why-iran-nuclear-talks-failed"
+  - title: "Is Restoring the Iran Nuclear Deal Still Possible? (Middle East Briefing No. 87)"
+    url: "https://www.crisisgroup.org/brf/b87-middle-east-north-africa/gulf-and-arabian-peninsula/iran/restoring-iran-nuclear-deal-still"
     publisher: "International Crisis Group"
     year: 2022
     type: academic

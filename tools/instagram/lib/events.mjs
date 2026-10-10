@@ -12,7 +12,7 @@ export const toFa = (v) => String(v).replace(/[0-9]/g, (d) => FA_DIGITS[d]);
 const toAscii = (v) => String(v).replace(/[۰-۹]/g, (d) => FA_DIGITS.indexOf(d));
 
 // Strongest evidence first: primary documents beat commentary.
-const SOURCE_RANK = ['declassified', 'official', 'archive', 'academic', 'ngo', 'news', 'reference'];
+const SOURCE_RANK = ['declassified', 'official', 'archive', 'academic', 'ngo', 'journalism', 'news', 'reference'];
 
 export function loadEvents(repoRoot) {
   const dir = path.join(repoRoot, '_events');

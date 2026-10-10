@@ -30,7 +30,7 @@ sources:
     type: academic
     type_label: "پژوهش دانشگاهی"
   - title: "A Brief History of U.S.-Iranian Nuclear Negotiations"
-    url: "https://journals.sagepub.com/doi/full/10.2968/065001004"
+    url: "https://www.tandfonline.com/doi/full/10.2968/065001004"
     publisher: "William Burr — Bulletin of the Atomic Scientists"
     year: 2009
     type: academic

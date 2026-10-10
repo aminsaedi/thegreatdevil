@@ -12,8 +12,8 @@ featured: true
 image: "/assets/images/events/kerry-zarif.jpg"
 description: "برجام — نادرترین دستاورد دیپلماتیک در روابط آمریکا–ایران — که سه سال بعد نابود شد."
 sources:
-  - title: "Joint Comprehensive Plan of Action (JCPOA) — Full Text"
-    url: "https://www.state.gov/wp-content/uploads/2018/12/JCPOA.pdf"
+  - title: "Joint Comprehensive Plan of Action (JCPOA) — Main Text"
+    url: "https://2009-2017.state.gov/documents/organization/245317.pdf"
     publisher: "U.S. Department of State"
     year: 2015
     type: official

@@ -11,8 +11,8 @@ category_label: "نظامی"
 featured: false
 description: "برای اولین بار آمریکا در رهگیری حمله موشکی مستقیم ایران به اسرائیل مشارکت کرد."
 sources:
-  - title: "Iran Attack on Israel — Pentagon Statement"
-    url: "https://www.defense.gov/News/Releases/Release/Article/3737568/"
+  - title: "Statement by Secretary of Defense Lloyd J. Austin III on Iran's Strikes Against Israel"
+    url: "https://www.war.gov/News/Releases/Release/Article/3740656/statement-by-secretary-of-defense-lloyd-j-austin-iii-on-irans-strikes-against-i/"
     publisher: "U.S. Department of Defense"
     year: 2024
     type: official

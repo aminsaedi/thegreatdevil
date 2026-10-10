@@ -43,7 +43,7 @@ sources:                  # REQUIRED — cite a specific article URL, never a si
     url: "https://example.com/article"
     publisher: "Publisher"
     year: 2026
-    type: news            # news|official|academic|ngo|reference
+    type: news            # declassified|official|archive|academic|ngo|journalism|news|reference
     type_label: "فارسی label"
 ---
 Event description in Farsi here.

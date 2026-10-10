@@ -19,8 +19,8 @@ sources:
     type: archive
     type_label: "آرشیو"
   - title: "Report of the Congressional Committees Investigating the Iran-Contra Affair"
-    url: "https://www.senate.gov/artandhistory/history/common/investigations/Iran-Contra.htm"
-    publisher: "U.S. Senate Select Committee"
+    url: "https://archive.org/details/reportofcongress87unit"
+    publisher: "House and Senate Select Committees on the Iran-Contra Affair (scan via Internet Archive)"
     year: 1987
     type: official
     type_label: "گزارش رسمی کنگره"

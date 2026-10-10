@@ -15,7 +15,7 @@ sources:
     url: "https://www.bp.com/en/global/corporate/who-we-are/our-history.html"
     publisher: "BP Corporate History"
     year: 2009
-    type: general
+    type: reference
     type_label: "منبع"
   - title: "ANGLO-PERSIAN OIL COMPANY"
     url: "https://www.iranicaonline.org/articles/anglo-persian-oil-company/"

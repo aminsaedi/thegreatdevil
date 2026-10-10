@@ -34,7 +34,7 @@ sources:
     url: "https://example.com/specific-article"   # لینک مستقیم مقاله، نه صفحه اصلی سایت
     publisher: "Publisher"
     year: 2026
-    type: news            # news | official | academic | ngo | reference
+    type: news            # declassified | official | archive | academic | ngo | journalism | news | reference
     type_label: "خبرگزاری"
 ---
 توضیحات رویداد اینجا...

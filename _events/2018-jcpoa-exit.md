@@ -17,8 +17,8 @@ sources:
     year: 2018
     type: official
     type_label: "سند رسمی دولتی"
-  - title: "IAEA Confirmation of Iran Compliance Before Withdrawal"
-    url: "https://www.iaea.org/newscenter/pressreleases/iaea-director-generals-introductory-statement-to-the-board-of-governors-2018-03-05"
+  - title: "IAEA Director General's Introductory Statement to the Board of Governors (5 March 2018)"
+    url: "https://www.iaea.org/newscenter/statements/iaea-director-generals-introductory-statement-to-the-board-of-governors"
     publisher: "International Atomic Energy Agency"
     year: 2018
     type: official

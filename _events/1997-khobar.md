@@ -11,12 +11,12 @@ category_label: "تحریم"
 featured: false
 description: "آمریکا ایران را مسئول بمب‌گذاری خبر دانست و تحریم‌های جدیدی اعمال کرد."
 sources:
-  - title: "Khobar Towers Bombing Investigation — FBI"
-    url: "https://archives.fbi.gov/archives/news/stories/2006/june/khobar_062606"
-    publisher: "Federal Bureau of Investigation"
-    year: 2006
+  - title: "Attorney General Statement on the Khobar Towers Bombing Indictment"
+    url: "https://www.justice.gov/archive/opa/pr/2001/June/275ag.htm"
+    publisher: "U.S. Department of Justice"
+    year: 2001
     type: official
-    type_label: "سند رسمی"
+    type_label: "سند رسمی دولتی"
   - title: "The Khobar Towers Bombing — State Department"
     url: "https://1997-2001.state.gov/global/terrorism/khobar_report.html"
     publisher: "U.S. Department of State"

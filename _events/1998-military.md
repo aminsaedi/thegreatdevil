@@ -11,10 +11,10 @@ category_label: "نظامی"
 featured: false
 description: "رزمایش‌های نظامی گسترده آمریکا در خلیج‌فارس به‌عنوان فشار نمادین علیه ایران."
 sources:
-  - title: "U.S. Naval Forces Central Command History"
-    url: "https://www.cusnc.navy.mil/About-Us/History/"
-    publisher: "U.S. Naval Forces Central Command"
-    year: 2020
+  - title: "FIFTH Fleet — Bahrain (history of the U.S. Navy presence and the 1995 recommissioning of 5th Fleet/NAVCENT)"
+    url: "https://www.navsea.navy.mil/Home/RMC/FDRMC/Bahrain/WhyBahrain/OurMission/5thFleet.aspx"
+    publisher: "U.S. Navy, Naval Sea Systems Command"
+    year: 2025
     type: official
     type_label: "سند رسمی نظامی"
   - title: "Searching for Stable Peace in the Persian Gulf"

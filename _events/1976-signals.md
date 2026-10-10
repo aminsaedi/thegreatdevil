@@ -17,12 +17,12 @@ sources:
     year: 2000
     type: archive
     type_label: "آرشیو"
-  - title: "Intelligence Gathering in Iran — Senate Intelligence Committee"
-    url: "https://www.intelligence.senate.gov/sites/default/files/publications/94iranreport.pdf"
-    publisher: "U.S. Senate Select Committee on Intelligence"
-    year: 1980
+  - title: "Foreign Relations of the United States, 1969–1976, Vol. XXVII, Document 200: Editorial Note on Project IBEX"
+    url: "https://history.state.gov/historicaldocuments/frus1969-76v27/d200"
+    publisher: "U.S. Department of State, Office of the Historian"
+    year: 2012
     type: official
-    type_label: "گزارش کنگره"
+    type_label: "اسناد دیپلماتیک"
 ---
 
 آمریکا در شمال ایران، نزدیک مرز شوروی، پایگاه‌های شنود الکترونیک داشت و از آن‌ها برای جمع‌آوری اطلاعات درباره آزمایش‌های موشکی شوروی استفاده می‌کرد.
