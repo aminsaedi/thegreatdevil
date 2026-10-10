@@ -79,10 +79,16 @@ body {
   word-spacing: 0.05em;
 }
 
+/* Compact brand row: on the home page the header, era nav, hero and stats bar
+   together must fit the first screen, so every vertical size here scales with
+   the viewport height (svh = the height with mobile browser bars showing). */
 header {
   background: linear-gradient(135deg, #d8e8f8, #e8f2fd);
-  padding: 3rem 2rem 2rem;
-  text-align: center;
+  padding: clamp(0.5rem, 1.8svh, 1.1rem) 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
   border-bottom: 3px solid #e94560;
 }
 
@@ -99,36 +105,60 @@ header {
   filter: drop-shadow(0 6px 10px rgba(13, 27, 53, 0.35));
 }
 
-.site-logo img { width: 128px; }
+header .site-logo { margin: 0; flex: none; }
+.site-logo img { width: clamp(40px, 8svh, 72px); }
 .footer-logo img { width: 96px; }
 
-@media (max-width: 600px) {
-  .site-logo img { width: 96px; }
-}
+.header-text { min-width: 0; }
 
 header h1 {
-  font-size: 3.5rem;
+  font-size: clamp(1.4rem, 1rem + 1.4vw, 2.1rem);
   font-weight: 700;
   color: #0d1b35;
-  margin-bottom: 0.4rem;
-  line-height: 1.2;
+  line-height: 1.25;
+}
+
+.h1-main { display: block; }
+
+.h1-sub {
+  display: block;
+  font-size: 0.6em;
+  font-weight: 600;
+  color: #33415f;
+}
+
+/* Spoken between the two lines, never shown */
+.h1-sep {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .title-en {
-  font-size: 1rem;
+  font-size: 0.72rem;
   color: #e94560;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-top: 0.2rem;
   text-transform: uppercase;
 }
 
-header p { color: #556080; font-size: 0.9rem; }
+header p { color: #556080; font-size: 0.85rem; }
+.header-desc { margin-top: 0.2rem; }
+
+@media (max-width: 600px) {
+  /* Leave the theme toggle its own corner */
+  header { justify-content: flex-start; padding-inline: 1rem 4.25rem; }
+  .title-en { font-size: 0.62rem; line-height: 1.35; letter-spacing: 0.02em; text-wrap: balance; }
+}
 
 /* ── Hero Section ───────────────────────────────────────── */
 .hero {
   position: relative;
   width: 100%;
-  min-height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -147,7 +177,7 @@ header p { color: #556080; font-size: 0.9rem; }
   background-repeat: no-repeat;
   background-color: #04070f;
   border-bottom: 2px solid rgba(233, 69, 96, 0.55);
-  padding: 6rem 2rem 4rem;
+  padding: clamp(0.75rem, 4svh, 3.5rem) 1.25rem clamp(0.75rem, 3svh, 2.5rem);
   text-align: center;
   overflow: hidden;
 }
@@ -204,7 +234,7 @@ header p { color: #556080; font-size: 0.9rem; }
   z-index: 1;
   max-width: 860px;
   width: 100%;
-  margin-bottom: 2.5rem;
+  margin-bottom: clamp(0.75rem, 3svh, 2.5rem);
 }
 
 .hero-eyebrow {
@@ -212,7 +242,7 @@ header p { color: #556080; font-size: 0.9rem; }
   align-items: center;
   justify-content: center;
   gap: 0.85rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(0.5rem, 2svh, 1.5rem);
 }
 
 .hero-eyebrow-text {
@@ -237,11 +267,11 @@ header p { color: #556080; font-size: 0.9rem; }
 }
 
 .hero-headline {
-  font-size: clamp(2.4rem, 5vw, 3.75rem);
+  font-size: clamp(1.6rem, min(5vw, 6svh), 3.75rem);
   font-weight: 800;
   color: #f0f4ff;
   line-height: 1.25;
-  margin-bottom: 1.4rem;
+  margin-bottom: clamp(0.5rem, 2svh, 1.4rem);
   text-shadow:
     0 2px 10px rgba(0, 0, 0, 0.9),
     0 4px 40px rgba(0, 0, 0, 0.7);
@@ -255,11 +285,11 @@ header p { color: #556080; font-size: 0.9rem; }
 }
 
 .hero-sub {
-  font-size: 1.2rem;
+  font-size: clamp(0.95rem, 0.55rem + 1.1svh, 1.2rem);
   color: rgba(195, 215, 255, 0.88);
-  line-height: 1.85;
+  line-height: 1.8;
   max-width: 640px;
-  margin: 0 auto 2.25rem;
+  margin: 0 auto clamp(0.75rem, 3svh, 2.25rem);
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.75);
 }
 
@@ -280,7 +310,7 @@ header p { color: #556080; font-size: 0.9rem; }
   text-decoration: none;
   font-size: 1rem;
   font-weight: 700;
-  height: 56px;
+  height: clamp(44px, 6.5svh, 56px);
   padding: 0 2.5rem;
   border-radius: 3px;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
@@ -303,7 +333,7 @@ header p { color: #556080; font-size: 0.9rem; }
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 600;
-  height: 56px;
+  height: clamp(44px, 6.5svh, 56px);
   padding: 0 2rem;
   border-radius: 3px;
   border: 1px solid rgba(195, 215, 255, 0.28);
@@ -330,8 +360,10 @@ header p { color: #556080; font-size: 0.9rem; }
 .hero-tl-svg-host {
   position: relative;
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.5rem, 1.5svh, 1rem);
 }
+
+.hero-tl-svg-host svg { height: clamp(48px, 11svh, 100px); }
 
 /* Decade labels under the hero chart (HTML so they never stretch with the SVG) */
 .hero-tl-axis {
@@ -355,6 +387,8 @@ header p { color: #556080; font-size: 0.9rem; }
 @media (max-width: 600px) {
   .hero-tl-axis-minor { display: none; }
 }
+
+.hero-tl-status:empty { margin: 0; min-height: 0; }
 
 .hero-tl-status {
   min-height: 1.4em;
@@ -407,18 +441,55 @@ header p { color: #556080; font-size: 0.9rem; }
 /* ── end hero category timeline ── */
 
 @media (max-width: 600px) {
-  .hero { min-height: 70vh; padding: 4rem 1.5rem 3rem; background-position: center 25%; }
-  .hero-headline { font-size: clamp(1.9rem, 7vw, 2.4rem); }
-  .hero-sub { font-size: 1.05rem; }
-  .hero-cta { height: 48px; font-size: 0.92rem; padding: 0 1.75rem; }
-  .hero-cta-ghost { height: 48px; font-size: 0.88rem; padding: 0 1.5rem; }
+  .hero { padding-inline: 1rem; background-position: center 25%; }
+  .hero-headline { font-size: clamp(1.5rem, min(7vw, 5svh), 2.4rem); }
+  .hero-cta { font-size: 0.92rem; padding: 0 1.5rem; }
+  .hero-cta-ghost { font-size: 0.88rem; padding: 0 1.25rem; }
+  .hero-cta-group { gap: 0.75rem; }
   .hero-eyebrow-rule { max-width: 40px; }
+  .hero-tl-leg-btn { padding: 0.25rem 0.6rem; font-size: 0.74rem; }
+}
+
+/* Short screens: drop the lines that repeat what the header and stats say,
+   so the whole intro still fits without scrolling */
+@media (max-height: 820px), (max-width: 600px) and (max-height: 880px) {
+  .hero-sub { display: none; }
+}
+
+@media (max-height: 640px) {
+  .hero-eyebrow { display: none; }
+  .title-en { display: none; }
+}
+
+/* Smallest landscape phones (≤340px tall): the category filter has to go */
+@media (max-height: 340px) {
+  .hero-tl-legend { display: none; }
+}
+
+/* Landscape phones */
+@media (max-height: 480px) {
+  header { padding-block: 0.4rem; }
+  .site-logo img { width: 36px; }
+  header h1 { font-size: 1.25rem; }
+  .h1-main, .h1-sub { display: inline; }
+  .h1-sep { position: static; width: auto; height: auto; clip-path: none; }
+  .hero { padding-block: 0.6rem; }
+  .hero-content { margin-bottom: 0.6rem; }
+  .hero-cta, .hero-cta-ghost { height: 40px; }
+  .hero-accent { display: inline; }
+  .hero-tl-svg-host { display: none; }
+  .stat-item { display: flex; align-items: baseline; justify-content: center; gap: 0.4rem; }
+  .stat-number { margin: 0; }
+  .stat-label { white-space: nowrap; }
+  .stat-divider { height: 24px; }
+  .hero-tl-legend { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; scrollbar-width: none; }
+  .hero-tl-leg-btn { flex: none; }
 }
 /* ── Statistics Overview Bar (TGD-079) ── */
 .stats-bar {
   background: linear-gradient(180deg, #0d1327 0%, #111827 100%);
   border-bottom: 1px solid rgba(233, 69, 96, 0.25);
-  padding: 1.75rem 2rem;
+  padding: clamp(0.4rem, 1.6svh, 1.25rem) 2rem;
 }
 
 .stats-bar-inner {
@@ -437,20 +508,21 @@ header p { color: #556080; font-size: 0.9rem; }
 }
 
 .stat-number {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(1.4rem, min(4vw, 4.5svh), 2.2rem);
   font-weight: 800;
   color: #e94560;
   line-height: 1.1;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.15rem;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
 /* The year range is twice as long as the other figures; scale it down so it
    stays on one line instead of breaking after the dash */
-.stat-number.stat-number-range { font-size: clamp(1.3rem, 3vw, 2rem); }
+.stat-number.stat-number-range { font-size: clamp(1.1rem, min(3vw, 3.6svh), 2rem); }
 
 .stat-label {
+  line-height: 1.4;
   font-size: 0.78rem;
   color: rgba(190, 210, 245, 0.6);
   font-weight: 500;
@@ -464,10 +536,10 @@ header p { color: #556080; font-size: 0.9rem; }
 }
 
 @media (max-width: 600px) {
-  .stats-bar { padding: 1.25rem 1rem; }
+  .stats-bar { padding: clamp(0.4rem, 1.6svh, 1.25rem) 0.5rem; }
   .stats-bar-inner { gap: 0; }
-  .stat-item { padding: 0.35rem 0.5rem; }
-  .stat-number { font-size: clamp(1.4rem, 6vw, 1.75rem); }
+  .stat-item { padding: 0.25rem 0.35rem; }
+  .stat-number { font-size: clamp(1.25rem, 6vw, 1.75rem); }
   .stat-number.stat-number-range { font-size: clamp(0.95rem, 4vw, 1.2rem); }
   .stat-label { font-size: 0.72rem; }
   .stat-divider { height: 36px; }
@@ -2564,7 +2636,7 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
   }
 
   header h1 {
-    font-size: 2.4rem;
+    font-size: 1.45rem;
     line-height: 1.25;
   }
 
@@ -2665,6 +2737,23 @@ footer a:hover { color: #ff6b84; text-decoration: underline; }
   gap: 0.4rem;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+/* Tablets: one scrollable row instead of wrapping onto a second line */
+@media (min-width: 600px) and (max-width: 1199px) {
+  .era-nav { padding-inline: 0.5rem; }
+  .era-nav-links {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 4px 0.5rem;
+    margin: -4px 0;
+    max-width: 100%;
+  }
+  .era-nav-links::-webkit-scrollbar { display: none; }
+  .era-nav-links > a:first-child { margin-inline-start: auto; }
+  .era-nav-links > a:last-child { margin-inline-end: auto; }
 }
 
 /* ── Hamburger button styles ── */
@@ -3109,8 +3198,9 @@ header {
 
 .theme-toggle {
   position: absolute;
-  top: 1rem;
+  top: 50%;
   left: 1rem;
+  margin-top: -20px;
   background: rgba(13, 27, 53, 0.08);
   border: 1px solid rgba(13, 27, 53, 0.18);
   color: #0d1b35;
@@ -3164,6 +3254,7 @@ header {
   border-bottom-color: rgba(233, 69, 96, 0.6);
 }
 [data-theme="dark"] header h1 { color: #e8f2ff; }
+[data-theme="dark"] .h1-sub { color: #9fb2d4; }
 [data-theme="dark"] header p  { color: #7888a8; }
 [data-theme="dark"] .title-en { color: #e94560; }
 

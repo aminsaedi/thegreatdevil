@@ -389,7 +389,7 @@ layout: default
     role: 'img',
     'aria-label': 'نمودار تعاملی رویدادها بر اساس نوع — کلیک برای پیمایش'
   });
-  svg.style.cssText = 'width:100%;height:100px;display:block;overflow:visible;cursor:default';
+  svg.style.cssText = 'width:100%;display:block;overflow:visible;cursor:default';
 
   var g = svgEl('g', { transform: 'translate(' + PAD.l + ',' + PAD.t + ')' });
   svg.appendChild(g);
@@ -558,27 +558,30 @@ layout: default
 /* ── end Hero Category Timeline ── */
 
 /* ── Hero Viewport Fill ── */
+/* The header, era nav, hero and stats bar together make up the first screen:
+   the hero grows to take whatever height they leave, so the stats bar lands on
+   the bottom edge. It never shrinks below its content; the CSS keeps that
+   content small enough to fit. */
 (function () {
   function fitHeroToViewport() {
     var hero = document.querySelector('section.hero');
     if (!hero) return;
     var header = document.querySelector('header');
     var nav    = document.querySelector('nav.era-nav');
-    var overhead = (header ? header.offsetHeight : 0) + (nav ? nav.offsetHeight : 0);
-    var targetH = Math.max(560, window.innerHeight - overhead) + 'px';
-    if (window.innerWidth >= 601) {
-      /* Desktop: ensure hero fills viewport but allow content to grow if taller,
-         so category badges and timeline legend are never clipped by overflow:hidden */
-      hero.style.minHeight = targetH;
-      hero.style.height = '';
-    } else {
-      /* Mobile: allow hero to grow with content */
-      hero.style.height = '';
-      hero.style.minHeight = targetH;
-    }
+    var stats  = document.querySelector('.stats-bar');
+    var h = function (el) { return el ? el.getBoundingClientRect().height : 0; };
+    var overhead = h(header) + h(nav) + h(stats);
+    hero.style.minHeight = Math.max(0, Math.floor(window.innerHeight - overhead)) + 'px';
   }
   fitHeroToViewport();
-  window.addEventListener('resize', fitHeroToViewport, { passive: true });
+  /* On phones the height changes whenever the browser bars slide in or out
+     while scrolling; refitting then would make the page jump. */
+  var lastW = window.innerWidth, touch = window.matchMedia('(pointer: coarse)').matches;
+  window.addEventListener('resize', function () {
+    if (touch && window.innerWidth === lastW) return;
+    lastW = window.innerWidth;
+    fitHeroToViewport();
+  }, { passive: true });
 })();
 /* ── end Hero Viewport Fill ── */
 </script>

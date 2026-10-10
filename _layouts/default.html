@@ -129,9 +129,12 @@
     <source srcset="{{ '/assets/images/brand/logo.webp' | relative_url }}" type="image/webp">
     <img src="{{ '/assets/images/brand/logo.png' | relative_url }}" alt="" width="128" height="128" fetchpriority="high">
   </picture>
-  <h1>{{ site.title }}</h1>
-  <p class="title-en" lang="en">{{ site.title_en }}</p>
-  <p>{{ site.description_fa }}</p>
+  <div class="header-text">
+    {% assign title_parts = site.title | split: ' — ' %}
+    <h1><span class="h1-main">{{ title_parts[0] }}</span><span class="h1-sep"> — </span><span class="h1-sub">{{ title_parts[1] }}</span></h1>
+    <p class="title-en" lang="en">{{ site.title_en }}</p>
+    {% unless page.url == "/" %}<p class="header-desc">{{ site.description_fa }}</p>{% endunless %}
+  </div>
 </header>
 
 <nav class="era-nav" id="era-nav">
